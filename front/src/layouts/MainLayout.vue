@@ -54,13 +54,13 @@
       <div class="bg-grey-3">
         <div class="row q-pb-lg">
           <div class="col-6 flex flex-center">
-            <q-btn type="a" target="_blank" href="https://www.facebook.com/MultiCinesPLAZA" flat dense
+            <q-btn type="a" target="_blank" href="https://www.facebook.com/profile.php?id=100068249745954" flat dense
                    size="22px" color="primary" class="q-ma-md"
             >
               <div class="row items-center no-wrap">
                 <q-icon left name="fa-brands fa-facebook" />
                 <div class="text-left text-grey text-subtitle2 text-bold " style="line-height: 1.2;">
-                  Facebook<br>/MultiCinesPLAZA
+                  Facebook<br>4ta. Jornada Nacional de Neurología
                 </div>
               </div>
             </q-btn>
@@ -81,7 +81,7 @@
               <div class="col-12 col-md-1"></div>
               <div class="col-12 col-md-2 flex flex-center">
                 <div class="text-red-6 text-bold text-h5">
-                  <q-img src="/logoLargo.png" width="100px" class="cursor-pointer"
+                  <q-img src="logo.png" width="100px" class="cursor-pointer"
                          @click="$router.push('/')"
                   />
                 </div>
