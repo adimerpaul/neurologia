@@ -18,8 +18,8 @@
               <q-card-section>
                 <q-form @submit="login">
                   <q-input
-                    v-model="username"
-                    label="Usuario"
+                    v-model="email"
+                    label="email"
                     filled
                     lazy-rules
                     :rules="[val => val.length > 0 || 'El usuario es requerido']"
@@ -70,13 +70,12 @@
 </template>
 
 <script>
-import { setCssVar } from 'quasar'
 
 export default {
   name: 'LoginPage',
   data () {
     return {
-      username: '',
+      email: '',
       password: '',
       loading: false,
       passwordVisible: false
@@ -84,35 +83,25 @@ export default {
   },
   mounted () {
     if (this.$store.isLoggedIn) {
-      this.$router.push('/')
+      this.$router.push('/menu')
     }
   },
   methods: {
     login () {
       this.loading = true
       this.$axios.post('login', {
-        nickname: this.username,
+        email: this.email,
         password: this.password
       })
         .then(response => {
           this.$store.user = response.data.user
-          this.$store.agencia = response.data.agencia
-          setCssVar('primary', this.$store.agencia.color)
-          // this.$store.agencia_id = response.data.user.agencia_id
           this.$store.isLoggedIn = true
           this.$axios.defaults.headers.common.Authorization = `Bearer ${response.data.token}`
-          localStorage.setItem('tokenMiGanancia', response.data.token)
-          localStorage.setItem('user', JSON.stringify(response.data.user))
-          localStorage.setItem('agencia', JSON.stringify(response.data.agencia))
-          this.$router.push('/')
+          localStorage.setItem('tokenNeuro', response.data.token)
+          this.$router.push('/menu')
         })
         .catch(error => {
-          this.$q.notify({
-            message: error.response.data.message,
-            color: 'negative',
-            icon: 'o_report_problem',
-            position: 'top'
-          })
+          this.$alert.error(error.response.data.message)
         })
         .finally(() => {
           this.loading = false

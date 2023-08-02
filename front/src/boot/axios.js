@@ -1,6 +1,7 @@
 import { boot } from 'quasar/wrappers'
 import axios from 'axios'
 import { useCounterStore } from 'stores/example-store'
+import { Alert } from 'src/addons/Alert'
 // Be careful when using SSR for cross-request state pollution
 // due to creating a Singleton instance here;
 // If any client changes this (global) instance, it might be a
@@ -15,6 +16,7 @@ export default boot(({ app }) => {
   app.config.globalProperties.$axios = axios.create({ baseURL: import.meta.env.VITE_API_BACK })
   app.config.globalProperties.$url = import.meta.env.VITE_API_BACK
   app.config.globalProperties.$store = useCounterStore()
+  app.config.globalProperties.$alert = Alert
   // ^ ^ ^ this will allow you to use this.$axios (for Vue Options API form)
   //       so you won't necessarily have to import axios in each vue file
 
