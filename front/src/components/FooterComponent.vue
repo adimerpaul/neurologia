@@ -28,41 +28,41 @@
         <div class="col-12">
           <div class="row">
             <div class="col-12 col-md-1"></div>
-            <div class="col-12 col-md-2 flex flex-center">
+            <div class="col-12 col-md-3 flex flex-center">
               <div class="text-red-6 text-bold text-h5">
                 <q-img src="logo.png" width="100px" class="cursor-pointer"
                        @click="$router.push('/')"
                 />
               </div>
             </div>
-            <div class="col-6 col-md-2 q-pa-md">
-              <div class=" text-grey text-bold">PROGRAMACIÓN</div>
+            <div class="col-6 col-md-3 q-pa-md">
+              <div class=" text-grey text-bold">𝟒𝐭𝗮 𝗝𝗼𝗿𝗻𝗮𝗱𝗮 𝗡𝗮𝗰𝗶𝗼𝗻𝗮𝗹 𝗱𝗲 𝗡𝗲𝘂𝗿𝗼𝗹𝗼𝗴𝗶́𝗮</div>
               <q-separator />
-              <div class="text-grey">Cartelera</div>
-              <div class="text-grey">Próximos Estrenos</div>
-              <div class="text-grey">Venta anticipada</div>
+              <div class="text-grey">Actualizaciones Neurológica</div>
+              <div class="text-grey">𝕕í𝕒𝕤 𝟙𝟛 , 𝟙𝟜 𝕪 𝟙𝟝 𝕕𝕖 𝕤𝕖𝕡𝕥𝕚𝕖𝕞𝕓𝕣𝕖</div>
+<!--              <div class="text-grey">Venta anticipada</div>-->
             </div>
-            <div class="col-6 col-md-2 q-pa-md">
-              <div class=" text-grey text-bold">SOBRE NOSOTROS</div>
+            <div class="col-6 col-md-3 q-pa-md">
+              <div class=" text-grey text-bold">𝟐𝐝𝐨 𝗦𝗶𝗺𝗽𝗼𝘀𝗶𝗼 𝗜𝗻𝘁𝗲𝗿𝗻𝗮𝗰𝗶𝗼𝗻𝗮𝗹</div>
               <q-separator />
-              <div class="text-grey">Nosotros</div>
-              <div class="text-grey">Salas y formatos</div>
-              <div class="text-grey">Terminos y condiciones</div>
+              <div class="text-grey">Emergencias Neurológicas</div>
+              <div class="text-grey">𝕕í𝕒𝕤 𝟙𝟞 𝕪 𝟙𝟟 𝕕𝕖 𝕤𝕖𝕡𝕥𝕚𝕖𝕞𝕓𝕣𝕖</div>
+<!--              <div class="text-grey">Terminos y condiciones</div>-->
             </div>
-            <div class="col-6 col-md-2 q-pa-md">
-              <div class=" text-grey text-bold">PUBLICIDAD & MARKETING</div>
-              <q-separator />
-              <div class="text-grey">Eventos especiales</div>
-              <div class="text-grey">Corporativo</div>
-              <div class="text-grey">Publicidad</div>
-            </div>
-            <div class="col-6 col-md-2 q-pa-md">
-              <div class=" text-grey text-bold">CONTACTOS</div>
-              <q-separator />
-              <div class="text-grey">Escribenos</div>
-              <div class="text-grey">Trabaja con nosotros</div>
-              <div class="text-grey">Celular: 099 999 9999</div>
-            </div>
+<!--            <div class="col-6 col-md-2 q-pa-md">-->
+<!--              <div class=" text-grey text-bold">PUBLICIDAD & MARKETING</div>-->
+<!--              <q-separator />-->
+<!--              <div class="text-grey">Eventos especiales</div>-->
+<!--              <div class="text-grey">Corporativo</div>-->
+<!--              <div class="text-grey">Publicidad</div>-->
+<!--            </div>-->
+<!--            <div class="col-6 col-md-2 q-pa-md">-->
+<!--              <div class=" text-grey text-bold">CONTACTOS</div>-->
+<!--              <q-separator />-->
+<!--              <div class="text-grey">Escribenos</div>-->
+<!--              <div class="text-grey">Trabaja con nosotros</div>-->
+<!--              <div class="text-grey">Celular: 099 999 9999</div>-->
+<!--            </div>-->
             <div class="col-12 col-md-1"></div>
           </div>
         </div>

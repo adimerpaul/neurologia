@@ -92,8 +92,9 @@
                 <q-icon name="o_home" />
               </q-item-section>
               <q-item-section >
-                <q-item-label>Inicio</q-item-label>
-                <q-item-label caption :class="path=='/menu'?'text-white':'text-black'">Bienvenido {{$store.user.name}}</q-item-label>
+<!--                <q-item-label>Inicio</q-item-label>-->
+                <q-item-label caption :class="path=='/menu'?'text-white':'text-black'"><b>Bienvenido:</b>{{$store.user.name}}</q-item-label>
+                <q-item-label caption :class="path=='/menu'?'text-white':'text-black'"><b>Profesion:</b>{{$store.user.profession}}</q-item-label>
               </q-item-section>
             </q-item>
             <q-separator></q-separator>
@@ -150,6 +151,22 @@
               </q-item-section>
               <q-item-section>
                 Pagina Web
+              </q-item-section>
+            </q-item>
+            <q-item clickable to="/users" exact active-class="bg-primary text-white text-bold" v-if="$store.user.id==1">
+              <q-item-section avatar>
+                <q-icon name="o_people" />
+              </q-item-section>
+              <q-item-section>
+                Administrar Usuarios
+              </q-item-section>
+            </q-item>
+            <q-item clickable to="/estadisticos" exact active-class="bg-primary text-white text-bold" v-if="$store.user.id==1">
+              <q-item-section avatar>
+                <q-icon name="o_bar_chart" />
+              </q-item-section>
+              <q-item-section>
+                Datos Estadisticos
               </q-item-section>
             </q-item>
           </q-list>
