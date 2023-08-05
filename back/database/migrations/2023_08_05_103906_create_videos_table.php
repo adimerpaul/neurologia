@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
-            $table->string('subtitle')->nullable()->default('');
-            $table->string('title')->nullable()->default('');
-            $table->string('avatar')->nullable()->default('');
-            $table->string('content')->nullable()->default('');
+            $table->text('subtitle')->nullable()->default('');
+            $table->text('title')->nullable()->default('');
+            $table->text('avatar')->nullable()->default('');
+            $table->text('content')->nullable()->default('');
             $table->boolean('button')->nullable()->default(false);
             $table->string('urlZoom')->nullable()->default('');
             $table->string('urlYoutube')->nullable()->default('');
