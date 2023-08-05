@@ -15,11 +15,11 @@
           <div>
             <template v-if="video.button">
               <q-btn size="12px" outline label="Ingresa a la sala" color="blue" class="" no-caps
-                     icon-right="o_videocam" type="a" href="https://us05web.zoom.us/j/87909555789?pwd=jnX91HcvJIIccojTMLCatjMV9ZpWAY.1"
+                     icon-right="o_videocam" type="a" :href="video.urlZoom"
                      target="_blank" v-if="video.urlZoom"
               />
               <q-btn size="12px" label="Ver video" color="red" class="q-ml-xs" no-caps
-                     icon-right="fa-brands fa-youtube" type="a" href="https://www.youtube.com/watch?v=9Q4XZQZVq6c"
+                     icon-right="fa-brands fa-youtube" type="a" :href="video.urlYoutube"
                      target="_blank" v-if="video.urlYoutube" @click="verVideo(video)"
               />
             </template>
@@ -48,7 +48,12 @@ export default {
   },
   methods: {
     verVideo (video) {
-      console.log(video)
+      this.$axios.post('verVideo', video).then(response => {
+        // this.$alert.success(response.data.message)
+        this.$store.porcentaje = response.data
+      }).catch(error => {
+        this.$alert.error(error.response.data.message)
+      })
     },
     videosGet () {
       this.videos = []

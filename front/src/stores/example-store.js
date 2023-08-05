@@ -6,6 +6,7 @@ export const useCounterStore = defineStore('counter', {
     user: {},
     agencia: {},
     productosVenta: [],
+    porcentaje: 0,
     isLoggedIn: !!localStorage.getItem('tokenNeuro'),
     env: {}
   }),

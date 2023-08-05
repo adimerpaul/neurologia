@@ -30,7 +30,7 @@
             <div class="col-12 col-md-1"></div>
             <div class="col-12 col-md-3 flex flex-center">
               <div class="text-red-6 text-bold text-h5">
-                <q-img src="logo.png" width="100px" class="cursor-pointer"
+                <q-img src="/logo.png" width="100px" class="cursor-pointer"
                        @click="$router.push('/')"
                 />
               </div>

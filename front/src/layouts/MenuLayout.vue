@@ -67,9 +67,9 @@
               <q-item dense>
                 <q-item-section>
                   <q-item-label>
-                    <q-linear-progress stripe rounded size="20px" :value="value" color="primary" class="q-mt-sm">
+                    <q-linear-progress stripe rounded size="20px" :value="$store.porcentaje/100" color="primary" class="q-mt-sm">
                       <div class="absolute-full flex flex-center">
-                        <q-badge color="white" size="10px" text-color="accent" :label="`${value*100}%`"/>
+                        <q-badge color="white" size="10px" text-color="accent" :label="`${$store.porcentaje}%`"/>
                       </div>
                     </q-linear-progress>
                     <div class="text-center">

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Agencia;
 use App\Models\Chat;
 use App\Models\User;
+use App\Models\UserVideo;
+use App\Models\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -117,8 +119,12 @@ class UserController extends Controller
     }
     public function me(Request $request){
         $user=User::where('id',$request->user()->id)->firstOrFail();
+        $videosActivos = Video::where('button', 1)->count();
+        $userCantidad = UserVideo::where('user_id', $user->id)->count();
+        $porcentaje = $userCantidad * 100 / $videosActivos;
         return response()->json([
-            'user'=>$user
+            'user'=>$user,
+            'porcentaje'=>round($porcentaje,2)
         ],200);
     }
 }

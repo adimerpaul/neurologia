@@ -8,7 +8,7 @@
             <q-card class="q-mt-md">
               <q-card-section class="text-center">
                 <div class="text-h5 text-bold">Iniciar sesión</div>
-                <q-img src="logo.png" width="150px" />
+                <q-img src="/logo.png" width="150px" />
                 <div class="text-h6 text-bold">4ta. Jornada Nacional de Neurología</div>
                 <div class="text-subtitle2 text-bold">
                   <q-icon name="o_location_on" /> 2do Simposio Internacional de
