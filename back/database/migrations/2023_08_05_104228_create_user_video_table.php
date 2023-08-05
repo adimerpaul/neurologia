@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('video_id')->constrained();
+            $table->date('date')->nullable()->default(null);
+            $table->time('time')->nullable()->default(null);
             $table->timestamps();
         });
     }

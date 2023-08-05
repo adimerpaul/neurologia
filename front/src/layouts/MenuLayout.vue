@@ -102,7 +102,7 @@
               4ta Jornada Nacional de Neurología
             </q-item-label>
             <q-separator></q-separator>
-            <q-item clickable to="dia13" exact active-class="bg-primary text-white text-bold">
+            <q-item clickable to="/dia13/2023-09-13" exact active-class="bg-primary text-white text-bold">
               <q-item-section avatar>
                 <q-icon name="event_available" />
               </q-item-section>
@@ -110,7 +110,7 @@
                 Miercoles 13-Sep-2023
               </q-item-section>
             </q-item>
-            <q-item clickable to="dia14" exact active-class="bg-primary text-white text-bold">
+            <q-item clickable to="/dia13/2023-09-14" exact active-class="bg-primary text-white text-bold">
               <q-item-section avatar>
                 <q-icon name="event_available" />
               </q-item-section>
@@ -118,7 +118,7 @@
                 Jueves 14-Sep-2023
               </q-item-section>
             </q-item>
-            <q-item clickable to="dia15" exact active-class="bg-primary text-white text-bold">
+            <q-item clickable to="/dia13/2023-09-15" exact active-class="bg-primary text-white text-bold">
               <q-item-section avatar>
                 <q-icon name="event_available" />
               </q-item-section>
@@ -129,7 +129,7 @@
             <q-item-label header>
               2da Simposio Internacional de Neurología
             </q-item-label>
-            <q-item clickable to="dia16" exact active-class="bg-primary text-white text-bold">
+            <q-item clickable to="/dia13/2023-09-16" exact active-class="bg-primary text-white text-bold">
               <q-item-section avatar>
                 <q-icon name="event_available" />
               </q-item-section>
@@ -137,7 +137,7 @@
                 Viernes 16-Sep-2023
               </q-item-section>
             </q-item>
-            <q-item clickable to="dia17" exact active-class="bg-primary text-white text-bold">
+            <q-item clickable to="/dia13/2023-09-17" exact active-class="bg-primary text-white text-bold">
               <q-item-section avatar>
                 <q-icon name="event_available" />
               </q-item-section>

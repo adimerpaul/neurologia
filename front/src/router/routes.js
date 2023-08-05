@@ -16,7 +16,7 @@ const routes = [
     component: MenuLayout,
     children: [
       { path: '', component: IndexMenuPage, meta: { requiresAuth: true } },
-      { path: '/dia13', component: Dia13Page, meta: { requiresAuth: true } }
+      { path: '/dia13/:date', component: Dia13Page, meta: { requiresAuth: true } }
     ]
   },
   {
