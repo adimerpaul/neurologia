@@ -144,6 +144,14 @@
                 Sabado 17-Sep-2023
               </q-item-section>
             </q-item>
+            <q-item clickable to="/" exact active-class="bg-primary text-white text-bold">
+              <q-item-section avatar>
+                <q-icon name="o_public" />
+              </q-item-section>
+              <q-item-section>
+                Pagina Web
+              </q-item-section>
+            </q-item>
           </q-list>
         </q-header>
         <q-footer class="bg-white">

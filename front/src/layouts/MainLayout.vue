@@ -1,6 +1,10 @@
 <template>
   <q-layout view="lHh Lpr fff">
-    <q-header>
+    <q-header elevated>
+      <div class="bg-teal-9">
+        <q-btn flat dense round size="10px" icon="fa-brands fa-facebook" color="white" />
+        <q-btn flat dense round size="10px" icon="fa-brands fa-youtube" color="white" />
+      </div>
       <q-toolbar>
 <!--        <q-btn-->
 <!--          flat-->
@@ -22,7 +26,7 @@
         </q-toolbar-title>
 
         <div>
-          <q-btn label="Entrar" color="red" to="/login" no-caps size="13px" />
+          <q-btn label="Ingresar" color="red" to="/login" no-caps size="14px" icon="login" />
         </div>
       </q-toolbar>
     </q-header>

@@ -12,7 +12,7 @@
     >
       <q-carousel-slide name="first" img-src="6I7N22TXFVHAVPUAFRWA35DWCI.avif">
         <div class="absolute-bottom custom-caption">
-          <div class="text-subtitle1">
+          <div class="text-h2">
             4ta JORNADANACIONAL DE
             NEUROLOGIA “EL PODER DE TUS
             BRAZOS ORURO”
@@ -22,7 +22,7 @@
       <q-carousel-slide name="second" img-src="Bucle OWKIN-G.jpg.webp">
         <div class="absolute-bottom custom-caption">
 <!--          <div class="text-h2">Second stop</div>-->
-          <div class="text-subtitle1">“ACTUALIZACIONES EN
+          <div class="text-h2">“ACTUALIZACIONES EN
             ENFERMEDADES NEUROLOGICAS”
           </div>
         </div>
@@ -30,7 +30,7 @@
       <q-carousel-slide name="third" img-src="NOTICIA_OCT28_OP2-_FINUT-02-1024x536.webp">
         <div class="absolute-bottom custom-caption">
 <!--          <div class="text-h2">Third stop</div>-->
-          <div class="text-subtitle1">2do SIMPOSIO INTERNACIONAL DE
+          <div class="text-h2">2do SIMPOSIO INTERNACIONAL DE
             NEUROLOGIA
           </div>
         </div>
