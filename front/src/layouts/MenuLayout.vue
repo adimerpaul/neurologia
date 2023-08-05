@@ -32,45 +32,6 @@
       show-if-above
       bordered
     >
-<!--      <q-list bordered>-->
-<!--        <q-item-label header class="q-pa-none">-->
-<!--          <q-item dense>-->
-<!--            <q-item-section>-->
-<!--              <q-item-label>-->
-<!--                <q-linear-progress stripe rounded size="20px" :value="value" color="primary" class="q-mt-sm">-->
-<!--                  <div class="absolute-full flex flex-center">-->
-<!--                    <q-badge color="white" size="10px" text-color="accent" :label="`${value*100}%`"/>-->
-<!--                  </div>-->
-<!--                </q-linear-progress>-->
-<!--                <div class="text-center">-->
-<!--                  Porcentaje de avance-->
-<!--                  <q-icon name="help" class="q-ml-sm">-->
-<!--                    <q-tooltip>-->
-<!--                      <div class="text-center">-->
-<!--                        <div class="text-h6">Porcentaje de avance</div>-->
-<!--                        <div class="text-subtitle2">Muestra el porcentaje de avance de la jornada</div>-->
-<!--                      </div>-->
-<!--                    </q-tooltip>-->
-<!--                  </q-icon>-->
-<!--                </div>-->
-<!--              </q-item-label>-->
-<!--            </q-item-section>-->
-<!--          </q-item>-->
-<!--          <q-item-section>-->
-<!--          </q-item-section>-->
-<!--        </q-item-label>-->
-<!--          <q-item-label header>-->
-<!--            Jornadas-->
-<!--          </q-item-label>-->
-<!--&lt;!&ndash;        <q-item clickable>&ndash;&gt;-->
-<!--          <q-expansion-item icon="event" label="03-Sep-2021" default-open>-->
-<!--            <q-expansion-item label="Bienvenida" to="/welcome" />-->
-<!--            <q-expansion-item label="Objetivos" to="/objectives" />-->
-<!--            <q-expansion-item label="Programa" to="/program" />-->
-<!--            <q-expansion-item label="Agradecimientos" to="/thanks" />-->
-<!--          </q-expansion-item>-->
-<!--&lt;!&ndash;        </q-item>&ndash;&gt;-->
-<!--      </q-list>-->
       <q-layout>
         <q-header class="bg-white">
           <q-list class="text-black" separator bordered>
@@ -89,7 +50,7 @@
                         <q-tooltip>
                           <div class="text-center">
                             <div class="text-h6">Porcentaje de avance</div>
-                            <div class="text-subtitle2">Muestra el porcentaje de avance de la jornada</div>
+                            <div class="text-subtitle2">Muestra el porcentaje de avance de los videos vistos una vez finalizado el evento.</div>
                           </div>
                         </q-tooltip>
                       </q-icon>
@@ -98,32 +59,60 @@
                 </q-item-section>
               </q-item>
             </q-item-label>
+            <q-item clickable to="/menu" exact active-class="bg-primary text-white">
+              <q-item-section avatar>
+                <q-icon name="o_home" />
+              </q-item-section>
+              <q-item-section>
+                Principal
+              </q-item-section>
+            </q-item>
+            <q-separator></q-separator>
             <q-item-label header>
               4ta Jornada Nacional de Neurología
             </q-item-label>
             <q-separator></q-separator>
-            <q-item clickable to="dia13" active-class="bg-primary text-white">
+            <q-item clickable to="dia13" exact active-class="bg-primary text-white">
               <q-item-section avatar>
                 <q-icon name="event_available" />
               </q-item-section>
               <q-item-section>
-                13-Sep-2023
+                Miercoles 13-Sep-2023
               </q-item-section>
             </q-item>
-            <q-item clickable to="dia14" active-class="bg-primary text-white">
+            <q-item clickable to="dia14" exact active-class="bg-primary text-white">
               <q-item-section avatar>
                 <q-icon name="event_available" />
               </q-item-section>
               <q-item-section>
-                14-Sep-2023
+                Jueves 14-Sep-2023
               </q-item-section>
             </q-item>
-            <q-item clickable to="dia15" active-class="bg-primary text-white">
+            <q-item clickable to="dia15" exact active-class="bg-primary text-white">
               <q-item-section avatar>
                 <q-icon name="event_available" />
               </q-item-section>
               <q-item-section>
-                15-Sep-2023
+                Viernes 15-Sep-2023
+              </q-item-section>
+            </q-item>
+            <q-item-label header>
+              2da Simposio Internacional de Neurología
+            </q-item-label>
+            <q-item clickable to="dia16" exact active-class="bg-primary text-white">
+              <q-item-section avatar>
+                <q-icon name="event_available" />
+              </q-item-section>
+              <q-item-section>
+                Viernes 16-Sep-2023
+              </q-item-section>
+            </q-item>
+            <q-item clickable to="dia17" exact active-class="bg-primary text-white">
+              <q-item-section avatar>
+                <q-icon name="event_available" />
+              </q-item-section>
+              <q-item-section>
+                Sabado 17-Sep-2023
               </q-item-section>
             </q-item>
           </q-list>
