@@ -1,6 +1,7 @@
 import LoginPage from 'pages/LoginPage.vue'
 import MenuLayout from 'layouts/MenuLayout.vue'
 import IndexMenuPage from 'pages/IndexMenuPage.vue'
+import Dia13Page from 'pages/Dia13Page.vue'
 
 const routes = [
   {
@@ -14,7 +15,8 @@ const routes = [
     path: '/menu',
     component: MenuLayout,
     children: [
-      { path: '', component: IndexMenuPage }
+      { path: '', component: IndexMenuPage },
+      { path: '/dia13', component: Dia13Page }
     ]
   },
   {

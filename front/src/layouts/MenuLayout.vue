@@ -32,38 +32,113 @@
       show-if-above
       bordered
     >
-      <q-list>
-        <q-item-label header class="q-pa-none">
+<!--      <q-list bordered>-->
+<!--        <q-item-label header class="q-pa-none">-->
 <!--          <q-item dense>-->
-<!--            <q-item-section avatar>-->
-<!--              <q-img src="logo.png" width="35px"/>-->
-<!--            </q-item-section>-->
-
 <!--            <q-item-section>-->
-<!--              <q-item-label>Jornadas</q-item-label>-->
+<!--              <q-item-label>-->
+<!--                <q-linear-progress stripe rounded size="20px" :value="value" color="primary" class="q-mt-sm">-->
+<!--                  <div class="absolute-full flex flex-center">-->
+<!--                    <q-badge color="white" size="10px" text-color="accent" :label="`${value*100}%`"/>-->
+<!--                  </div>-->
+<!--                </q-linear-progress>-->
+<!--                <div class="text-center">-->
+<!--                  Porcentaje de avance-->
+<!--                  <q-icon name="help" class="q-ml-sm">-->
+<!--                    <q-tooltip>-->
+<!--                      <div class="text-center">-->
+<!--                        <div class="text-h6">Porcentaje de avance</div>-->
+<!--                        <div class="text-subtitle2">Muestra el porcentaje de avance de la jornada</div>-->
+<!--                      </div>-->
+<!--                    </q-tooltip>-->
+<!--                  </q-icon>-->
+<!--                </div>-->
+<!--              </q-item-label>-->
 <!--            </q-item-section>-->
 <!--          </q-item>-->
-          <q-item-section>
-            <q-linear-progress stripe rounded size="20px" :value="value" color="primary" class="q-mt-sm">
-              <div class="absolute-full flex flex-center">
-                <q-badge color="white" size="10px" text-color="accent" :label="`${value*100}%`"/>
-              </div>
-            </q-linear-progress>
-            <div>Prcetaje de videos visto</div>
-          </q-item-section>
-        </q-item-label>
-
-        <q-item clickable>
-          <q-item-section avatar>
-            <q-icon name="home" />
-          </q-item-section>
-
-          <q-item-section>
-            <q-item-label>Title</q-item-label>
-            <q-item-label caption>Caption</q-item-label>
-          </q-item-section>
-        </q-item>
-      </q-list>
+<!--          <q-item-section>-->
+<!--          </q-item-section>-->
+<!--        </q-item-label>-->
+<!--          <q-item-label header>-->
+<!--            Jornadas-->
+<!--          </q-item-label>-->
+<!--&lt;!&ndash;        <q-item clickable>&ndash;&gt;-->
+<!--          <q-expansion-item icon="event" label="03-Sep-2021" default-open>-->
+<!--            <q-expansion-item label="Bienvenida" to="/welcome" />-->
+<!--            <q-expansion-item label="Objetivos" to="/objectives" />-->
+<!--            <q-expansion-item label="Programa" to="/program" />-->
+<!--            <q-expansion-item label="Agradecimientos" to="/thanks" />-->
+<!--          </q-expansion-item>-->
+<!--&lt;!&ndash;        </q-item>&ndash;&gt;-->
+<!--      </q-list>-->
+      <q-layout>
+        <q-header class="bg-white">
+          <q-list class="text-black" separator bordered>
+            <q-item-label header class="q-pa-none">
+              <q-item dense>
+                <q-item-section>
+                  <q-item-label>
+                    <q-linear-progress stripe rounded size="20px" :value="value" color="primary" class="q-mt-sm">
+                      <div class="absolute-full flex flex-center">
+                        <q-badge color="white" size="10px" text-color="accent" :label="`${value*100}%`"/>
+                      </div>
+                    </q-linear-progress>
+                    <div class="text-center">
+                      Porcentaje de avance
+                      <q-icon name="help" class="q-ml-sm">
+                        <q-tooltip>
+                          <div class="text-center">
+                            <div class="text-h6">Porcentaje de avance</div>
+                            <div class="text-subtitle2">Muestra el porcentaje de avance de la jornada</div>
+                          </div>
+                        </q-tooltip>
+                      </q-icon>
+                    </div>
+                  </q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-item-label>
+            <q-item-label header>
+              4ta Jornada Nacional de Neurología
+            </q-item-label>
+            <q-separator></q-separator>
+            <q-item clickable to="dia13" active-class="bg-primary text-white">
+              <q-item-section avatar>
+                <q-icon name="event_available" />
+              </q-item-section>
+              <q-item-section>
+                13-Sep-2023
+              </q-item-section>
+            </q-item>
+            <q-item clickable to="dia14" active-class="bg-primary text-white">
+              <q-item-section avatar>
+                <q-icon name="event_available" />
+              </q-item-section>
+              <q-item-section>
+                14-Sep-2023
+              </q-item-section>
+            </q-item>
+            <q-item clickable to="dia15" active-class="bg-primary text-white">
+              <q-item-section avatar>
+                <q-icon name="event_available" />
+              </q-item-section>
+              <q-item-section>
+                15-Sep-2023
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-header>
+        <q-footer class="bg-white">
+          <q-list bordered padding dense class="rounded-borders text-red">
+            <q-item clickable v-ripple @click="logout()">
+              <q-item-section avatar>
+                <q-icon name="o_logout" />
+              </q-item-section>
+              <q-item-section> Cerrar sesión</q-item-section>
+            </q-item>
+          </q-list>
+        </q-footer>
+      </q-layout>
     </q-drawer>
 
     <q-page-container>
@@ -84,7 +159,7 @@ export default {
   },
   data () {
     return {
-      value: 0.01,
+      value: 0.05,
       leftDrawerOpen: false
     }
   }
