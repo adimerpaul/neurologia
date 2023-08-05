@@ -94,6 +94,7 @@ export default {
         password: this.password
       })
         .then(response => {
+          this.$alert.success(`Bienvenido ${response.data.user.name}!`)
           this.$store.user = response.data.user
           this.$store.isLoggedIn = true
           this.$axios.defaults.headers.common.Authorization = `Bearer ${response.data.token}`

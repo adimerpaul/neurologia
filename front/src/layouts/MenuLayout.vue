@@ -22,7 +22,35 @@
         </q-toolbar-title>
 
         <div>
-          <q-btn label="Salir" color="red" to="/login" no-caps size="13px" />
+          <q-btn icon="account_circle" flat round color="white">
+            <q-menu>
+              <q-list>
+                <q-item clickable v-ripple>
+                  <q-item-section avatar>
+                    <q-avatar>
+                      <q-icon name="account_circle" />
+                    </q-avatar>
+                  </q-item-section>
+                  <q-item-section>
+                    <q-item-label>Bienvenido</q-item-label>
+                    <q-item-section side>
+                      <q-item-label caption>{{$store.user.name}}</q-item-label>
+                    </q-item-section>
+                  </q-item-section>
+                </q-item>
+                <q-item clickable v-ripple @click="logout">
+                  <q-item-section avatar>
+                    <q-avatar>
+                      <q-icon name="logout" />
+                    </q-avatar>
+                  </q-item-section>
+                  <q-item-section>
+                    <q-item-label>Salir</q-item-label>
+                  </q-item-section>
+                </q-item>
+              </q-list>
+            </q-menu>
+          </q-btn>
         </div>
       </q-toolbar>
     </q-header>
@@ -59,12 +87,13 @@
                 </q-item-section>
               </q-item>
             </q-item-label>
-            <q-item clickable to="/menu" exact active-class="bg-primary text-white">
+            <q-item clickable to="/menu" exact active-class="bg-primary text-white text-bold">
               <q-item-section avatar>
                 <q-icon name="o_home" />
               </q-item-section>
-              <q-item-section>
-                Principal
+              <q-item-section >
+                <q-item-label>Inicio</q-item-label>
+                <q-item-label caption :class="path=='/menu'?'text-white':'text-black'">Bienvenido {{$store.user.name}}</q-item-label>
               </q-item-section>
             </q-item>
             <q-separator></q-separator>
@@ -72,7 +101,7 @@
               4ta Jornada Nacional de Neurología
             </q-item-label>
             <q-separator></q-separator>
-            <q-item clickable to="dia13" exact active-class="bg-primary text-white">
+            <q-item clickable to="dia13" exact active-class="bg-primary text-white text-bold">
               <q-item-section avatar>
                 <q-icon name="event_available" />
               </q-item-section>
@@ -80,7 +109,7 @@
                 Miercoles 13-Sep-2023
               </q-item-section>
             </q-item>
-            <q-item clickable to="dia14" exact active-class="bg-primary text-white">
+            <q-item clickable to="dia14" exact active-class="bg-primary text-white text-bold">
               <q-item-section avatar>
                 <q-icon name="event_available" />
               </q-item-section>
@@ -88,7 +117,7 @@
                 Jueves 14-Sep-2023
               </q-item-section>
             </q-item>
-            <q-item clickable to="dia15" exact active-class="bg-primary text-white">
+            <q-item clickable to="dia15" exact active-class="bg-primary text-white text-bold">
               <q-item-section avatar>
                 <q-icon name="event_available" />
               </q-item-section>
@@ -99,7 +128,7 @@
             <q-item-label header>
               2da Simposio Internacional de Neurología
             </q-item-label>
-            <q-item clickable to="dia16" exact active-class="bg-primary text-white">
+            <q-item clickable to="dia16" exact active-class="bg-primary text-white text-bold">
               <q-item-section avatar>
                 <q-icon name="event_available" />
               </q-item-section>
@@ -107,7 +136,7 @@
                 Viernes 16-Sep-2023
               </q-item-section>
             </q-item>
-            <q-item clickable to="dia17" exact active-class="bg-primary text-white">
+            <q-item clickable to="dia17" exact active-class="bg-primary text-white text-bold">
               <q-item-section avatar>
                 <q-icon name="event_available" />
               </q-item-section>
@@ -150,6 +179,36 @@ export default {
     return {
       value: 0.05,
       leftDrawerOpen: false
+    }
+  },
+  methods: {
+    logout () {
+      this.$q.dialog({
+        message: '¿Quieres cerrar sesión?',
+        title: 'Salir',
+        ok: {
+          push: true
+        },
+        cancel: {
+          push: true,
+          color: 'negative'
+        }
+      }).onOk(() => {
+        this.$q.loading.show()
+        this.$axios.post('logout').then(() => {
+          this.$axios.defaults.headers.common.Authorization = ''
+          this.$store.user = {}
+          localStorage.removeItem('tokenNeuro')
+          this.$store.isLoggedIn = false
+          this.$q.loading.hide()
+          this.$router.push('/login')
+        })
+      })
+    }
+  },
+  computed: {
+    path () {
+      return this.$route.path
     }
   }
 }
