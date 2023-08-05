@@ -1,4 +1,6 @@
 import LoginPage from 'pages/LoginPage.vue'
+import MenuLayout from 'layouts/MenuLayout.vue'
+import IndexMenuPage from 'pages/IndexMenuPage.vue'
 
 const routes = [
   {
@@ -6,6 +8,13 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') }
+    ]
+  },
+  {
+    path: '/menu',
+    component: MenuLayout,
+    children: [
+      { path: '', component: IndexMenuPage }
     ]
   },
   {
