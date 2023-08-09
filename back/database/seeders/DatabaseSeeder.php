@@ -3,7 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Imports\UsersImport;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Maatwebsite\Excel\Facades\Excel;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,5 +26,19 @@ class DatabaseSeeder extends Seeder
             VideoSeeder::class,
             // UserSeeder::class,
         ]);
+        $inscritos = Excel::toArray(new UsersImport, public_path('Inscripción Neurología & Emergencias Neurológicas. (Respuestas).xlsx'));
+        foreach ($inscritos[0] as $inscrito) {
+//            error_log("inscrito". json_encode($inscrito));
+            $user = new User();
+            $user->firstName=$inscrito['primer_nombre'];
+            $user->secondName=$inscrito['segundo_nombre'];
+            $user->lastName=$inscrito['primer_apellido'];
+            $user->secondLastName=$inscrito['segundo_apellido'];
+            $user->phone=$inscrito['nro_de_celular'];
+            $user->profession=$inscrito['profesion'];
+            $user->email=$inscrito['correo_electronico'];
+            $user->password=bcrypt($inscrito['nro_de_ci']);
+            $user->save();
+        }
     }
 }
