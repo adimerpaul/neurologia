@@ -29,7 +29,7 @@
         </div>
       </q-carousel-slide>
       <q-carousel-slide :name="2" class="column no-wrap flex-center" img-src="WhatsApp Image 2023-08-05 at 15.53.45 (1).jpeg" >
-        <div class="text-center full-width" style="background: rgba(0,0,0,.3); color: white; padding: 30px">
+        <div class="text-center full-width full-height flex flex-center" style="background: rgba(0,0,0,.3); color: white; padding: 30px">
           <div :class="`${$q.screen.lt.md ? 'text-h6' : 'text-h3'} text-left`" style="width: 100%;padding: 10px">
             2DO. SIMPOSIO INTERNACIONAL
           </div>
