@@ -5,7 +5,6 @@
       swipeable
       animated
       v-model="slide"
-      thumbnails
       arrows
       navigation-icon="radio_button_unchecked"
       infinite
@@ -19,7 +18,7 @@
       <q-carousel-slide :name="1" class="column no-wrap flex-center" img-src="WhatsApp Image 2023-08-05 at 15.53.45.jpeg">
 <!--        <q-icon name="style" size="56px" />-->
         <div class="text-center full-width q-pa-lg" style="background: rgba(0,0,0,.3)">
-          <div :class="`${$q.screen.lt.md ? 'text-h6' : 'text-h3'} text-left`" style="width: 650px;padding: 150px">
+          <div :class="`${$q.screen.lt.md ? 'text-h6' : 'text-h3'} text-left`" style="width: 100%;padding: 10px">
             4ta. JORNADA NACIONAL DE NEUROLOGÍA
           </div>
           Actualización en Enfermedades Neurológicas <br>
@@ -31,7 +30,7 @@
       </q-carousel-slide>
       <q-carousel-slide :name="2" class="column no-wrap flex-center" img-src="WhatsApp Image 2023-08-05 at 15.53.45 (1).jpeg" >
         <div class="text-center full-width" style="background: rgba(0,0,0,.3); color: white; padding: 30px">
-          <div :class="`${$q.screen.lt.md ? 'text-h6' : 'text-h3'} text-left`" style="width: 650px;padding: 150px">
+          <div :class="`${$q.screen.lt.md ? 'text-h6' : 'text-h3'} text-left`" style="width: 100%;padding: 10px">
             2DO. SIMPOSIO INTERNACIONAL
           </div>
           Emergencias Neurológicas <br>
@@ -58,7 +57,14 @@
           class="text-white rounded-borders"
         >
           <div>
-            <q-btn label="Ingresar" color="primary" to="/login" no-caps size="14px" icon="o_person" dense />
+            <q-toolbar class="text-primary">
+      <q-btn flat label="Principal" to="/principal"></q-btn>
+      <q-btn flat label="Principal" ></q-btn>
+      <q-toolbar-title>
+        <q-btn label="Ingresar" color="primary" to="/login" no-caps size="14px" icon="o_person" dense />
+      </q-toolbar-title>
+      <q-btn flat round dense icon="more_vert" />
+    </q-toolbar>
           </div>
 <!--          <q-toggle dense dark color="orange" v-model="autoplay" label="Auto Play" />-->
         </q-carousel-control>
