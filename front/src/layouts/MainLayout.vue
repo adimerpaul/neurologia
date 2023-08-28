@@ -1,51 +1,25 @@
 <template>
   <q-layout view="lHh Lpr fff">
-    <q-carousel
-      :height="$q.screen.lt.md ? '35vh' : '70vh'"
-      swipeable
-      animated
-      v-model="slide"
-      arrows
-      navigation-icon="radio_button_unchecked"
-      infinite
-      autoplay
-      dark
-    >
-      <q-carousel-slide v-for="(t, i) in textos" :name="i+1" :key="i" class="column no-wrap flex-center q-pa-none" :img-src="t.img">
-        <div class="text-center full-width q-pa-lg background">
-          <div class="text-left titulo">
-            {{ t.titulo }}
-          </div>
-          <div class="subtitulo">
-            {{ t.subtitulo }}
-          </div>
-          <br>
-            {{ t.fecha }}
-          <div>
-            <q-btn label="Ingresa aquí" color="primary" class="q-mt-md" no-caps to="/login" />
-          </div>
-        </div>
-      </q-carousel-slide>
-      <template v-slot:control>
-        <q-carousel-control
-          position="top-right"
-          :offset="[18, 18]"
-          class="text-white rounded-borders"
-        >
-          <div>
-            <q-btn icon="o_menu" v-if="$q.screen.lt.md" flat @click="modalMenu= true"/>
-            <q-toolbar class="" v-else>
-              <q-btn flat label="Principal" to="/principal" no-caps></q-btn>
-              <q-btn flat label="Quienes Somos" no-caps></q-btn>
-              <q-btn flat label="Objetivos" no-caps></q-btn>
-              <q-btn flat label="Ponentes" no-caps></q-btn>
-              <q-btn label="Ingresar" color="primary" to="/login" no-caps size="14px" />
-            </q-toolbar>
-          </div>
-        </q-carousel-control>
-      </template>
-    </q-carousel>
-
+      <div class="bg-primary text-right">
+        <q-btn icon="o_menu" color="white" v-if="$q.screen.lt.md" flat @click="modalMenu= true"/>
+        <q-toolbar class="" v-else>
+          <q-space />
+          <q-tabs shrink class="text-white">
+            <q-tab name="principal" label="Principal" to="/principal" no-caps/>
+            <q-tab name="quienesSomos" label="Quienes Somos" no-caps/>
+            <q-tab name="objetivos" label="Objetivos" no-caps/>
+            <q-tab name="ponentes" label="Ponentes" no-caps/>
+            <q-tab name="ingresar" no-caps>
+              <q-btn label="Ingresar" to="/login" color="white" text-color="black" no-caps size="14px" />
+            </q-tab>
+          </q-tabs>
+<!--          <q-btn flat label="Principal" to="/principal" no-caps></q-btn>-->
+<!--          <q-btn flat label="Quienes Somos" no-caps></q-btn>-->
+<!--          <q-btn flat label="Objetivos" no-caps></q-btn>-->
+<!--          <q-btn flat label="Ponentes" no-caps></q-btn>-->
+<!--          <q-btn label="Ingresar" color="primary" to="/login" no-caps size="14px" />-->
+        </q-toolbar>
+      </div>
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -57,7 +31,7 @@
           <div class="text-subtitle1 text-center">Quienes Somos</div>
           <div class="text-subtitle1 text-center">Objetivos</div>
           <div class="text-subtitle1 text-center">Ponentes</div>
-          <div class="text-subtitle1 text-center"><q-btn label="Ingresar" color="primary" to="/login" no-caps size="14px" /></div>
+<!--          <div class="text-subtitle1 text-center"><q-btn label="Ingresar" color="primary" to="/login" no-caps size="14px" /></div>-->
         </q-card-section>
       </q-card>
     </q-dialog>
@@ -94,13 +68,13 @@ export default {
 </script>
 <style>
 .background {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   color: white;
   width: 100%;
   height: 100%;
 }
 .titulo{
-  padding: 50px 80px;
+  padding: 10px;
   font-size: 50px;
   font-weight: 900;
 }
@@ -108,6 +82,10 @@ export default {
   padding: 50px 80px;
   font-size: 30px;
   font-weight: 900;
+}
+.bannerMenu{
+  background: url('images/WhatsApp Image 2023-08-28 at 06.49.19.jpeg') no-repeat center center;
+  background-size: cover;
 }
 @media (max-width: 1024px) {
   .titulo{
@@ -119,6 +97,9 @@ export default {
     padding: 5px 10px;
     font-size: 15px;
     font-weight: 900;
+  }
+  .textMenu{
+    font-size: 20px;
   }
 }
 </style>
