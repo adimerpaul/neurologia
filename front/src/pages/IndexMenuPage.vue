@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <div class="text-center">
-      <div class="text-h1 text-center text-bold">Bienvenidos!!></div>
+      <div class="text-h1 text-center text-bold">Bienvenidos!!</div>
       <div class="text-center">
         <q-img src="images/porta2023.jpg" width="700px" />
       </div>
