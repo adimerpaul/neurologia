@@ -38,7 +38,7 @@
             <div class="col-6 col-md-3 q-pa-md">
               <div class=" text-grey text-bold">𝟒𝐭𝗮 𝗝𝗼𝗿𝗻𝗮𝗱𝗮 𝗡𝗮𝗰𝗶𝗼𝗻𝗮𝗹 𝗱𝗲 𝗡𝗲𝘂𝗿𝗼𝗹𝗼𝗴𝗶́𝗮</div>
               <q-separator />
-              <div class="text-grey">Actualizaciones Neurológica</div>
+              <div class="text-grey">Actualizaciones en Enfermedades Neurológica</div>
               <div class="text-grey">𝕕í𝕒𝕤 𝟙𝟛 , 𝟙𝟜 𝕪 𝟙𝟝 𝕕𝕖 𝕤𝕖𝕡𝕥𝕚𝕖𝕞𝕓𝕣𝕖</div>
 <!--              <div class="text-grey">Venta anticipada</div>-->
             </div>
