@@ -3,8 +3,15 @@
   font-family: customfont;
   src: url("fonts/RobotoCondensed-Regular.ttf");
 }
+@font-face {
+  font-family: changa;
+  src: url("fonts/Changa-Regular.ttf");
+}
 
 // declare a class which applies it
 * {
   font-family: 'customfont';
+}
+.changa{
+  font-family: changa;
 }
