@@ -1,10 +1,20 @@
 <template>
   <q-page>
     <div class="text-center">
-      <div class="text-h1 text-center text-bold">Bienvenidos!!</div>
-      <div class="text-center">
-        <q-img src="images/porta2023.jpg" width="700px" />
-      </div>
+      <q-video
+        :ratio="16/9"
+        src="https://www.youtube.com/embed/mCTHo_f_DSU"
+      />
+      <q-video
+        :ratio="16/9"
+        src="https://www.youtube.com/embed/LbXivmRSW1c"
+      />
+<!--      <iframe width="930" height="523" src="https://www.youtube.com/embed/LbXivmRSW1c" title="simposio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
+<!--      <iframe src="https://www.youtube.com/embed/mCTHo_f_DSU" title="jornadas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
+<!--      <div class="text-h1 text-center text-bold">Bienvenidos!!</div>-->
+<!--      <div class="text-center">-->
+<!--        <q-img src="images/porta2023.jpg" width="700px" />-->
+<!--      </div>-->
     </div>
     <div class="row">
 <!--      <div class="col-2 col-md-1"></div>-->

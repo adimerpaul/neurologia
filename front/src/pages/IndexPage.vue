@@ -62,12 +62,10 @@
               <div class="changa button" >Ingresa Aqui</div>
             </q-btn>
           </div>
-          <div style="position: absolute; bottom: 0; right: 0; padding: 10px;">
+          <div style="position: absolute; bottom: 0; right: 0; padding: 5px 0px 5px 40px;margin: 5px" class="fondoAzul">
             <div class="flex flex-center">
-                <q-img src="images/logoColMed3.png" width="50px" />
-                <div class="changa tituloCarrocel">
-                  Colegio Médico <br>
-                  De Oruro
+                <q-img :src="t.imgButton" width="45px" />
+                <div class="changa tituloCarrocel" v-html="t.textButton">
                 </div>
             </div>
           </div>
@@ -137,14 +135,26 @@ export default defineComponent({
           titulo: '4ta. JORNADA NACIONAL DE NEUROLOGÍA',
           subtitulo: 'Actualización en Enfermedades Neurológicas',
           fecha: '13, 14, 15 de septiembre',
-          img: 'WhatsApp Image 2023-08-05 at 15.53.45.jpeg'
+          img: 'WhatsApp Image 2023-08-05 at 15.53.45.jpeg',
+          imgButton: 'images/logoColMed3.png',
+          textButton: 'Colegio Médico <br> De Oruro'
+        },
+        {
+          titulo: '2DO. SIMPOSIO INTERNACIONAL',
+          subtitulo: 'Emergencias Neurológicas',
+          fecha: '16 y 12 de septiembre',
+          img: 'WhatsApp Image 2023-08-05 at 15.53.45 (1).jpeg',
+          imgButton: 'images/logoSBN3.gif',
+          textButton: 'Sociedad Boliviana <br> De Neurologia'
+        },
+        {
+          titulo: 'AULA VIRTUAL',
+          subtitulo: '',
+          fecha: '',
+          img: 'images/WhatsApp Image 2023-08-28 at 20.04.20.jpeg',
+          imgButton: 'images/quir blanco2.png',
+          textButton: 'Neuro Oruro'
         }
-        // {
-        //   titulo: '2DO. SIMPOSIO INTERNACIONAL',
-        //   subtitulo: 'Emergencias Neurológicas',
-        //   fecha: '16 y 12 de septiembre',
-        //   img: 'WhatsApp Image 2023-08-05 at 15.53.45 (1).jpeg'
-        // }
       ]
     }
   }
@@ -180,12 +190,18 @@ export default defineComponent({
   background-size: cover;
 }
 .tituloCarrocel{
-  padding: 10px;
-  font-size: 20px;
+  //padding: 10px;
+  font-size: 15px;
   line-height: 1;
   letter-spacing: 1px;
-  max-width: 180px;
+  //max-width: 180px;
   //font-weight: 900;
+}
+.fondoAzul{
+  background: url("images/fondoAzul.png") no-repeat center center;
+  background-size: cover;
+  //opacity: 0.5;
+  //background-position: center;
 }
 @media (max-width: 1024px) {
   .titulo{
