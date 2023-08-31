@@ -1,10 +1,10 @@
 <template>
   <q-layout>
     <q-page-container>
-      <q-page class="bg-grey-4">
+      <q-page class="fondo">
         <div class="row">
           <div class="col-12 col-md-4"></div>
-          <div class="col-12 col-md-4 q-pa-xs">
+          <div class="col-12 col-md-4 q-pa-lg">
             <q-card class="q-mt-md">
               <q-card-section class="text-center">
                 <div class="text-h5 text-bold">Iniciar sesión</div>
@@ -113,5 +113,10 @@ export default {
 </script>
 
 <style scoped>
-
+.fondo{
+  background-image: url("images/portadaTono4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 </style>

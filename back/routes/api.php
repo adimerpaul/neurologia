@@ -25,3 +25,4 @@ Route::group(['middleware'=>'auth:sanctum'],function () {
     Route::resource('videos', \App\Http\Controllers\VideoController::class);
     Route::post('/verVideo', [\App\Http\Controllers\VideoController::class, 'verVideo']);
 });
+Route::get('/programa', [\App\Http\Controllers\ProgramaController::class, 'programa']);
