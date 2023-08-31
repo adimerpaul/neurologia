@@ -1,14 +1,30 @@
 <template>
   <q-page>
-    <div class="text-center">
-      <q-video
-        :ratio="16/9"
-        src="https://www.youtube.com/embed/mCTHo_f_DSU"
-      />
-      <q-video
-        :ratio="16/9"
-        src="https://www.youtube.com/embed/LbXivmRSW1c"
-      />
+    <div class="row text-center">
+      <div class="col-12">
+        <p class="text-h6">4ta JORNADA NACIONAL DE NEUROLOGIA</p>
+      </div>
+      <div class="col-3"></div>
+      <div class="col-6">
+        <q-video
+          width="930"
+          :ratio="16/9"
+          src="https://www.youtube.com/embed/mCTHo_f_DSU"
+        />
+      </div>
+      <div class="col-3"></div>
+      <div class="col-12">
+        <p class="text-h6">2do SIMPOSIO INTERNACIONAL DE NEUROLOGIA</p>
+      </div>
+      <div class="col-3"></div>
+      <div class="col-6">
+        <q-video
+          width="930"
+          :ratio="16/9"
+          src="https://www.youtube.com/embed/LbXivmRSW1c"
+        />
+      </div>
+      <div class="col-3"></div>
 <!--      <iframe width="930" height="523" src="https://www.youtube.com/embed/LbXivmRSW1c" title="simposio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
 <!--      <iframe src="https://www.youtube.com/embed/mCTHo_f_DSU" title="jornadas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
 <!--      <div class="text-h1 text-center text-bold">Bienvenidos!!</div>-->

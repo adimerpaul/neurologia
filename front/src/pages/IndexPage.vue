@@ -62,11 +62,25 @@
               <div class="changa button" >Ingresa Aqui</div>
             </q-btn>
           </div>
-          <div style="position: absolute; bottom: 0; right: 0; padding: 5px 0px 5px 40px;margin: 5px" class="fondoAzul">
-            <div class="flex flex-center">
-                <q-img :src="t.imgButton" width="45px" />
-                <div class="changa tituloCarrocel" v-html="t.textButton">
+          <div style="position: absolute; bottom: 0; right: 0; padding: 10px 10px 10px 10px;margin: 5px">
+<!--            <div class="flex flex-center">-->
+<!--                <q-img :src="t.imgButton" width="45px" />-->
+<!--                <div class="changa tituloCarrocel" v-html="t.textButton">-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="">
+              <img
+                class="demo-bg"
+                src="images/fondoAzul.png"
+                alt=""
+              >
+              <div class="demo-content">
+                <div class="flex flex-center">
+                    <q-img :src="t.imgButton" width="45px" />
+                    <div class="changa tituloCarrocel" v-html="t.textButton">
+                    </div>
                 </div>
+              </div>
             </div>
           </div>
 <!--          <q-img src="images/logoColMed3.png" width="30px" />-->
@@ -190,18 +204,28 @@ export default defineComponent({
   background-size: cover;
 }
 .tituloCarrocel{
-  //padding: 10px;
+  padding: 20px 30px 30px 20px;
   font-size: 15px;
   line-height: 1;
   letter-spacing: 1px;
+  color: white;
   //max-width: 180px;
   //font-weight: 900;
 }
-.fondoAzul{
-  background: url("images/fondoAzul.png") no-repeat center center;
-  background-size: cover;
-  //opacity: 0.5;
-  //background-position: center;
+.demo-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.demo-bg {
+  opacity: 0.6;
+  position: absolute;
+  left: -30px;
+  top: 10px;
+  width: 100%;
+}
+.demo-content {
+  position: relative;
 }
 @media (max-width: 1024px) {
   .titulo{
