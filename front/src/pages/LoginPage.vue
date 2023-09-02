@@ -114,7 +114,7 @@ export default {
 
 <style scoped>
 .fondo{
-  background-image: url("images/portadaTono4.jpg");
+  background-image: url("images/portadaTono2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

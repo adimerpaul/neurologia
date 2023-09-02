@@ -23,6 +23,7 @@ Route::group(['middleware'=>'auth:sanctum'],function () {
     Route::post('/me', [\App\Http\Controllers\UserController::class, 'me']);
     Route::post('/logout', [\App\Http\Controllers\UserController::class, 'logout']);
     Route::resource('videos', \App\Http\Controllers\VideoController::class);
+    Route::resource('users', \App\Http\Controllers\UserController::class);
     Route::post('/verVideo', [\App\Http\Controllers\VideoController::class, 'verVideo']);
 });
 Route::get('/programa', [\App\Http\Controllers\ProgramaController::class, 'programa']);

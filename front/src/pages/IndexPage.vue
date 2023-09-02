@@ -7,6 +7,7 @@
             <q-img src="images/quir blanco2.png" width="70px" />
           </div>
           <div class="col-12 col-md-2 flex flex-center">
+            <span class="text-subtitle1 q-pr-sm">Aula virtual </span>
             <span class="text-center textMenu changa">
               Neuro Oruro
             </span>
@@ -34,7 +35,7 @@
       </div>
     </div>
     <q-carousel
-      :height="$q.screen.lt.md ? '35vh' : '60vh'"
+      :height="$q.screen.lt.md ? '40vh' : '60vh'"
       swipeable
       animated
       v-model="slide"
@@ -58,7 +59,7 @@
             {{ t.fecha }}
           </div>
           <div>
-            <q-btn color="primary" class="q-mt-md " no-caps to="/login">
+            <q-btn color="primary" class="q-mt-md " rounded  no-caps to="/login">
               <div class="changa button" >Ingresa Aqui</div>
             </q-btn>
           </div>
@@ -105,30 +106,30 @@
     </q-carousel>
     <div>
       <div class="text-center">
-        <span class="changa text-h6 text-bold text-white bg-grey-7 q-pa-xs borderRadius">
+        <span class="changa text-h6 text-bold text-white bg-grey-9 q-pa-xs borderRadius">
           AUSPICIADORES
         </span>
       </div>
     </div>
     <div class="row">
       <div class="col-12 flex flex-center bg-grey-2">
-          <div class="q-pa-md">
-            <q-img src="logos/bago.png" width="100px" />
+          <div class="q-pa-xs">
+            <q-img src="logos/bago.png" width="80px"  />
           </div>
-          <div class="q-pa-md">
-            <q-img src="logos/breskot pharma.png" width="100px" />
+          <div class="q-pa-xs">
+            <q-img src="logos/breskot pharma.png" width="80px"  />
           </div>
-          <div class="q-pa-md">
-            <q-img src="logos/ferrer.png" width="100px" />
+          <div class="q-pa-xs">
+            <q-img src="logos/ferrer.png" width="80px"  />
           </div>
-          <div class="q-pa-md">
-            <q-img src="logos/IMG_20230805_161256.jpg" width="100px" />
+          <div class="q-pa-xs">
+            <q-img src="logos/IMG_20230805_161256.jpg" width="60px"  />
           </div>
-          <div class="q-pa-md">
-            <q-img src="logos/megalabs.png" width="100px" />
+          <div class="q-pa-xs">
+            <q-img src="logos/megalabs.png" width="80px"  />
           </div>
-          <div class="q-pa-md">
-            <q-img src="logos/saval.png" width="100px" />
+          <div class="q-pa-xs">
+            <q-img src="logos/saval.png" width="55px"  />
           </div>
       </div>
     </div>
@@ -162,8 +163,8 @@ export default defineComponent({
           textButton: 'Sociedad Boliviana <br> De Neurologia'
         },
         {
-          titulo: 'AULA VIRTUAL',
-          subtitulo: '',
+          titulo: 'AULA VIRTUAL: Recursos Educativos en Neurología',
+          subtitulo: 'Explora nuestro catálogo de cursos y materiales de aprendizaje',
           fecha: '',
           img: 'images/WhatsApp Image 2023-08-28 at 20.04.20.jpeg',
           imgButton: 'images/quir blanco2.png',
@@ -178,6 +179,7 @@ export default defineComponent({
 .background {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
+  height: 90vh;
 }
 .titulo{
   padding: 10px;
@@ -188,7 +190,7 @@ export default defineComponent({
   //font-weight: 900;
 }
 .button{
-  max-width: 50px;
+  max-width: 100px;
   line-height: 1
 }
 .subtitulo{
@@ -218,7 +220,7 @@ export default defineComponent({
 }
 
 .demo-bg {
-  opacity: 0.6;
+  opacity: 0.5;
   position: absolute;
   left: -30px;
   top: 10px;

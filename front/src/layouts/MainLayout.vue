@@ -7,8 +7,8 @@
           <q-tabs shrink class="text-white">
             <q-route-tab name="Inicio" label="Inicio" to="/" no-caps/>
             <q-route-tab name="Programa general" label="Programa general" to="/programa" no-caps/>
-            <q-route-tab name="Contactos" label="Contactos" no-caps/>
-<!--            <q-tab name="ponentes" label="Ponentes" no-caps/>-->
+            <q-route-tab name="Contactos" label="Contactos" to="/contacto" no-caps/>
+            <q-route-tab name="Mapa" label="Lugar Evento" to="/mapa" no-caps/>
             <q-tab name="ingresar" no-caps>
               <q-btn label="Ingresar" to="/login" color="white" text-color="black" no-caps size="14px" />
             </q-tab>
