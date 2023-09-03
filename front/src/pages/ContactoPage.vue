@@ -10,21 +10,23 @@
               </q-card-section>
               <q-card-section class="q-pa-none">
                 <div class="row">
-                  <div class="col-12 col-md-6 flex flex-center">
+                  <div class="col-12 col-md-4"></div>
+                  <div class="col-12 col-md-8">
                     <q-btn type="a" target="_blank" href="https://www.facebook.com/profile.php?id=100068249745954" flat dense
                            size="22px" color="primary" class="q-ma-md"
                     >
                       <div class="row items-center no-wrap">
                         <q-icon left name="fa-brands fa-facebook" />
                         <div class="text-left text-grey text-subtitle2 text-bold " style="line-height: 1.2;">
-                          Facebook<br>4ta. Jornada Nacional de Neurología
+                          Facebook<br>4ta. Jornada <br>Nacional de Neurología
                         </div>
                       </div>
                     </q-btn>
                   </div>
-                  <div class="col-12 col-md-6 flex flex-center">
+                  <div class="col-12 col-md-4"></div>
+                  <div class="col-12 col-md-8">
                     <q-btn type="a" target="_blank" href="https://www.facebook.com/profile.php?id=100068249745954" flat dense
-                           size="22px" color="primary" class="q-ma-md"
+                           size="22px" color="green-5" class="q-ma-md"
                     >
                       <div class="row items-center no-wrap">
                         <q-icon left name="fa-brands fa-whatsapp" />
@@ -32,6 +34,20 @@
                           Cel: 7247581 <br>
                           Cel: 61823204 <br>
                           Cel: 60401730
+                        </div>
+                      </div>
+                    </q-btn>
+                  </div>
+                  <div class="col-12 col-md-4"></div>
+                  <div class="col-12 col-md-8">
+                    <q-btn type="a" target="_blank" href="https://www.facebook.com/profile.php?id=100068249745954" flat dense
+                           size="22px" color="primary" class="q-ma-md"
+                    >
+                      <div class="row items-center no-wrap">
+                        <q-icon left name="o_public" />
+                        <div class="text-left text-grey text-subtitle2 text-bold text-capitalize" style="line-height: 1.2;">
+                          Pagina web: <br>
+                          <a href="https://jornadasimposioneurooruro.org/">https://jornadasimposioneurooruro.org/</a>
                         </div>
                       </div>
                     </q-btn>

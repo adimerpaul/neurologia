@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-pa-md">
+  <q-page class="q-pa-md bg-grey-3">
     <q-timeline color="secondary">
       <q-timeline-entry heading>
         {{ $filters.dateDmY(date) }}

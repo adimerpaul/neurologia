@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lff">
-    <q-header>
+    <q-header class="">
       <q-toolbar>
         <q-btn
           flat
@@ -10,16 +10,20 @@
           aria-label="Menu"
           @click="leftDrawerOpen = !leftDrawerOpen"
         />
-
-        <q-toolbar-title>
-          <div class="text-subtitle2" style="line-height: 1em">
-            4ta Jornada Nacional de
-            Neurología
-            <br>
-            2do Simposio Internacional de
-            Neurología
-          </div>
-        </q-toolbar-title>
+        <q-space />
+        <q-btn icon="o_menu" color="white" v-if="$q.screen.lt.md" flat @click="modalMenu= true"/>
+        <q-toolbar class="" v-else>
+          <q-space />
+          <q-tabs shrink class="text-white">
+            <q-route-tab name="Inicio" label="Inicio" to="/" no-caps/>
+            <q-route-tab name="Programa general" label="Programa general" to="/programa" no-caps/>
+            <q-route-tab name="Contactos" label="Contactos" to="/contacto" no-caps/>
+            <q-route-tab name="Mapa" label="Lugar Evento" to="/mapa" no-caps/>
+<!--            <q-tab name="ingresar" no-caps>-->
+<!--              <q-btn label="Ingresar" to="/login" color="white" text-color="black" no-caps size="14px" />-->
+<!--            </q-tab>-->
+          </q-tabs>
+        </q-toolbar>
 
         <div>
           <q-btn icon="account_circle" flat round color="white">
