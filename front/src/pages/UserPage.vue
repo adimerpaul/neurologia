@@ -1,15 +1,28 @@
 <template>
   <q-page>
-    <q-table :rows="users" :columns="userColums" :filter="search">
+    <q-table :rows="users" :columns="userColums" :filter="search" dense
+             :rows-per-page-options="[0]">
+    >
       <template v-slot:top-right>
         <q-toolbar>
-          <q-btn flat icon="add_circle_outline" @click="showAddUserDialog = true;userCrear=true" />
-          <q-input v-model="search"  outlined  dense placeholder="Buscar..." />
+          <q-btn icon="add_circle_outline" @click="showAddUserDialog = true;userCrear=true"
+                 label="Agregar" dense no-caps color="primary"
+          />
+          <q-btn icon="refresh" @click="usersGet" flat color="primary" />
+          <q-input v-model="search"  outlined  dense placeholder="Buscar..." clearable>
+            <template v-slot:append>
+              <q-icon name="search" />
+            </template>
+          </q-input>
         </q-toolbar>
       </template>
-      <template v-slot:body-cell-role="props">
-        <q-td :props="props" auto-width >
-          <q-badge dense text-color="white" :color="props.row.role=='ADMINISTRADOR'?'red':props.row.role=='INSCRIPCION'?'green':props.row.role=='ACREDITACION'?'blue':'cyan'">{{props.row.role.substring(0,4)}}</q-badge>
+      <template v-slot:body-cell-porcentaje="props">
+        <q-td :props="props">
+          <q-linear-progress stripe rounded size="20px" :value="props.row.porcentaje/100" color="primary" class="q-mt-sm">
+            <div class="absolute-full flex flex-center">
+              <q-badge color="white" size="10px" text-color="accent" :label="`${props.row.porcentaje}%`"/>
+            </div>
+          </q-linear-progress>
         </q-td>
       </template>
       <template v-slot:body-cell-option="props">
@@ -27,10 +40,14 @@
         </q-card-section>
         <q-card-section>
           <q-form @submit.prevent="userCreate">
-            <q-input v-model="user.name" hint="" required outlined label="Nombre" />
-            <q-input v-model="user.email" hint="" required outlined label="Email" />
-            <q-input v-model="user.password" type="password" hint="" required outlined label="Password" />
-            <q-select v-model="user.role" hint="" required outlined label="Rol" :options="roles" />
+            <q-input v-model="user.firstName" hint="" required dense outlined label="Primer Nombre" />
+            <q-input v-model="user.secondName" hint="" dense outlined label="Segundo Nombre" />
+            <q-input v-model="user.lastName" hint="" dense outlined label="Apellido Paterno" />
+            <q-input v-model="user.secondLastName" hint="" dense outlined label="Apellido Materno" />
+            <q-input v-model="user.email" hint="" required dense outlined label="Email" />
+            <q-input v-model="user.phone" hint="" dense outlined label="Celular" />
+            <q-input v-model="user.profession" hint="" dense outlined label="Especialidad" />
+            <q-input v-model="user.password" type="password" hint="" required dense outlined label="Password" />
             <q-btn :loading="loading" type="submit" color="primary" icon="add_circle_outline" label="Guardar" class="full-width" />
           </q-form>
         </q-card-section>
@@ -43,9 +60,13 @@
         </q-card-section>
         <q-card-section>
           <q-form @submit.prevent="userUpdate">
-            <q-input v-model="user.name" hint="" required outlined label="Nombre" />
-            <q-input v-model="user.email" hint="" required outlined label="Email" />
-            <q-select v-model="user.role" hint="" required outlined label="Rol" :options="roles" />
+            <q-input v-model="user.firstName" hint="" required dense outlined label="Primer Nombre" />
+            <q-input v-model="user.secondName" hint="" dense outlined label="Segundo Nombre" />
+            <q-input v-model="user.lastName" hint="" dense outlined label="Apellido Paterno" />
+            <q-input v-model="user.secondLastName" hint="" dense outlined label="Apellido Materno" />
+            <q-input v-model="user.email" hint="" required dense outlined label="Email" />
+            <q-input v-model="user.phone" hint="" dense outlined label="Celular" />
+            <q-input v-model="user.profession" hint="" dense outlined label="Especialidad" />
             <q-btn :loading="loading" type="submit" color="primary" icon="add_circle_outline" label="Guardar" class="full-width" />
           </q-form>
         </q-card-section>
@@ -74,17 +95,18 @@ export default {
       userCrear: true,
       userColums: [
         { name: 'option', field: 'option', label: 'Opciones', align: 'left', sortable: true },
-        { name: 'role', field: 'role', label: 'Rol', align: 'left', sortable: true },
-        { name: 'id', label: 'ID', field: 'id', align: 'left', sortable: true },
+        { name: 'phone', label: 'Telefono', field: 'phone', align: 'left', sortable: true },
         { name: 'name', label: 'Nombre', field: 'name', align: 'left', sortable: true },
-        { name: 'email', label: 'Email', field: 'email', align: 'left', sortable: true }
+        { name: 'porcentaje', label: 'Porcentaje', field: 'porcentaje', align: 'left', sortable: true },
+        { name: 'email', label: 'Email', field: 'email', align: 'left', sortable: true },
+        { name: 'profession', label: 'Profesion', field: 'profession', align: 'left', sortable: true }
       ]
     }
   },
   methods: {
     userUpdate () {
       this.loading = true
-      this.$axios.put(`user/${this.user.id}`, this.user)
+      this.$axios.put(`users/${this.user.id}`, this.user)
         .then(res => {
           this.loading = false
           this.showUpdateUserDialog = false

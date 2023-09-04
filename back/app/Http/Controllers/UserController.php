@@ -15,6 +15,12 @@ class UserController extends Controller
 {
     public function index(Request $request){
         $users= User::where('id','!=',1)->where('id','!=',$request->user()->id)->get();
+        $users->each(function ($user){
+            $videosActivos = Video::where('button', 1)->count();
+            $userCantidad = UserVideo::where('user_id', $user->id)->count();
+            $porcentaje = $userCantidad * 100 / $videosActivos;
+            $user->porcentaje=round($porcentaje,2);
+        });
         return $users;
     }
     public function show($id,Request $request)
@@ -62,27 +68,20 @@ class UserController extends Controller
     }
     public function store(Request $request){
         $this->validate($request, [
-            'name' => 'required',
             'email' => 'required|unique:users',
-            'password' => 'required|confirmed',
-            'password_confirmation' => 'required|same:password',
-            'tipo' => 'required',
-            'fechaLimite' => 'required',
+            'password' => 'required',
         ]);
-        $user=new User();
-        $user->name=$request->name;
-        $user->email=$request->email;
-        $user->tipo=$request->tipo;
-        $user->password= Hash::make($request->password) ;
-        $user->fechaLimite=$request->fechaLimite;
-        $user->save();
+        $request->merge([
+            'password'=>Hash::make($request->password)
+        ]);
+        return User::create($request->all());
     }
-    public function update(Request $request,User $user){
+    public function update(Request $request,$id){
+        $user=User::findOrFail($id);
+        error_log(json_encode($request->all()));
         $this->validate($request, [
-            'name' => 'required',
+//            'name' => 'required',
             'email' => 'required|unique:users,email,'.$user->id,
-            'tipo' => 'required',
-            'fechaLimite' => 'required',
         ]);
         $user->update($request->all());
         return $user;
@@ -90,8 +89,8 @@ class UserController extends Controller
 
     public function updatePassword(Request $request,User $user){
         $this->validate($request, [
-            'password' => 'required|confirmed',
-            'password_confirmation' => 'required|same:password',
+            'password' => 'required',
+//            'password_confirmation' => 'required|same:password',
         ]);
         $user->update([
             'password'=>Hash::make($request->password)
