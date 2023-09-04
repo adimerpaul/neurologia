@@ -187,7 +187,6 @@ export default defineComponent({
   line-height: 1;
   letter-spacing: 1px;
   max-width: 600px;
-  //font-weight: 900;
 }
 .button{
   max-width: 100px;
@@ -196,7 +195,6 @@ export default defineComponent({
 .subtitulo{
   padding: 10px 30px;
   font-size: 30px;
-  //font-weight: 900;
 }
 .borderRadius{
   border-radius: 10px;
@@ -211,8 +209,6 @@ export default defineComponent({
   line-height: 1;
   letter-spacing: 1px;
   color: white;
-  //max-width: 180px;
-  //font-weight: 900;
 }
 .demo-wrap {
   overflow: hidden;
