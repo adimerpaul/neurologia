@@ -41,12 +41,15 @@ export default {
     }
   },
   mounted () {
+    this.$q.loading.show()
     this.$axios.get('programa')
       .then(response => {
         this.programas = response.data
       })
       .catch(error => {
         this.$alert.error(error.response.data.message)
+      }).finally(() => {
+        this.$q.loading.hide()
       })
   },
   methods: {
