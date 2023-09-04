@@ -22,11 +22,16 @@
     <q-dialog v-model="modalMenu" position="top">
       <q-card class="q-pa-md">
         <q-card-section class="q-pa-md">
-          <div class="text-subtitle1 text-center">Principal</div>
-          <div class="text-subtitle1 text-center">Quienes Somos</div>
-          <div class="text-subtitle1 text-center">Objetivos</div>
-          <div class="text-subtitle1 text-center">Ponentes</div>
-<!--          <div class="text-subtitle1 text-center"><q-btn label="Ingresar" color="primary" to="/login" no-caps size="14px" /></div>-->
+          <div class="text-subtitle1 text-center">
+            <q-item-label header class="text-h6">Menu</q-item-label>
+          </div>
+<!--          <div class="text-subtitle1 text-center">-->
+            <q-btn label="Inicio" color="primary" to="/" no-caps size="14px" class="full-width" flat @click="modalMenu= false"/>
+            <q-btn label="Programa general" color="primary" to="/programa" no-caps size="14px" class="full-width" flat @click="modalMenu= false"/>
+            <q-btn label="Contactos" color="primary" to="/contacto" no-caps size="14px" class="full-width" flat @click="modalMenu= false"/>
+            <q-btn label="Lugar Evento" color="primary" to="/mapa" no-caps size="14px" class="full-width" flat @click="modalMenu= false"/>
+            <q-btn icon="login" label="Ingresar" to="/login" color="primary" no-caps size="14px" class="full-width" flat @click="modalMenu= false"/>
+<!--          </div>-->
         </q-card-section>
       </q-card>
     </q-dialog>

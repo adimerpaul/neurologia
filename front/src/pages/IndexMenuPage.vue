@@ -6,7 +6,7 @@
           <div class="col-12 col-md-1 text-center">
             <q-img src="images/quir blanco2.png" width="50px" />
           </div>
-          <div class="col-12 col-md-2 flex flex-center">
+          <div class="col-12 col-md-1 flex flex-center">
             <span class="text-subtitle1 q-pr-sm">Aula virtual </span>
 <!--            <span class="text-center textMenu changa">-->
 <!--              Neuro Oruro-->
@@ -187,8 +187,8 @@ export default defineComponent({
   height: 90vh;
 }
 .titulo{
-  padding: 5px;
-  font-size: 20px;
+  padding: 10px;
+  font-size: 50px;
   line-height: 1;
   letter-spacing: 1px;
   max-width: 600px;
@@ -200,7 +200,7 @@ export default defineComponent({
 }
 .subtitulo{
   padding: 10px 30px;
-  font-size: 15px;
+  font-size: 30px;
 //font-weight: 900;
 }
 .borderRadius{

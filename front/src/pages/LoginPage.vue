@@ -38,6 +38,10 @@
                       </q-icon>
                     </template>
                   </q-input>
+                  <div class="q-py-xs">
+                    <a href="https://wa.me/59172461667" target="_blank"
+                       class="text-primary">¿Olvidaste tu contraseña?</a>
+                  </div>
                   <q-btn
                     label="Iniciar sesión"
                     color="primary"
