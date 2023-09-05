@@ -161,7 +161,7 @@ export default defineComponent({
   border-radius: 10px;
 }
 .bannerMenu{
-  background: url('/images/portadaTono2.jpg') no-repeat center center;
+  background: url('/images/portadaTono3.jpg') no-repeat center center;
   background-size: cover;
 }
 .tituloCarrocel2{
