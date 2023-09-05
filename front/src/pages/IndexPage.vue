@@ -157,7 +157,7 @@ export default defineComponent({
         {
           titulo: '2DO. SIMPOSIO INTERNACIONAL',
           subtitulo: 'Emergencias Neurológicas',
-          fecha: '16 y 12 de septiembre',
+          fecha: '16 y 17 de septiembre',
           img: 'WhatsApp Image 2023-08-05 at 15.53.45 (1).jpeg',
           imgButton: 'images/logoSBN3.gif',
           textButton: 'Sociedad Boliviana <br> De Neurologia'

@@ -11,11 +11,11 @@
               <q-card-section class="q-pa-none">
 <!--                <div class="row">-->
                   <q-card v-for="p in programas" :key="p.date" class="q-my-md">
-                    <q-card-section>
+                    <q-card-section >
                       <div class="text-h6 text-blue-10 text-bold text-center" style="text-decoration: underline;">
                         {{ $filters.dateDdM(p.date) }}
                       </div>
-                      <div class="text-h6" v-for="video in p.videos" :key="video.id">
+                      <div class="text-h6 texto-programa" v-for="video in p.videos" :key="video.id">
                         <span class="text-red">{{video.hora}}</span> | {{video.text}}-{{video.title}}
                       </div>
                     </q-card-section>
@@ -63,5 +63,14 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+.texto-programa{
+  text-indent: 2em;
+}
+@media (max-width: 1024px) {
+  .texto-programa{
+    text-indent: 0em;
+    font-size: 12px;
+  }
 }
 </style>

@@ -20,6 +20,13 @@ return new class extends Migration
             $table->string('phone')->nullable();
 			$table->string('profession')->nullable();
             $table->string('email')->unique();
+            $table->string('departamento')->nullable();
+            $table->string('provincia')->nullable();
+            $table->string('direccion')->nullable();
+            $table->string('ci')->nullable();
+            $table->string('celular')->nullable();
+            $table->string('correo')->nullable();
+            $table->string('photo')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

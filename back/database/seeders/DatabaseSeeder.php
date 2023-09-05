@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         ]);
         $inscritos = Excel::toArray(new UsersImport, public_path('Inscripción Neurología & Emergencias Neurológicas. (Respuestas).xlsx'));
         foreach ($inscritos[0] as $inscrito) {
-//            error_log("inscrito". json_encode($inscrito));
+            error_log("inscrito". json_encode($inscrito));
             $user = new User();
             $user->firstName=$inscrito['primer_nombre'];
             $user->secondName=$inscrito['segundo_nombre'];
@@ -38,6 +38,13 @@ class DatabaseSeeder extends Seeder
             $user->profession=$inscrito['profesion'];
             $user->email=$inscrito['correo_electronico'];
             $user->password=bcrypt($inscrito['nro_de_ci']);
+            $user->departamento=$inscrito['departamento'];
+            $user->provincia=$inscrito['provinciamunicipioregion'];
+            $user->direccion=$inscrito['direccion'];
+            $user->ci=$inscrito['nro_de_ci'];
+            $user->celular=$inscrito['nro_de_celular'];
+            $user->correo=$inscrito['direccion_de_correo_electronico'];
+            $user->photo=$inscrito['adjuntar_archivo_de_pago'];
             $user->save();
         }
     }

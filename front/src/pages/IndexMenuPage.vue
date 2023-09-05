@@ -8,28 +8,9 @@
           </div>
           <div class="col-12 col-md-1 flex flex-center">
             <span class="text-subtitle1 q-pr-sm">Aula virtual </span>
-<!--            <span class="text-center textMenu changa">-->
-<!--              Neuro Oruro-->
-<!--            </span>-->
           </div>
           <div class="col-12 col-md-7"></div>
           <div class="col-12 col-md-2 flex flex-center">
-<!--            <div class="text-right">-->
-<!--              <q-input-->
-<!--                outlined-->
-<!--                dense-->
-<!--                placeholder="Buscar"-->
-<!--                bg-color="white"-->
-<!--                border-color="white"-->
-<!--                clearable-->
-<!--              >-->
-<!--                <template v-slot:append>-->
-<!--                  &lt;!&ndash;                  <div class="bg-blue">&ndash;&gt;-->
-<!--                  <q-icon name="search" />-->
-<!--                  &lt;!&ndash;                  </div>&ndash;&gt;-->
-<!--                </template>-->
-<!--              </q-input>-->
-<!--            </div>-->
           </div>
         </div>
       </div>
@@ -59,54 +40,29 @@
             {{ t.fecha }}
           </div>
           <div>
-<!--            <q-btn color="primary" class="q-mt-md " rounded  no-caps to="/login">-->
-<!--              <div class="changa button" >Ingresa Aqui</div>-->
-<!--            </q-btn>-->
           </div>
           <div style="position: absolute; bottom: 0; right: 0; padding: 10px 10px 10px 10px;margin: 5px">
-            <!--            <div class="flex flex-center">-->
-            <!--                <q-img :src="t.imgButton" width="45px" />-->
-            <!--                <div class="changa tituloCarrocel" v-html="t.textButton">-->
-            <!--                </div>-->
-            <!--            </div>-->
             <div class="">
               <img
-                class="demo-bg"
+                class="demo-bg2"
                 src="images/fondoAzul.png"
                 alt=""
               >
-              <div class="demo-content">
+              <div class="demo-content2">
                 <div class="flex flex-center">
-                  <q-img :src="t.imgButton" width="45px" />
-                  <div class="changa tituloCarrocel" v-html="t.textButton">
+                  <q-img :src="t.imgButton" width="35px" />
+                  <div class="changa tituloCarrocel2" v-html="t.textButton">
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <!--          <q-img src="images/logoColMed3.png" width="30px" />-->
-          <!--          <div class="changa tituloCarrocel">-->
-          <!--            Colegio Medico Oruro-->
-          <!--          </div>-->
         </div>
       </q-carousel-slide>
-      <!--      <template v-slot:control>-->
-      <!--        <q-carousel-control-->
-      <!--          position="bottom-right"-->
-      <!--          :offset="[18, 18]"-->
-      <!--          class="text-white rounded-borders"-->
-      <!--          style="background: rgba(0, 0, 0, .3); padding: 4px 8px;"-->
-      <!--        >-->
-      <!--          <q-img src="images/logoColMed3.png" width="30px" />-->
-      <!--          <div class="changa tituloCarrocel">-->
-      <!--            Colegio Medico Oruro-->
-      <!--          </div>-->
-      <!--        </q-carousel-control>-->
-      <!--      </template>-->
     </q-carousel>
     <div class="row q-pa-lg">
       <div class="col-12 flex flex-center">
-        <iframe width="60%" height="350px" src="https://www.youtube.com/embed/eQwTo9R4Wiw" title="JORNADAS Y SIMPOSIO NEROLOGÍA ORURO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="80%" height="350px" src="https://www.youtube.com/embed/eQwTo9R4Wiw" title="JORNADAS Y SIMPOSIO NEROLOGÍA ORURO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
     <div>
@@ -162,7 +118,7 @@ export default defineComponent({
         {
           titulo: '2DO. SIMPOSIO INTERNACIONAL',
           subtitulo: 'Emergencias Neurológicas',
-          fecha: '16 y 12 de septiembre',
+          fecha: '16 y 17 de septiembre',
           img: 'WhatsApp Image 2023-08-05 at 15.53.45 (1).jpeg',
           imgButton: 'images/logoSBN3.gif',
           textButton: 'Sociedad Boliviana <br> De Neurologia'
@@ -208,9 +164,9 @@ export default defineComponent({
   background: url('/images/portadaTono2.jpg') no-repeat center center;
   background-size: cover;
 }
-.tituloCarrocel{
-  padding: 20px 30px 30px 20px;
-  font-size: 15px;
+.tituloCarrocel2{
+  padding: 10px 20px 20px 10px;
+  font-size: 10px;
   line-height: 1;
   letter-spacing: 1px;
   color: white;
@@ -220,14 +176,14 @@ export default defineComponent({
   position: relative;
 }
 
-.demo-bg {
+.demo-bg2 {
   opacity: 0.5;
   position: absolute;
   left: -30px;
   top: 10px;
   width: 100%;
 }
-.demo-content {
+.demo-content2 {
   position: relative;
 }
 @media (max-width: 1024px) {

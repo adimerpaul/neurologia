@@ -20,18 +20,16 @@
     </q-page-container>
     <FooterComponent></FooterComponent>
     <q-dialog v-model="modalMenu" position="top">
-      <q-card class="q-pa-md">
+      <q-card class="q-pa-md bg-primary">
         <q-card-section class="q-pa-md">
           <div class="text-subtitle1 text-center">
             <q-item-label header class="text-h6">Menu</q-item-label>
           </div>
-<!--          <div class="text-subtitle1 text-center">-->
-            <q-btn label="Inicio" color="primary" to="/" no-caps size="14px" class="full-width" flat @click="modalMenu= false"/>
-            <q-btn label="Programa general" color="primary" to="/programa" no-caps size="14px" class="full-width" flat @click="modalMenu= false"/>
-            <q-btn label="Contactos" color="primary" to="/contacto" no-caps size="14px" class="full-width" flat @click="modalMenu= false"/>
-            <q-btn label="Lugar Evento" color="primary" to="/mapa" no-caps size="14px" class="full-width" flat @click="modalMenu= false"/>
-            <q-btn icon="login" label="Ingresar" to="/login" color="primary" no-caps size="14px" class="full-width" flat @click="modalMenu= false"/>
-<!--          </div>-->
+            <q-btn label="Inicio" color="primary" to="/" size="14px" class="full-width text-bold text-white" flat @click="modalMenu= false"/>
+            <q-btn label="Programa general" color="primary" to="/programa" size="14px" class="full-width text-bold text-white" flat @click="modalMenu= false"/>
+            <q-btn label="Contactos" color="primary" to="/contacto" size="14px" class="full-width text-bold text-white" flat @click="modalMenu= false"/>
+            <q-btn label="Lugar Evento" color="primary" to="/mapa" size="14px" class="full-width text-bold text-white" flat @click="modalMenu= false"/>
+            <q-btn icon="login" label="Ingresar" to="/login" color="primary" size="14px" class="full-width text-bold text-white" flat @click="modalMenu= false"/>
         </q-card-section>
       </q-card>
     </q-dialog>

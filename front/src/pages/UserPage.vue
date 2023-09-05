@@ -34,21 +34,62 @@
       </template>
     </q-table>
     <q-dialog v-model="showAddUserDialog" >
-      <q-card style="width: 700px;max-width: 85vw">
+      <q-card style="width: 850px;max-width: 85vw">
         <q-card-section class="row items-center">
           <div class="text-h6">Agregar Usuario</div>
         </q-card-section>
         <q-card-section>
           <q-form @submit.prevent="userCreate">
-            <q-input v-model="user.firstName" hint="" required dense outlined label="Primer Nombre" />
-            <q-input v-model="user.secondName" hint="" dense outlined label="Segundo Nombre" />
-            <q-input v-model="user.lastName" hint="" dense outlined label="Apellido Paterno" />
-            <q-input v-model="user.secondLastName" hint="" dense outlined label="Apellido Materno" />
-            <q-input v-model="user.email" hint="" required dense outlined label="Email" />
-            <q-input v-model="user.phone" hint="" dense outlined label="Celular" />
-            <q-input v-model="user.profession" hint="" dense outlined label="Especialidad" />
-            <q-input v-model="user.password" type="password" hint="" required dense outlined label="Password" />
-            <q-btn :loading="loading" type="submit" color="primary" icon="add_circle_outline" label="Guardar" class="full-width" />
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.firstName" hint="" required dense outlined label="Primer Nombre" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.secondName" hint="" dense outlined label="Segundo Nombre" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.lastName" hint="" dense outlined label="Apellido Paterno" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.secondLastName" hint="" dense outlined label="Apellido Materno" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.email" hint="" required dense outlined label="Email" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.phone" hint="" dense outlined label="Celular" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.profession" hint="" dense outlined label="Profesion" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-select v-model="user.departamento" hint="" dense outlined label="Departamento" :options="['Oruro','La Paz','Cochabamba','Santa Cruz','Potosi','Chuquisaca','Tarija','Beni','Pando']" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.provincia" hint="" dense outlined label="Provincia" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.direccion" hint="" dense outlined label="Direccion" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.ci" hint="" dense outlined label="CI" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.celular" hint="" dense outlined label="Celular" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.correo" hint="" dense outlined label="Correo" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.photo" hint="" dense outlined label="Photo" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.password" type="password" hint="" required dense outlined label="Password" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-btn :loading="loading" type="submit" color="primary" icon="add_circle_outline" label="Guardar" class="full-width" />
+              </div>
+            </div>
           </q-form>
         </q-card-section>
       </q-card>
@@ -56,18 +97,57 @@
     <q-dialog v-model="showUpdateUserDialog" >
       <q-card style="width: 700px;max-width: 85vw">
         <q-card-section class="row items-center">
-          <div class="text-h6">Agregar Usuario</div>
+          <div class="text-h6">Modificar Usuario</div>
         </q-card-section>
         <q-card-section>
           <q-form @submit.prevent="userUpdate">
-            <q-input v-model="user.firstName" hint="" required dense outlined label="Primer Nombre" />
-            <q-input v-model="user.secondName" hint="" dense outlined label="Segundo Nombre" />
-            <q-input v-model="user.lastName" hint="" dense outlined label="Apellido Paterno" />
-            <q-input v-model="user.secondLastName" hint="" dense outlined label="Apellido Materno" />
-            <q-input v-model="user.email" hint="" required dense outlined label="Email" />
-            <q-input v-model="user.phone" hint="" dense outlined label="Celular" />
-            <q-input v-model="user.profession" hint="" dense outlined label="Especialidad" />
-            <q-btn :loading="loading" type="submit" color="primary" icon="add_circle_outline" label="Guardar" class="full-width" />
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.firstName" hint="" required dense outlined label="Primer Nombre" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.secondName" hint="" dense outlined label="Segundo Nombre" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.lastName" hint="" dense outlined label="Apellido Paterno" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.secondLastName" hint="" dense outlined label="Apellido Materno" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.email" hint="" required dense outlined label="Email" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.phone" hint="" dense outlined label="Celular" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.profession" hint="" dense outlined label="Profesion" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-select v-model="user.departamento" hint="" dense outlined label="Departamento" :options="['Oruro','La Paz','Cochabamba','Santa Cruz','Potosi','Chuquisaca','Tarija','Beni','Pando']" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.provincia" hint="" dense outlined label="Provincia" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.direccion" hint="" dense outlined label="Direccion" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.ci" hint="" dense outlined label="CI" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.celular" hint="" dense outlined label="Celular" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.correo" hint="" dense outlined label="Correo" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="user.photo" hint="" dense outlined label="Photo" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-btn :loading="loading" type="submit" color="primary" icon="add_circle_outline" label="Actualizar" class="full-width" />
+              </div>
+            </div>
           </q-form>
         </q-card-section>
       </q-card>
@@ -99,7 +179,14 @@ export default {
         { name: 'name', label: 'Nombre', field: 'name', align: 'left', sortable: true },
         { name: 'porcentaje', label: 'Porcentaje', field: 'porcentaje', align: 'left', sortable: true },
         { name: 'email', label: 'Email', field: 'email', align: 'left', sortable: true },
-        { name: 'profession', label: 'Profesion', field: 'profession', align: 'left', sortable: true }
+        { name: 'profession', label: 'Profesion', field: 'profession', align: 'left', sortable: true },
+        { name: 'departamento', label: 'Departamento', field: 'departamento', align: 'left', sortable: true },
+        { name: 'provincia', label: 'Provincia', field: 'provincia', align: 'left', sortable: true },
+        { name: 'direccion', label: 'Direccion', field: 'direccion', align: 'left', sortable: true },
+        { name: 'ci', label: 'CI', field: 'ci', align: 'left', sortable: true },
+        { name: 'celular', label: 'Celular', field: 'celular', align: 'left', sortable: true },
+        { name: 'correo', label: 'Correo', field: 'correo', align: 'left', sortable: true },
+        { name: 'photo', label: 'Photo', field: 'photo', align: 'left', sortable: true }
       ]
     }
   },
