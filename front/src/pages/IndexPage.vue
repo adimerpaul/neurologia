@@ -163,8 +163,8 @@ export default defineComponent({
           textButton: 'Sociedad Boliviana <br> De Neurologia'
         },
         {
-          titulo: 'AULA VIRTUAL: Recursos Educativos en Neurología',
-          subtitulo: 'Explora nuestro catálogo de cursos y materiales de aprendizaje',
+          titulo: 'AULA VIRTUAL: Transmición en vivo',
+          subtitulo: 'Material de aprendizaje',
           fecha: '',
           img: 'images/WhatsApp Image 2023-08-28 at 20.04.20.jpeg',
           imgButton: 'images/quir blanco2.png',
@@ -200,7 +200,7 @@ export default defineComponent({
   border-radius: 10px;
 }
 .bannerMenu{
-  background: url('/images/portadaTono2.jpg') no-repeat center center;
+  background: url('/images/portadaTono4.jpg') no-repeat center center;
   background-size: cover;
 }
 .tituloCarrocel{
