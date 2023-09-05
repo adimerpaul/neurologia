@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use App\Imports\UsersImport;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 
 class DatabaseSeeder extends Seeder
@@ -23,7 +24,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             UserSeeder::class,
-            VideoSeeder::class,
+//            VideoSeeder::class,
             // UserSeeder::class,
         ]);
         $inscritos = Excel::toArray(new UsersImport, public_path('Inscripción Neurología & Emergencias Neurológicas. (Respuestas).xlsx'));
@@ -47,5 +48,7 @@ class DatabaseSeeder extends Seeder
             $user->photo=$inscrito['adjuntar_archivo_de_pago'];
             $user->save();
         }
+        $sql = storage_path('sql/videos.sql');
+        DB::unprepared(file_get_contents($sql));
     }
 }

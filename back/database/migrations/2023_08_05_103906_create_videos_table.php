@@ -20,6 +20,7 @@ return new class extends Migration
             $table->boolean('button')->nullable()->default(false);
             $table->string('urlZoom')->nullable()->default('');
             $table->string('urlYoutube')->nullable()->default('');
+            $table->string('hojaVida')->nullable()->default('');
             $table->date('date')->nullable()->default('2023-09-13');
             $table->timestamps();
         });

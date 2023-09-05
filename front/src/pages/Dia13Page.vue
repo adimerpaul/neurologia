@@ -14,7 +14,10 @@
           <div v-html="video.content"></div>
           <div>
             <template v-if="video.button">
-              <q-btn size="12px" outline label="Ingresa a la sala" color="blue" class="" no-caps
+              <q-btn size="12px" outline label="Hoja de vida" color="blue" class="" no-caps
+                     icon-right="o_file_download" type="a" :href="video.hojaVida"
+                     target="_blank" v-if="video.hojaVida"/>
+              <q-btn size="12px" outline label="Ingresa a la sala" color="blue" class="q-ml-xs" no-caps
                      icon-right="o_videocam" type="a" :href="video.urlZoom"
                      target="_blank" v-if="video.urlZoom"
               />

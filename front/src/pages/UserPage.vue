@@ -32,6 +32,13 @@
           <q-btn flat dense v-if="props.row.id!=1" icon="o_key" @click="updatePassword(props.row)" />
         </q-td>
       </template>
+      <template v-slot:body-cell-photo="props">
+        <q-td :props="props" auto-width >
+          <a :href="props.row.photo" target="_blank">
+            {{props.row.photo}}
+          </a>
+        </q-td>
+      </template>
     </q-table>
     <q-dialog v-model="showAddUserDialog" >
       <q-card style="width: 850px;max-width: 85vw">
