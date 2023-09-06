@@ -3,7 +3,7 @@
         <div class="row">
           <div class="col-12">
             <q-card class="q-pa-md bg-grey-3">
-              <q-card-section class="text-h2 fondo">
+              <q-card-section class="text-h4 fondo">
                 <div class="text-center text-bold text-white">
                   PROGRAMA GENERAL
                 </div>

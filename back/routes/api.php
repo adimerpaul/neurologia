@@ -18,10 +18,12 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 Route::post('/login',[\App\Http\Controllers\UserController::class,'login']);
+Route::post('/register',[\App\Http\Controllers\UserController::class,'register']);
 //Route::post('upload/{id}/{option}', [\App\Http\Controllers\UploadController::class, 'upload']);
 Route::group(['middleware'=>'auth:sanctum'],function () {
     Route::post('/me', [\App\Http\Controllers\UserController::class, 'me']);
     Route::post('/logout', [\App\Http\Controllers\UserController::class, 'logout']);
+    Route::post('/cambiarPass', [\App\Http\Controllers\UserController::class, 'cambiarPass']);
     Route::put('/updatePassword/{user}', [\App\Http\Controllers\UserController::class, 'updatePassword']);
 
     Route::resource('videos', \App\Http\Controllers\VideoController::class);

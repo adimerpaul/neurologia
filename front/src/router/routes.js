@@ -3,6 +3,7 @@ import MenuLayout from 'layouts/MenuLayout.vue'
 import IndexMenuPage from 'pages/IndexMenuPage.vue'
 import Dia13Page from 'pages/Dia13Page.vue'
 import UserPage from 'pages/UserPage.vue'
+import PerfilPage from 'pages/PerfilPage.vue'
 
 const routes = [
   {
@@ -21,7 +22,8 @@ const routes = [
     children: [
       { path: '', component: IndexMenuPage, meta: { requiresAuth: true } },
       { path: '/dia13/:date', component: Dia13Page, meta: { requiresAuth: true } },
-      { path: '/users', component: UserPage, meta: { requiresAuth: true } }
+      { path: '/users', component: UserPage, meta: { requiresAuth: true } },
+      { path: '/perfil', component: PerfilPage, meta: { requiresAuth: true } }
     ]
   },
   {

@@ -29,14 +29,14 @@
           <q-btn icon="account_circle" flat round color="white">
             <q-menu>
               <q-list>
-                <q-item clickable v-ripple>
+                <q-item clickable v-ripple to="/perfil">
                   <q-item-section avatar>
                     <q-avatar>
-                      <q-icon name="account_circle" />
+                      <q-icon name="o_account_circle" />
                     </q-avatar>
                   </q-item-section>
                   <q-item-section>
-                    <q-item-label>Bienvenido</q-item-label>
+                    <q-item-label>Mis datos </q-item-label>
                     <q-item-section side>
                       <q-item-label caption>{{$store.user.name}}</q-item-label>
                     </q-item-section>
@@ -147,6 +147,16 @@
               </q-item-section>
               <q-item-section>
                 Sabado 17-Sep-2023
+              </q-item-section>
+            </q-item>
+            <q-item clickable to="/perfil" exact active-class="bg-primary text-white text-bold">
+            <q-item-section avatar >
+                <q-icon name="o_account_circle" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>
+                  <q-item-label>Mis datos </q-item-label>
+                </q-item-label>
               </q-item-section>
             </q-item>
             <q-item clickable to="/" exact active-class="bg-primary text-white text-bold">

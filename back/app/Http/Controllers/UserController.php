@@ -13,6 +13,25 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 class UserController extends Controller
 {
+    public function cambiarPass(Request $request){
+        $user=User::findOrFail($request->user()->id);
+        if (! Hash::check($request->password, $user->password)) {
+            throw ValidationException::withMessages([
+                'password' => ['La contraseña actual es incorrecta'],
+            ]);
+        }
+        if ($request->newPassword!=$request->confirmPassword) {
+            throw ValidationException::withMessages([
+                'confirmPassword' => ['La confirmación de la contraseña no coincide'],
+            ]);
+        }
+        $user->update([
+            'password'=>Hash::make($request->newPassword)
+        ]);
+        return response()->json([
+            'message'=>'Contraseña actualizada correctamente'
+        ],200);
+    }
     public function index(Request $request){
         $users= User::where('id','!=',1)->where('id','!=',$request->user()->id)->get();
         $users->each(function ($user){
@@ -50,16 +69,26 @@ class UserController extends Controller
     public function register(Request $request){
         $request->validate([
             'email'=>'required|unique:users|email',
-            'name'=>'required|unique:users',
+//            'name'=>'required|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
-        $user=new User();
-        $user->name= ( $request->name);
-        $user->email=$request->email;
-        $user->password=Hash::make( $request->password);
-//        $user->fechaLimite=date('Y-m-d', strtotime(now(). ' + 360 days'));
-//        $user->fechaConexion=now();
-        $user->save();
+//        $user=new User();
+//        $user->name= ( $request->name);
+//        $user->email=$request->email;
+//        $user->password=Hash::make( $request->password);
+////        $user->fechaLimite=date('Y-m-d', strtotime(now(). ' + 360 days'));
+////        $user->fechaConexion=now();
+//        $user->save();
+        $request->merge([
+            'password'=>Hash::make($request->password)
+        ]);
+        $request->merge([
+            'celular'=>$request->phone
+        ]);
+        $request->merge([
+            'correo'=>$request->correo
+        ]);
+        $user = User::create($request->all());
         $token=$user->createToken('web')->plainTextToken;
         return response()->json([
             'token'=>$token,
