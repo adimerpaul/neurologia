@@ -121,7 +121,7 @@
                 <q-icon name="event_available" />
               </q-item-section>
               <q-item-section>
-                Miercoles 13-Sep-2023
+                Miércoles 13-Sep-2023
               </q-item-section>
             </q-item>
             <q-item clickable to="/dia13/2023-09-14" exact active-class="bg-primary text-white text-bold">
@@ -148,7 +148,7 @@
                 <q-icon name="event_available" />
               </q-item-section>
               <q-item-section>
-                Viernes 16-Sep-2023
+                Sábado 16-Sep-2023
               </q-item-section>
             </q-item>
             <q-item clickable to="/dia13/2023-09-17" exact active-class="bg-primary text-white text-bold">
@@ -156,7 +156,7 @@
                 <q-icon name="event_available" />
               </q-item-section>
               <q-item-section>
-                Sabado 17-Sep-2023
+                Domingo 17-Sep-2023
               </q-item-section>
             </q-item>
 <!--            <q-item clickable to="/perfil" exact active-class="bg-primary text-white text-bold">-->
