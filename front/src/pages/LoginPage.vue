@@ -8,7 +8,7 @@
             <q-card class="q-mt-md">
               <q-card-section class="text-center">
                 <div class="text-h5 text-bold">{{userOption === 'login' ? 'Iniciar sesión' : 'Registrarse'}}</div>
-                {{userOption === 'login' ? 'Si ya tienes una cuenta, inicia sesión' : 'Si no tienes una cuenta, registrate'}}
+<!--                {{userOption === 'login' ? 'Si ya tienes una cuenta, inicia sesión' : 'Si no tienes una cuenta, registrate'}}-->
                 <q-img src="images/quirquin3.png" width="150px" />
                 <div class="text-h6 text-bold">4ta. Jornada Nacional de Neurología</div>
                 <div class="text-subtitle2 text-bold">
@@ -119,7 +119,7 @@ export default {
       password: '',
       loading: false,
       passwordVisible: false,
-      userOption: 'register',
+      userOption: 'login',
       user: {}
     }
   },

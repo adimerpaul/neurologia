@@ -42,6 +42,16 @@
                     </q-item-section>
                   </q-item-section>
                 </q-item>
+                <q-item clickable v-ripple to="/changePassword">
+                  <q-item-section avatar>
+                    <q-avatar>
+                      <q-icon name="o_lock" />
+                    </q-avatar>
+                  </q-item-section>
+                  <q-item-section>
+                    <q-item-label>Cambiar contraseña</q-item-label>
+                  </q-item-section>
+                </q-item>
                 <q-item clickable v-ripple @click="logout">
                   <q-item-section avatar>
                     <q-avatar>
@@ -91,14 +101,14 @@
                 </q-item-section>
               </q-item>
             </q-item-label>
-            <q-item clickable to="/menu" exact active-class="bg-primary text-white text-bold">
+            <q-item clickable to="/perfil" exact active-class="bg-primary text-white text-bold">
               <q-item-section avatar>
                 <q-icon name="o_home" />
               </q-item-section>
               <q-item-section >
 <!--                <q-item-label>Inicio</q-item-label>-->
-                <q-item-label caption :class="path=='/menu'?'text-white':'text-black'"><b>Bienvenido:</b>{{$store.user.name}}</q-item-label>
-                <q-item-label caption :class="path=='/menu'?'text-white':'text-black'"><b>Profesion:</b>{{$store.user.profession}}</q-item-label>
+                <q-item-label caption :class="path=='/perfil'?'text-white':'text-black'"><b>Bienvenido:</b>{{$store.user.name}}</q-item-label>
+                <q-item-label caption :class="path=='/perfil'?'text-white':'text-black'"><b>Profesion:</b>{{$store.user.profession}}</q-item-label>
               </q-item-section>
             </q-item>
             <q-separator></q-separator>
@@ -149,16 +159,16 @@
                 Sabado 17-Sep-2023
               </q-item-section>
             </q-item>
-            <q-item clickable to="/perfil" exact active-class="bg-primary text-white text-bold">
-            <q-item-section avatar >
-                <q-icon name="o_account_circle" />
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>
-                  <q-item-label>Mis datos </q-item-label>
-                </q-item-label>
-              </q-item-section>
-            </q-item>
+<!--            <q-item clickable to="/perfil" exact active-class="bg-primary text-white text-bold">-->
+<!--            <q-item-section avatar >-->
+<!--                <q-icon name="o_account_circle" />-->
+<!--              </q-item-section>-->
+<!--              <q-item-section>-->
+<!--                <q-item-label>-->
+<!--                  <q-item-label>Completa tus datos </q-item-label>-->
+<!--                </q-item-label>-->
+<!--              </q-item-section>-->
+<!--            </q-item>-->
             <q-item clickable to="/" exact active-class="bg-primary text-white text-bold">
               <q-item-section avatar>
                 <q-icon name="o_public" />
@@ -175,14 +185,14 @@
                 Administrar Usuarios
               </q-item-section>
             </q-item>
-            <q-item clickable to="/estadisticos" exact active-class="bg-primary text-white text-bold" v-if="$store.user.id==1">
-              <q-item-section avatar>
-                <q-icon name="o_bar_chart" />
-              </q-item-section>
-              <q-item-section>
-                Datos Estadisticos
-              </q-item-section>
-            </q-item>
+<!--            <q-item clickable to="/estadisticos" exact active-class="bg-primary text-white text-bold" v-if="$store.user.id==1">-->
+<!--              <q-item-section avatar>-->
+<!--                <q-icon name="o_bar_chart" />-->
+<!--              </q-item-section>-->
+<!--              <q-item-section>-->
+<!--                Datos Estadisticos-->
+<!--              </q-item-section>-->
+<!--            </q-item>-->
           </q-list>
         </q-header>
         <q-footer class="bg-white">
