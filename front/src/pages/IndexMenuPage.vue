@@ -125,7 +125,7 @@ export default defineComponent({
           textButton: 'Sociedad Boliviana <br> De Neurologia'
         },
         {
-          titulo: 'AULA VIRTUAL: Transmición en vivo',
+          titulo: 'AULA VIRTUAL: Transmisión en vivo',
           subtitulo: 'Material de aprendizaje',
           fecha: '',
           img: 'images/WhatsApp Image 2023-08-28 at 20.04.20.jpeg',
