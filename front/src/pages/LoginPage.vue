@@ -65,7 +65,7 @@
                   <q-input v-model="user.lastName" label="Primer apellido" filled lazy-rules :name="user.lastName" hint=""></q-input>
                   <q-input v-model="user.secondLastName" label="Segundo apellido" filled lazy-rules  :name="user.secondLastName" hint=""></q-input>
                   <q-input v-model="user.phone" label="Telefono" filled lazy-rules :rules="[val => val.length > 0 || 'El telefono es requerido']" :name="user.phone"/>
-                  <q-select v-model="user.profession" label="Profesion" filled lazy-rules :rules="[val => val.length > 0 || 'La profesion es requerida']" :name="user.profession" :options="['Medico', 'Estudiante de Medicina', 'Otro']"/>
+                  <q-select v-model="user.profession" label="Profesion" filled lazy-rules :rules="[val => val.length > 0 || 'La profesion es requerida']" :name="user.profession" :options="['Medico Gneral', 'specialista', 'Lic. en enfermeria', 'Aux. en nnfermeria', 'Estudiante', 'Otros']"/>
                   <q-input v-model="user.email" label="Email" filled lazy-rules :rules="[val => val.length > 0 || 'El email es requerido']" :name="user.email"/>
                   <q-select v-model="user.departamento" label="Departamento" filled lazy-rules :rules="[val => val.length > 0 || 'El departamento es requerido']" :name="user.departamento" :options="['Oruro', 'La Paz', 'Cochabamba', 'Santa Cruz', 'Potosi', 'Chuquisaca', 'Tarija', 'Beni', 'Pando', 'Otros']"/>
                   <q-input v-model="user.provincia" label="Provincia" filled lazy-rules :rules="[val => val.length > 0 || 'La provincia es requerida']" :name="user.provincia"/>
