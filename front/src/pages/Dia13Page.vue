@@ -21,6 +21,9 @@
                      icon-right="o_videocam" type="a" :href="video.urlZoom"
                      target="_blank" v-if="video.urlZoom"
               />
+              <q-btn size="12px" label="Material estudio" color="blue-10" class="q-ml-xs" no-caps
+                     icon-right="o_file_download" type="a" :href="video.materialEstudio"
+                     target="_blank" v-if="video.materialEstudio"/>
               <q-btn size="12px" label="Ver video" color="red" class="q-ml-xs" no-caps
                      icon-right="fa-brands fa-youtube" type="a" :href="video.urlYoutube"
                      target="_blank" v-if="video.urlYoutube" @click="verVideo(video)"
