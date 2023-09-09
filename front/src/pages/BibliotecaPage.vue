@@ -5,7 +5,7 @@
             <q-card class="q-pa-md bg-grey-3">
               <q-card-section class="text-h2 fondo">
                 <div class="text-center text-bold text-white">
-                  CONTACTOS
+                  BIBLIOTECA VIRTUAL
                 </div>
               </q-card-section>
               <q-card-section class="q-pa-none">

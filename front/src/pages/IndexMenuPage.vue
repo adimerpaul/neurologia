@@ -62,8 +62,8 @@
     </q-carousel>
     <div class="row q-pa-lg">
       <div class="col-12 flex flex-center">
-        <iframe :width="$q.screen.lt.md ? '100%' : '80%'"
-                height="500px" src="https://www.youtube.com/embed/eQwTo9R4Wiw" title="JORNADAS Y SIMPOSIO NEROLOGÍA ORURO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe :width="$q.screen.lt.md ? '85%' : '75%'"
+                height="450px" src="https://www.youtube.com/embed/eQwTo9R4Wiw" title="JORNADAS Y SIMPOSIO NEROLOGÍA ORURO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
     <div>

@@ -28,16 +28,16 @@
           <div class="col-6 col-md-4">{{ $store.user.direccion }}</div>
         </div>
       </q-card-section>
-      <ChangePasswordComponent/>
+<!--      <ChangePasswordComponent/>-->
     </q-card>
 <!--    <pre>{{$store.user}}</pre>-->
   </q-page>
 </template>
 <script>
-import ChangePasswordComponent from 'components/ChangePasswordComponent.vue'
+// import ChangePasswordComponent from 'components/ChangePasswordComponent.vue'
 export default {
   name: 'PerfilPage',
-  components: { ChangePasswordComponent },
+  // components: { ChangePasswordComponent },
   data () {
     return {
       loading: false,
