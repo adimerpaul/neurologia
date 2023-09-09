@@ -159,6 +159,14 @@
                 Domingo 17-Sep-2023
               </q-item-section>
             </q-item>
+            <q-item clickable to="/biblioteca" exact active-class="bg-primary text-white text-bold">
+              <q-item-section avatar>
+                <q-icon name="o_library_books" />
+              </q-item-section>
+              <q-item-section>
+                Biblioteca virtual
+              </q-item-section>
+            </q-item>
 <!--            <q-item clickable to="/perfil" exact active-class="bg-primary text-white text-bold">-->
 <!--            <q-item-section avatar >-->
 <!--                <q-icon name="o_account_circle" />-->

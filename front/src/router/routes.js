@@ -5,6 +5,7 @@ import Dia13Page from 'pages/Dia13Page.vue'
 import UserPage from 'pages/UserPage.vue'
 import PerfilPage from 'pages/PerfilPage.vue'
 import ChangePasswordPage from 'pages/ChangePasswordPage.vue'
+import BibliotecaPage from 'pages/BibliotecaPage.vue'
 
 const routes = [
   {
@@ -25,7 +26,8 @@ const routes = [
       { path: '/dia13/:date', component: Dia13Page, meta: { requiresAuth: true } },
       { path: '/users', component: UserPage, meta: { requiresAuth: true } },
       { path: '/perfil', component: PerfilPage, meta: { requiresAuth: true } },
-      { path: '/changePassword', component: ChangePasswordPage, meta: { requiresAuth: true } }
+      { path: '/changePassword', component: ChangePasswordPage, meta: { requiresAuth: true } },
+      { path: '/biblioteca', component: BibliotecaPage, meta: { requiresAuth: true } }
     ]
   },
   {
