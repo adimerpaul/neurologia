@@ -167,16 +167,16 @@
                 Biblioteca virtual
               </q-item-section>
             </q-item>
-<!--            <q-item clickable to="/perfil" exact active-class="bg-primary text-white text-bold">-->
-<!--            <q-item-section avatar >-->
-<!--                <q-icon name="o_account_circle" />-->
-<!--              </q-item-section>-->
-<!--              <q-item-section>-->
-<!--                <q-item-label>-->
-<!--                  <q-item-label>Completa tus datos </q-item-label>-->
-<!--                </q-item-label>-->
-<!--              </q-item-section>-->
-<!--            </q-item>-->
+            <q-item clickable to="/perfil" exact active-class="bg-primary text-white text-bold">
+            <q-item-section avatar >
+                <q-icon name="o_account_circle" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>
+                  <q-item-label>Mis datos</q-item-label>
+                </q-item-label>
+              </q-item-section>
+            </q-item>
             <q-item clickable to="/" exact active-class="bg-primary text-white text-bold">
               <q-item-section avatar>
                 <q-icon name="o_public" />
