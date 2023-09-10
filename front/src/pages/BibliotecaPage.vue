@@ -11,57 +11,57 @@
               <q-card-section class="q-pa-none">
                 <div class="row">
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/a.pdf">
+                    <q-btn color="blue-10" icon="book" :href="`${$url}/../a.pdf`">
                       700 Essential Neurology Checklists by Ibrahim Imam (z-lib.org).pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/b.pdf">
+                    <q-btn color="blue-10" icon="book" :href="`${$url}/../b.pdf`">
                       Bioquimica Medica Baynes 5a Edicion.pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/c.pdf">
+                    <q-btn color="blue-10" icon="book" :href="`${$url}/../c.pdf`">
                       Consejos a un joven estudiante de medicina.pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/d.pdf">
+                    <q-btn color="blue-10" icon="book" :href="`${$url}/../d.pdf`">
                       Diagnostic imaging Spine by Ross, Moore (z-lib.org).pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/e.pdf">
+                    <q-btn color="blue-10" icon="book" :href="`${$url}/../e.pdf`">
                       Localization in Clinical Neurology, 6th Edition by Paul W. Brazis, Joseph Masdeu, José Biller MD FACP FAAN FAHA (z-lib.org).pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/f.pdf">
+                    <q-btn color="blue-10" icon="book" :href="`${$url}/../f.pdf`">
                       Los 7 pecados cerebrales_booksmedicos.org.pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/g.pdf">
+                    <q-btn color="blue-10" icon="book" :href="`${$url}/../g.pdf`">
                       Neurologia de Merritt, 12a edición (Spanish Edition) by Timothy A. Pedley Lewis P. Rowland [Pedley, Timothy A.] (z-lib.org).pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/h.pdf">
+                    <q-btn color="blue-10" icon="book" :href="`${$url}/../h.pdf`">
                       Neurologic-Psychiatric Syndromes in Focus Part I by Julien Bogousslavsky (z-lib.org).pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/i.pdf">
+                    <q-btn color="blue-10" icon="book" :href="`${$url}/../i.pdf`">
                       Neurological Disorders in Famous Artists (Frontiers of Neurology and Neuroscience), Part 3 by J. Bogousslavsky, M. G. Hennerici, H. Bazner, C. Bassetti (z-lib.org).pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/j.pdf">
+                    <q-btn color="blue-10" icon="book" :href="`${$url}/../j.pdf`">
                       Sindromes Neurologicos.pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/k.pdf">
+                    <q-btn color="blue-10" icon="book" :href="`${$url}/../k.pdf`">
                       Tintinalli Manual de Medicina de Urgencias 7a Ed_booksmedicos.org.pdf
                     </q-btn>
                   </div>
