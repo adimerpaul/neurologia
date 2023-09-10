@@ -11,57 +11,57 @@
               <q-card-section class="q-pa-none">
                 <div class="row">
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/700 Essential Neurology Checklists by Ibrahim Imam (z-lib.org).pdf">
+                    <q-btn color="blue-10" icon="book" href="libros/a.pdf">
                       700 Essential Neurology Checklists by Ibrahim Imam (z-lib.org).pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/Bioquimica Medica Baynes 5a Edicion.pdf">
+                    <q-btn color="blue-10" icon="book" href="libros/b.pdf">
                       Bioquimica Medica Baynes 5a Edicion.pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/Consejos a un joven estudiante de medicina.pdf">
+                    <q-btn color="blue-10" icon="book" href="libros/c.pdf">
                       Consejos a un joven estudiante de medicina.pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/Diagnostic imaging Spine by Ross, Moore (z-lib.org).pdf">
+                    <q-btn color="blue-10" icon="book" href="libros/d.pdf">
                       Diagnostic imaging Spine by Ross, Moore (z-lib.org).pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/Localization in Clinical Neurology, 6th Edition by Paul W. Brazis, Joseph Masdeu, José Biller MD FACP FAAN FAHA (z-lib.org).pdf">
+                    <q-btn color="blue-10" icon="book" href="libros/e.pdf">
                       Localization in Clinical Neurology, 6th Edition by Paul W. Brazis, Joseph Masdeu, José Biller MD FACP FAAN FAHA (z-lib.org).pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/Los 7 pecados cerebrales_booksmedicos.org.pdf">
+                    <q-btn color="blue-10" icon="book" href="libros/f.pdf">
                       Los 7 pecados cerebrales_booksmedicos.org.pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/Neurologia de Merritt, 12a edición (Spanish Edition) by Timothy A. Pedley Lewis P. Rowland [Pedley, Timothy A.] (z-lib.org).pdf">
+                    <q-btn color="blue-10" icon="book" href="libros/g.pdf">
                       Neurologia de Merritt, 12a edición (Spanish Edition) by Timothy A. Pedley Lewis P. Rowland [Pedley, Timothy A.] (z-lib.org).pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/Neurologic-Psychiatric Syndromes in Focus Part I by Julien Bogousslavsky (z-lib.org).pdf">
+                    <q-btn color="blue-10" icon="book" href="libros/h.pdf">
                       Neurologic-Psychiatric Syndromes in Focus Part I by Julien Bogousslavsky (z-lib.org).pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/Neurological Disorders in Famous Artists (Frontiers of Neurology and Neuroscience), Part 3 by J. Bogousslavsky, M. G. Hennerici, H. Bazner, C. Bassetti (z-lib.org).pdf">
+                    <q-btn color="blue-10" icon="book" href="libros/i.pdf">
                       Neurological Disorders in Famous Artists (Frontiers of Neurology and Neuroscience), Part 3 by J. Bogousslavsky, M. G. Hennerici, H. Bazner, C. Bassetti (z-lib.org).pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/Sindromes Neurologicos.pdf">
+                    <q-btn color="blue-10" icon="book" href="libros/j.pdf">
                       Sindromes Neurologicos.pdf
                     </q-btn>
                   </div>
                   <div class="col-12 q-pa-xs">
-                    <q-btn color="blue-10" icon="book" href="libros/Tintinalli Manual de Medicina de Urgencias 7a Ed_booksmedicos.org.pdf">
+                    <q-btn color="blue-10" icon="book" href="libros/k.pdf">
                       Tintinalli Manual de Medicina de Urgencias 7a Ed_booksmedicos.org.pdf
                     </q-btn>
                   </div>
