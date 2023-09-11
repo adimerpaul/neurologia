@@ -72,11 +72,10 @@
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
-      bordered
     >
       <q-layout>
-        <q-header class="bg-white">
-          <q-list class="text-black" separator bordered>
+        <q-header class="">
+          <q-list class="bg-blue-10">
             <q-item-label header class="q-pa-none">
               <q-item dense>
                 <q-item-section>
@@ -86,12 +85,12 @@
                         <q-badge color="white" size="10px" text-color="accent" :label="`${$store.porcentaje}%`"/>
                       </div>
                     </q-linear-progress>
-                    <div class="text-center">
+                    <div class="text-center text-white">
                       Porcentaje de avance
                       <q-icon name="help" class="q-ml-sm">
                         <q-tooltip>
                           <div class="text-center">
-                            <div class="text-h6">Porcentaje de avance</div>
+                            <div class="text-h6 text-white">Porcentaje de avance</div>
                             <div class="text-subtitle2">Muestra el porcentaje de avance de los videos vistos una vez finalizado el evento.</div>
                           </div>
                         </q-tooltip>
@@ -107,12 +106,12 @@
               </q-item-section>
               <q-item-section >
 <!--                <q-item-label>Inicio</q-item-label>-->
-                <q-item-label caption :class="path=='/perfil'?'text-white':'text-black'"><b>Bienvenido:</b>{{$store.user.name}}</q-item-label>
-                <q-item-label caption :class="path=='/perfil'?'text-white':'text-black'"><b>Profesion:</b>{{$store.user.profession}}</q-item-label>
+                <q-item-label caption :class="path=='/perfil'?'text-white':'text-white'"><b>Bienvenido:</b>{{$store.user.name}}</q-item-label>
+                <q-item-label caption :class="path=='/perfil'?'text-white':'text-white'"><b>Profesion:</b>{{$store.user.profession}}</q-item-label>
               </q-item-section>
             </q-item>
             <q-separator></q-separator>
-            <q-item-label header>
+            <q-item-label header class="text-white">
               4ta Jornada Nacional de Neurología
             </q-item-label>
             <q-separator></q-separator>
@@ -140,7 +139,7 @@
                 Viernes 15-Sep-2023
               </q-item-section>
             </q-item>
-            <q-item-label header>
+            <q-item-label header class="text-white">
               2da Simposio Internacional de Neurología
             </q-item-label>
             <q-item clickable to="/dia13/2023-09-16" exact active-class="bg-primary text-white text-bold">
