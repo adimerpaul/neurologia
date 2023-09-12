@@ -73,8 +73,8 @@
       v-model="leftDrawerOpen"
       show-if-above
     >
-      <q-layout>
-        <q-header class="bg-white">
+      <q-layout class="bg-grey-3">
+        <q-header class="bg-grey-3">
           <q-list class="text-black" separator bordered>
             <q-item-label header class="q-pa-none">
               <q-item dense>
@@ -202,7 +202,7 @@
 <!--            </q-item>-->
           </q-list>
         </q-header>
-        <q-footer class="bg-white">
+        <q-footer class="bg-grey-3">
           <q-list bordered padding dense class="rounded-borders text-red">
             <q-item clickable v-ripple @click="logout()">
               <q-item-section avatar>
