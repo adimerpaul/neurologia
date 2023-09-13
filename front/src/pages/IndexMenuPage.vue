@@ -78,21 +78,21 @@
         <div class="q-pa-xs">
           <q-img src="logos/bago.png" width="80px"  />
         </div>
-        <div class="q-pa-xs">
-          <q-img src="logos/breskot pharma.png" width="80px"  />
-        </div>
-        <div class="q-pa-xs">
-          <q-img src="logos/ferrer.png" width="80px"  />
-        </div>
-        <div class="q-pa-xs">
-          <q-img src="logos/IMG_20230805_161256.jpg" width="60px"  />
-        </div>
-        <div class="q-pa-xs">
-          <q-img src="logos/megalabs.png" width="80px"  />
-        </div>
-        <div class="q-pa-xs">
-          <q-img src="logos/saval.png" width="55px"  />
-        </div>
+<!--        <div class="q-pa-xs">-->
+<!--          <q-img src="logos/breskot pharma.png" width="80px"  />-->
+<!--        </div>-->
+<!--        <div class="q-pa-xs">-->
+<!--          <q-img src="logos/ferrer.png" width="80px"  />-->
+<!--        </div>-->
+<!--        <div class="q-pa-xs">-->
+<!--          <q-img src="logos/IMG_20230805_161256.jpg" width="60px"  />-->
+<!--        </div>-->
+<!--        <div class="q-pa-xs">-->
+<!--          <q-img src="logos/megalabs.png" width="80px"  />-->
+<!--        </div>-->
+<!--        <div class="q-pa-xs">-->
+<!--          <q-img src="logos/saval.png" width="55px"  />-->
+<!--        </div>-->
       </div>
     </div>
   </q-page>
