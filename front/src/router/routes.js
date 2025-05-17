@@ -6,6 +6,7 @@ import UserPage from 'pages/UserPage.vue'
 import PerfilPage from 'pages/PerfilPage.vue'
 import ChangePasswordPage from 'pages/ChangePasswordPage.vue'
 import BibliotecaPage from 'pages/BibliotecaPage.vue'
+import Registro from 'pages/registro/Registro.vue'
 
 const routes = [
   {
@@ -33,6 +34,10 @@ const routes = [
   {
     path: '/login',
     component: LoginPage
+  },
+  {
+    path: '/registro',
+    component: Registro
   },
   // Always leave this as last one,
   // but you can also remove it
