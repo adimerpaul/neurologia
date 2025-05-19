@@ -62,6 +62,9 @@
             <q-btn color="primary" class="q-mt-md " rounded  no-caps to="/login">
               <div class="changa button" >Ingresa Aqui</div>
             </q-btn>
+            <q-btn color="white" class="q-mt-md " rounded  no-caps to="/registro" outline>
+              <div class="changa button" >Regístrate</div>
+            </q-btn>
           </div>
           <div style="position: absolute; bottom: 0; right: 0; padding: 10px 10px 10px 10px;margin: 5px">
 <!--            <div class="flex flex-center">-->
