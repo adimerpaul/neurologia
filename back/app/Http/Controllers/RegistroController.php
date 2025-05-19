@@ -6,6 +6,10 @@ use App\Models\Registro;
 use Illuminate\Http\Request;
 
 class RegistroController extends Controller{
+    function index(){
+        $registros = Registro::orderBy('id', 'desc')->get();
+        return $registros;
+    }
     public function store(Request $request)
     {
         $request->validate([
