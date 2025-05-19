@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('secondLastName')->nullable();
             $table->string('phone')->nullable();
 			$table->string('profession')->nullable();
-            $table->string('email')->unique();
+            $table->string('email')->nullable();
             $table->string('departamento')->nullable();
             $table->string('provincia')->nullable();
             $table->string('direccion')->nullable();
