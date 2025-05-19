@@ -199,6 +199,26 @@ export default {
           this.loading = false
         })
         this.$q.notify({ type: 'positive', message: 'Inscripción completada', position: 'top' })
+        this.user = {
+          firstSurname: '',
+          secondSurname: '',
+          firstName: '',
+          secondName: '',
+          // name: '',
+          ci: '',
+          phone: '',
+          email: '',
+          profession: '',
+          professionOther: '',
+          departamento: '',
+          provincia: '',
+          direccion: '',
+          cursoTaller: false,
+          file: null,
+          file2: null
+        }
+        const url = 'https://chat.whatsapp.com/EbTwZvGCYoe0ZpGkrSjPd8'
+        window.open(url, '_blank')
       } catch (err) {
         console.log(err.response.data)
         this.$q.notify({ type: 'negative', message: err.response.data.message, position: 'top' })
