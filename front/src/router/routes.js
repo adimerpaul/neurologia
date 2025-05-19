@@ -37,7 +37,7 @@ const routes = [
     component: LoginPage
   },
   {
-    path: '/registro',
+    path: '/inscripcion',
     component: Registro
   },
   // Always leave this as last one,

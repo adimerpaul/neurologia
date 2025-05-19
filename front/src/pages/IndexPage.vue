@@ -62,7 +62,7 @@
             <q-btn color="primary" class="q-mt-md " rounded  no-caps to="/login">
               <div class="changa button" >Ingresa Aqui</div>
             </q-btn>
-            <q-btn color="white" class="q-mt-md " rounded  no-caps to="/registro" outline>
+            <q-btn color="white" class="q-mt-md " rounded  no-caps to="/inscripcion" outline>
               <div class="changa button" >Regístrate</div>
             </q-btn>
           </div>
