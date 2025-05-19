@@ -95,6 +95,19 @@
                       class="full-width text-bold text-white"
                       type="submit"
                       icon="send"
+                      no-caps
+                    />
+                  </div>
+                  <div>
+<!--                    btn para volve a home-->
+                    <q-btn
+                      label="Volver a la página principal"
+                      color="primary"
+                      class="full-width text-bold"
+                      to="/"
+                      no-caps
+                      outline
+                      icon="home"
                     />
                   </div>
                 </q-form>
@@ -131,7 +144,7 @@ export default {
         secondSurname: '',
         firstName: '',
         secondName: '',
-        name: '',
+        // name: '',
         ci: '',
         phone: '',
         email: '',
@@ -141,7 +154,8 @@ export default {
         provincia: '',
         direccion: '',
         cursoTaller: false,
-        file: null
+        file: null,
+        file2: null
       }
     }
   }
