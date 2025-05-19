@@ -26,6 +26,7 @@ const routes = [
       { path: '', component: IndexMenuPage, meta: { requiresAuth: true } },
       { path: '/dia13/:date', component: Dia13Page, meta: { requiresAuth: true } },
       { path: '/users', component: UserPage, meta: { requiresAuth: true } },
+      { path: '/register', component: () => import('pages/registro/Register.vue'), meta: { requiresAuth: true } },
       { path: '/perfil', component: PerfilPage, meta: { requiresAuth: true } },
       { path: '/changePassword', component: ChangePasswordPage, meta: { requiresAuth: true } },
       { path: '/biblioteca', component: BibliotecaPage, meta: { requiresAuth: true } }

@@ -72,10 +72,12 @@
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
+      :width="250"
+      :breakpoint="400"
     >
       <q-layout class="bg-grey-3">
         <q-header class="bg-grey-3">
-          <q-list class="text-black" separator bordered>
+          <q-list class="text-black" separator bordered dense>
             <q-item-label header class="q-pa-none">
               <q-item dense>
                 <q-item-section>
@@ -190,6 +192,14 @@
               </q-item-section>
               <q-item-section>
                 Administrar Usuarios
+              </q-item-section>
+            </q-item>
+            <q-item clickable to="/register" exact active-class="bg-primary text-white text-bold" v-if="$store.user.id==1">
+              <q-item-section avatar>
+                <q-icon name="o_person_add" />
+              </q-item-section>
+              <q-item-section>
+                Personas Registradas
               </q-item-section>
             </q-item>
 <!--            <q-item clickable to="/estadisticos" exact active-class="bg-primary text-white text-bold" v-if="$store.user.id==1">-->
