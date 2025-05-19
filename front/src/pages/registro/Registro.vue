@@ -26,7 +26,7 @@
           <div class="col-12 col-md-8">
             <q-card flat bordered>
               <q-card-section>
-                <q-form class="q-gutter-md" @submit.prevent>
+                <q-form class="q-gutter-md" @submit.prevent="registrarUsuario">
                   <q-input filled v-model="user.firstSurname" label="Primer Apellido" required ></q-input>
                   <q-input filled v-model="user.secondSurname" label="Segundo Apellido" ></q-input>
                   <q-input filled v-model="user.firstName" label="Primer Nombre" required ></q-input>
@@ -68,6 +68,8 @@
                   { label: 'Beni', value: 'Beni' }
                 ]"
                     required
+                    emit-value
+                    map-options
                   />
                   <q-input v-model="user.provincia" filled label="Provincia/Municipio/Region:" required ></q-input>
                   <q-input v-model="user.direccion" filled label="Dirección:" required ></q-input>
@@ -80,14 +82,27 @@
                   <div class="text-bold text-h5 ">
                     Comprobante de pago de Inscripción Jornadas
                   </div>
-                  input imagenes y pdf
-                  <q-input type="file" filled v-model="user.file" accept="application/pdf, image/*" />
+                  <q-file
+                    filled
+                    v-model="user.file"
+                    label="Comprobante de Inscripción"
+                    accept=".pdf, image/*"
+                    use-chips
+                  />
                   <template v-if="user.cursoTaller">
                     <div class="text-bold text-h5">
                       Comprobante de pago Inscripción Curso Taller de 70 Bs
                     </div>
-                    <q-input type="file" filled v-model="user.file2" accept="application/pdf, image/*" />
+                    <q-input
+                      type="file"
+                      filled
+                      accept="application/pdf, image/*"
+                      @change="e => user.file2 = e.target.files[0]"
+                    />
                   </template>
+<!--                  <div>-->
+<!--                    <pre>{{user}}</pre>-->
+<!--                  </div>-->
                   <div>
                     <q-btn
                       label="Enviar"
@@ -96,10 +111,10 @@
                       type="submit"
                       icon="send"
                       no-caps
+                      :loading="loading"
                     />
                   </div>
                   <div>
-<!--                    btn para volve a home-->
                     <q-btn
                       label="Volver a la página principal"
                       color="primary"
@@ -108,6 +123,7 @@
                       no-caps
                       outline
                       icon="home"
+                      :loading="loading"
                     />
                   </div>
                 </q-form>
@@ -139,6 +155,7 @@ export default {
         'Estudiante',
         'Otros'
       ],
+      loading: false,
       user: {
         firstSurname: '',
         secondSurname: '',
@@ -156,6 +173,36 @@ export default {
         cursoTaller: false,
         file: null,
         file2: null
+      }
+    }
+  },
+  methods: {
+    async registrarUsuario () {
+      const formData = new FormData()
+      for (const key in this.user) {
+        if (this.user[key] !== null && this.user[key] !== '') {
+          if (key === 'file' || key === 'file2') {
+            if (this.user[key]) {
+              formData.append(key, this.user[key])
+            }
+          } else {
+            formData.append(key, this.user[key])
+          }
+        }
+      }
+
+      try {
+        this.loading = true
+        await this.$axios.post('registro', formData, {
+          headers: { 'Content-Type': 'multipart/form-data' }
+        }).finally(() => {
+          this.loading = false
+        })
+        this.$q.notify({ type: 'positive', message: 'Inscripción completada', position: 'top' })
+      } catch (err) {
+        console.log(err.response.data)
+        this.$q.notify({ type: 'negative', message: err.response.data.message, position: 'top' })
+        console.error(err.response?.data || err.message)
       }
     }
   }
