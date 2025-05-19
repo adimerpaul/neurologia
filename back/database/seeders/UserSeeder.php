@@ -22,7 +22,8 @@ class UserSeeder extends Seeder
                 'secondLastName' => 'Cube',
                 'email' => 'admin@test.com',
                 'profession' => 'Administrador',
-                'password' => bcrypt('neuro123Neuro')
+                'ci' => '123456',
+                'password' => bcrypt('123456')
             ],
 
         ]);
