@@ -20,10 +20,10 @@
         <td>
           <q-btn-dropdown color="primary" text-color="white" dense label="Opciones" no-caps size="xs">
             <q-list>
-              <q-item clickable @click="verRegistro(registro)">
+              <q-item clickable @click="crearUsuario(registro)" v-close-popup>
                 <q-item-section>Crear usuario</q-item-section>
               </q-item>
-              <q-item clickable @click="mandarRegistro(registro)">
+              <q-item clickable @click="mandarRegistro(registro)" v-close-popup>
                 <q-item-section>Mandar por WhatsApp</q-item-section>
               </q-item>
             </q-list>
@@ -83,6 +83,20 @@ export default {
     this.registroGet()
   },
   methods: {
+    crearUsuario (registro) {
+      this.$q.loading.show()
+      this.$axios.post('/registro/crear-usuario', { id: registro.id })
+        .then(res => {
+          this.$q.notify({ type: 'positive', message: res.data.message, position: 'top' })
+        })
+        .catch(err => {
+          const msg = err.response?.data?.message || 'Error al crear usuario'
+          this.$q.notify({ type: 'warning', message: msg, position: 'top' })
+        })
+        .finally(() => {
+          this.$q.loading.hide()
+        })
+    },
     verFoto (file) {
       this.$q.dialog({
         title: 'Ver foto',
