@@ -20,11 +20,18 @@
                 <q-form @submit="login" v-if="userOption === 'login'">
                   <q-input
                     v-model="email"
-                    label="email"
+                    label="Carnet de identidad"
                     filled
                     lazy-rules
-                    :rules="[val => val.length > 0 || 'El usuario es requerido']"
+                    :rules="[val => val.length > 0 || 'El carnet de identidad es requerido']"
                   />
+<!--                  <q-input-->
+<!--                    v-model="email"-->
+<!--                    label="email"-->
+<!--                    filled-->
+<!--                    lazy-rules-->
+<!--                    :rules="[val => val.length > 0 || 'El usuario es requerido']"-->
+<!--                  />-->
                   <q-input
                     :type="passwordVisible ? 'text' : 'password'"
                     v-model="password"

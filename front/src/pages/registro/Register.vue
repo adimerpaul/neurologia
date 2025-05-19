@@ -8,6 +8,7 @@
         <th>CI</th>
         <th>Teléfono</th>
         <th>Ver foto</th>
+        <th>Ver foto</th>
         <th>Email</th>
         <th>Profesión</th>
         <th>Departamento</th>
@@ -37,6 +38,13 @@
           :src="`${$url}../storage/${registro.file}`"
             style="max-width: 100px; max-height: 100px;"
             @click="verFoto(registro.file)"
+          />
+        </td>
+        <td>
+          <q-img
+            :src="`${$url}../storage/${registro.file2}`"
+            style="max-width: 100px; max-height: 100px;"
+            @click="verFoto(registro.file2)"
           />
         </td>
         <td>{{ registro.email }}</td>
@@ -83,6 +91,13 @@ export default {
     this.registroGet()
   },
   methods: {
+    mandarRegistro (registro) {
+      const numero = registro.phone.replace(/\D/g, '') // limpia espacios o guiones
+      const mensaje = `Hola ${registro.firstName}, te damos la bienvenida. Tu cuenta ha sido creada:\n\nUsuario: ${registro.ci}\nContraseña: ${registro.ci}`
+
+      const url = `https://wa.me/591${numero}?text=${encodeURIComponent(mensaje)}`
+      window.open(url, '_blank')
+    },
     crearUsuario (registro) {
       this.$q.loading.show()
       this.$axios.post('/registro/crear-usuario', { id: registro.id })

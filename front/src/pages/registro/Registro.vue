@@ -93,11 +93,12 @@
                     <div class="text-bold text-h5">
                       Comprobante de pago Inscripción Curso Taller de 70 Bs
                     </div>
-                    <q-input
-                      type="file"
+                    <q-file
                       filled
-                      accept="application/pdf, image/*"
-                      @change="e => user.file2 = e.target.files[0]"
+                      v-model="user.file2"
+                      label="Comprobante de Inscripción"
+                      accept=".pdf, image/*"
+                      use-chips
                     />
                   </template>
 <!--                  <div>-->
