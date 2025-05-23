@@ -24,18 +24,17 @@
           <div class="col-12 col-md-2"></div>
           <div class="col-12 col-md-2"></div>
           <div class="col-12 col-md-8">
-            <q-img src="aviso.jpg" class="q-mb-md" />
             <q-card flat bordered>
               <q-card-section>
                 <q-form class="q-gutter-md" @submit.prevent="registrarUsuario">
-                  <q-input filled v-model="user.firstSurname" label="Primer Apellido" required ></q-input>
+                  <q-input filled v-model="user.firstSurname" label="Primer Apellido" ></q-input>
                   <q-input filled v-model="user.secondSurname" label="Segundo Apellido" ></q-input>
                   <q-input filled v-model="user.firstName" label="Primer Nombre" required ></q-input>
                   <q-input filled v-model="user.secondName" label="Segundo Nombre" ></q-input>
                   <!--              <q-input filled v-model="user.name" label="Nombre Completo:" required ></q-input>-->
-                  <q-input filled v-model="user.ci" label="Nro. de C.I." required ></q-input>
-                  <q-input filled v-model="user.phone" label="Nro. de Celular:" required ></q-input>
-                  <q-input filled v-model="user.email" label="Correo Electrónico:" required ></q-input>
+                  <q-input filled v-model="user.ci" label="Carnet" required ></q-input>
+                  <q-input filled v-model="user.phone" label="Celular" required ></q-input>
+                  <q-input filled v-model="user.email" label="Correo Electrónico:" ></q-input>
                   <!--              <q-option-group v-value="user.profession" :options="profesiones" label="Profesión:" required/>-->
                   <template v-for="(profession, index) in profesiones"
                             :key="index">
@@ -122,6 +121,9 @@
 <!--                  <div>-->
 <!--                    <pre>{{user}}</pre>-->
 <!--                  </div>-->
+                  <div>
+                    <q-img src="aviso.jpg" class="q-mb-md" />
+                  </div>
                   <div>
                     <q-btn
                       label="Enviar"

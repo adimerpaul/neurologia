@@ -23,7 +23,7 @@ Route::post('/registro', [\App\Http\Controllers\RegistroController::class, 'stor
 //Route::post('upload/{id}/{option}', [\App\Http\Controllers\UploadController::class, 'upload']);
 Route::group(['middleware'=>'auth:sanctum'],function () {
     Route::get('/registro', [\App\Http\Controllers\RegistroController::class, 'index']);
-    Route::post('/registro', [\App\Http\Controllers\RegistroController::class, 'store']);
+//    Route::post('/registro', [\App\Http\Controllers\RegistroController::class, 'store']);
     Route::post('/registro/{id}', [\App\Http\Controllers\RegistroController::class, 'update']);
     Route::delete('/registro/{id}', [\App\Http\Controllers\RegistroController::class, 'destroy']);
 
