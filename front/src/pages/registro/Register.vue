@@ -24,7 +24,7 @@
       <tbody>
       <tr v-for="(registro, index) in registros" :key="index">
         <td>
-          <q-btn-dropdown color="primary" text-color="white" dense label="Opciones" no-caps size="xs">
+          <q-btn-dropdown color="primary" text-color="white" dense label="Opciones" no-caps size="xs" :loading="loading">
             <q-list>
               <q-item clickable @click="crearUsuario(registro)" v-close-popup>
                 <q-item-section avatar>
@@ -53,7 +53,7 @@
             </q-list>
           </q-btn-dropdown>
         </td>
-        <td>{{ registro.firstName }} {{ registro.firstSurname }} {{ registro.secondSurname }}</td>
+        <td>{{ registro.firstSurname }} {{ registro.secondSurname }} {{ registro.firstName }} {{ registro.secondName }}</td>
         <td>{{ registro.ci }}</td>
         <td>{{ registro.phone }}</td>
         <td>
@@ -78,7 +78,7 @@
       </tr>
       </tbody>
     </q-markup-table>
-    <pre>{{registros}}</pre>
+<!--    <pre>{{registros}}</pre>-->
 <!--    [-->
 <!--    {-->
 <!--    "id": 2,-->
@@ -106,9 +106,10 @@
         </q-card-section>
         <q-card-section>
           <q-form @submit.prevent="submit">
-            <q-input v-model="registro.firstName" dense outlined label="Nombre" />
             <q-input v-model="registro.firstSurname" dense outlined label="Apellido Paterno" />
             <q-input v-model="registro.secondSurname" dense outlined label="Apellido Materno" />
+            <q-input v-model="registro.firstName" dense outlined label="Nombre" />
+            <q-input v-model="registro.secondName" dense outlined label="Segundo Nombre" />
             <q-input v-model="registro.ci" dense outlined label="CI" />
             <q-input v-model="registro.phone" dense outlined label="Teléfono" />
             <q-input v-model="registro.email" dense outlined label="Email" type="email" />
@@ -121,8 +122,8 @@
             <q-file v-model="registro.file" dense outlined label="Comprobante de pago" type="file" />
             <q-file v-model="registro.file2" dense outlined label="Comprobante de pago 2" type="file" />
             <div class="q-mt-md">
-              <q-btn type="submit" color="primary">Guardar</q-btn>
-              <q-btn flat @click="registroDialog = false">Cancelar</q-btn>
+              <q-btn type="submit" color="primary" :loading="loading">Guardar</q-btn>
+              <q-btn flat @click="registroDialog = false" :loading="loading">Cancelar</q-btn>
             </div>
           </q-form>
         </q-card-section>
@@ -151,10 +152,50 @@ export default {
     },
     submit () {
       if (this.registro.id) {
-        // this.updateRegistro()
+        this.updateRegistro()
       } else {
         this.crearRegistro()
       }
+    },
+    updateRegistro () {
+      this.loading = true
+      const formData = new FormData()
+      formData.append('id', this.registro.id)
+      formData.append('firstSurname', this.registro.firstSurname)
+      formData.append('secondSurname', this.registro.secondSurname)
+      formData.append('firstName', this.registro.firstName)
+      formData.append('secondName', this.registro.secondName)
+      formData.append('ci', this.registro.ci)
+      formData.append('phone', this.registro.phone)
+      formData.append('email', this.registro.email)
+      formData.append('profession', this.registro.profession)
+      formData.append('departamento', this.registro.departamento)
+      formData.append('provincia', this.registro.provincia)
+      formData.append('direccion', this.registro.direccion)
+      formData.append('cursoTaller', this.registro.cursoTaller)
+      if (this.registro.file) {
+        formData.append('file', this.registro.file)
+      }
+      if (this.registro.file2) {
+        formData.append('file2', this.registro.file2)
+      }
+      this.$axios.post(`registro/${this.registro.id}`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
+        .then(res => {
+          this.$q.notify({ type: 'positive', message: 'Registro actualizado', position: 'top' })
+          this.registroGet()
+        })
+        .catch(err => {
+          const msg = err.response?.data?.message || 'Error al actualizar registro'
+          this.$q.notify({ type: 'red', message: msg, position: 'top' })
+        })
+        .finally(() => {
+          this.registroDialog = false
+          this.loading = false
+        })
     },
     crearRegistro () {
       this.loading = true
@@ -189,6 +230,28 @@ export default {
           this.registroDialog = false
           this.loading = false
         })
+    },
+    eliminarRegistro (registro) {
+      this.$q.dialog({
+        title: 'Eliminar Registro',
+        message: `¿Está seguro de eliminar el registro de ${registro.firstName} ${registro.firstSurname}?`,
+        cancel: true,
+        persistent: true
+      }).onOk(() => {
+        this.loading = true
+        this.$axios.delete(`registro/${registro.id}`)
+          .then(res => {
+            this.$q.notify({ type: 'positive', message: res.data.message, position: 'top' })
+            this.registroGet()
+          })
+          .catch(err => {
+            const msg = err.response?.data?.message || 'Error al eliminar registro'
+            this.$q.notify({ type: 'red', message: msg, position: 'top' })
+          })
+          .finally(() => {
+            this.loading = false
+          })
+      })
     },
     editarRegistro (registro) {
       this.registro = { ...registro }
