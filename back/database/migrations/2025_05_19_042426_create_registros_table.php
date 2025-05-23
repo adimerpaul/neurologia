@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('departamento')->nullable();
             $table->string('provincia')->nullable();
             $table->string('direccion')->nullable();
-            $table->boolean('cursoTaller')->default(false);
+            $table->string('cursoTaller')->default('');
             $table->string('file')->nullable();
             $table->string('file2')->nullable();
             $table->softDeletes();

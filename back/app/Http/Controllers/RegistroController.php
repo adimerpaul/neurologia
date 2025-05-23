@@ -45,6 +45,45 @@ class RegistroController extends Controller{
 
         return response()->json(['success' => true, 'data' => $registro], 201);
     }
+    function destroy($id){
+        $registro = Registro::find($id);
+        if ($registro) {
+            $registro->delete();
+            return response()->json(['success' => true, 'message' => 'Registro eliminado correctamente.']);
+        } else {
+            return response()->json(['success' => false, 'message' => 'Registro no encontrado.'], 404);
+        }
+    }
+    function update(Request $request, $id){
+//        quitar re requeser file y file 2 si no se manda
+        $file = $request->file('file');
+        $file2 = $request->file('file2');
+        $registro = Registro::find($id);
+        if ($file) {
+            $path1 = $file->store('comprobantes', 'public');
+            $registro->file = $path1;
+        }
+        if ($file2) {
+            $path2 = $file2->store('comprobantes', 'public');
+            $registro->file2 = $path2;
+        }
+        error_log('firstName: ' . $request->firstName);
+        $registro->firstSurname = $request->firstSurname;
+        $registro->secondSurname = $request->secondSurname;
+        $registro->firstName = $request->firstName;
+        $registro->secondName = $request->secondName;
+        $registro->ci = $request->ci;
+        $registro->phone = $request->phone;
+        $registro->email = $request->email;
+        $registro->profession = $request->profession;
+        $registro->professionOther = $request->professionOther;
+        $registro->departamento = $request->departamento;
+        $registro->provincia = $request->provincia;
+        $registro->direccion = $request->direccion;
+        $registro->cursoTaller = $request->cursoTaller ;
+        $registro->save();
+
+    }
     public function crearUsuarioDesdeRegistro(Request $request)
     {
         $registro = Registro::findOrFail($request->id);
