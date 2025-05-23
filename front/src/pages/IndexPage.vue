@@ -63,7 +63,7 @@
               <div class="changa button" >Ingresa Aqui</div>
             </q-btn>
             <q-btn color="white" class="q-mt-md " rounded  no-caps to="/inscripcion" outline>
-              <div class="changa button" >Regístrate</div>
+              <div class="changa button" >Inscribirse</div>
             </q-btn>
           </div>
           <div style="position: absolute; bottom: 0; right: 0; padding: 10px 10px 10px 10px;margin: 5px">

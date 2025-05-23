@@ -74,12 +74,29 @@
                   />
                   <q-input v-model="user.provincia" filled label="Provincia/Municipio/Region:" required ></q-input>
                   <q-input v-model="user.direccion" filled label="Dirección:" required ></q-input>
-                  <q-checkbox v-model="user.cursoTaller"
-                              label="Va a asistir al curso taller?"
-                  />
-                  <div class="bg-red text-white text-h5" v-if="user.cursoTaller">
-                    Debe cancelar el monto Adicional de 70 Bs. por el curso taller.
-                  </div>
+
+<!--                  -Inscribirse a las Jornadas-->
+<!--                  -Inscribirse al Taller-->
+<!--                  -Inscribirse a ambos-->
+<!--                  <q-checkbox v-model="user.cursoTaller"-->
+<!--                              label="Va a asistir al curso taller?"-->
+<!--                  />-->
+                  <template v-for="(checkbox, index) in ['Inscribirse a las Jornadas', 'Inscribirse al Taller', 'Inscribirse a ambos']"
+                            :key="index">
+                    <div class="text-left">
+                      <q-radio
+                        v-model="user.cursoTaller"
+                        dense
+                        class="text-subtitle2"
+                        :label="checkbox"
+                        :val="checkbox"
+                      />
+                    </div>
+                  </template>
+<!--                  <pre>{{user.cursoTaller}}</pre>-->
+<!--                  <div class="bg-red text-white text-h5" v-if="user.cursoTaller== 'Inscribirse al Taller'">-->
+<!--                    Debe cancelar el monto Adicional de 70 Bs. por el curso taller.-->
+<!--                  </div>-->
                   <div class="text-bold text-h5 ">
                     Comprobante de pago de Inscripción Jornadas
                   </div>
@@ -90,18 +107,18 @@
                     accept=".pdf, image/*"
                     use-chips
                   />
-                  <template v-if="user.cursoTaller">
-                    <div class="text-bold text-h5">
-                      Comprobante de pago Inscripción Curso Taller de 70 Bs
-                    </div>
-                    <q-file
-                      filled
-                      v-model="user.file2"
-                      label="Comprobante de Inscripción"
-                      accept=".pdf, image/*"
-                      use-chips
-                    />
-                  </template>
+<!--                  <template v-if="user.cursoTaller">-->
+<!--                    <div class="text-bold text-h5">-->
+<!--                      Comprobante de pago Inscripción Curso Taller de 70 Bs-->
+<!--                    </div>-->
+<!--                    <q-file-->
+<!--                      filled-->
+<!--                      v-model="user.file2"-->
+<!--                      label="Comprobante de Inscripción"-->
+<!--                      accept=".pdf, image/*"-->
+<!--                      use-chips-->
+<!--                    />-->
+<!--                  </template>-->
 <!--                  <div>-->
 <!--                    <pre>{{user}}</pre>-->
 <!--                  </div>-->
@@ -172,7 +189,7 @@ export default {
         departamento: '',
         provincia: '',
         direccion: '',
-        cursoTaller: false,
+        cursoTaller: 'Inscribirse a las Jornadas',
         file: null,
         file2: null
       }
