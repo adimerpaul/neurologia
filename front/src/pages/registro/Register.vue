@@ -1,8 +1,27 @@
 <template>
   <q-page class="bg-grey-3 q-pa-md">
     <q-card flat bordered>
-      <q-card-section class="q-pa-xs text-right">
-        <q-btn @click="clickRegistrar" color="green" label="Crear Registro" class="q-mb-md" no-caps />
+      <q-card-section class="q-pa-xs">
+        <div class="row">
+          <div class="col-12 col-md-8">
+<!--            input buscar-->
+            <q-input
+              v-model="search"
+              dense
+              outlined
+              label="Buscar"
+              class="q-mb-md"
+              @update:modelValue="filterRegistros"
+            />
+          </div>
+          <div class="col-12 col-md-2">
+            <q-btn @click="registroGet" color="primary" label="Actualizar Registros" class="q-mb-md" no-caps :loading="loading"
+                   icon="refresh" />
+          </div>
+          <div class="col-12 col-md-2 text-right">
+            <q-btn @click="clickRegistrar" color="green" label="Crear Registro" class="q-mb-md" no-caps icon="add_circle" />
+          </div>
+        </div>
       </q-card-section>
     </q-card>
     <q-markup-table dense wrap-cells flat bordered>
@@ -13,12 +32,13 @@
         <th>CI</th>
         <th>Teléfono</th>
         <th>Ver foto</th>
-        <th>Ver foto</th>
+<!--        <th>Ver foto</th>-->
         <th>Email</th>
         <th>Profesión</th>
         <th>Departamento</th>
         <th>Provincia</th>
         <th>Dirección</th>
+        <th>Curso/Taller</th>
       </tr>
       </thead>
       <tbody>
@@ -63,18 +83,19 @@
             @click="verFoto(registro.file)"
           />
         </td>
-        <td>
-          <q-img
-            :src="`${$url}../storage/${registro.file2}`"
-            style="max-width: 100px; max-height: 100px;"
-            @click="verFoto(registro.file2)"
-          />
-        </td>
+<!--        <td>-->
+<!--          <q-img-->
+<!--            :src="`${$url}../storage/${registro.file2}`"-->
+<!--            style="max-width: 100px; max-height: 100px;"-->
+<!--            @click="verFoto(registro.file2)"-->
+<!--          />-->
+<!--        </td>-->
         <td>{{ registro.email }}</td>
         <td>{{ registro.profession }}</td>
         <td>{{ registro.departamento }}</td>
         <td>{{ registro.provincia }}</td>
         <td>{{ registro.direccion }}</td>
+        <td>{{ registro.cursoTaller }}</td>
       </tr>
       </tbody>
     </q-markup-table>
@@ -138,14 +159,33 @@ export default {
     return {
       loading: false,
       registros: [],
+      registrosAll: [],
       registro: {},
-      registroDialog: false
+      registroDialog: false,
+      search: ''
     }
   },
   mounted () {
     this.registroGet()
   },
   methods: {
+    filterRegistros () {
+      if (this.search) {
+        this.registros = this.registrosAll.filter(registro => {
+          return (
+            registro.firstSurname.toLowerCase().includes(this.search.toLowerCase()) ||
+            registro.secondSurname.toLowerCase().includes(this.search.toLowerCase()) ||
+            registro.firstName.toLowerCase().includes(this.search.toLowerCase()) ||
+            registro.secondName.toLowerCase().includes(this.search.toLowerCase()) ||
+            registro.ci.includes(this.search) ||
+            registro.phone.includes(this.search) ||
+            registro.email.toLowerCase().includes(this.search.toLowerCase())
+          )
+        })
+      } else {
+        this.registros = this.registrosAll
+      }
+    },
     clickRegistrar () {
       this.registro = {}
       this.registroDialog = true
@@ -291,6 +331,7 @@ export default {
       this.$axios.get('/registro')
         .then(response => {
           this.registros = response.data
+          this.registrosAll = response.data
           this.loading = false
         })
         .catch(error => {
