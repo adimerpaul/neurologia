@@ -26,6 +26,9 @@ class RegistroController extends Controller{
             'direccion' => 'required|string',
             'file' => 'required|file|mimes:pdf,jpg,jpeg,png',
 //            'file2' => 'nullable|file|mimes:pdf,jpg,jpeg,png'
+        ],[
+            'file.required' => 'Se debe mandar el documento de comprobante.',
+            'file.mimes' => 'El comprobante debe ser un archivo en formato PDF, JPG, JPEG o PNG.',
         ]);
 
         // Guardar archivos
@@ -36,9 +39,9 @@ class RegistroController extends Controller{
             ...$request->only([
                 'firstSurname', 'secondSurname', 'firstName', 'secondName',
                 'ci', 'phone', 'email', 'profession', 'professionOther',
-                'departamento', 'provincia', 'direccion'
+                'departamento', 'provincia', 'direccion', 'cursoTaller'
             ]),
-            'cursoTaller' => $request->cursoTaller ? 1 : 0,
+//            'cursoTaller' => $request->cursoTaller ? 1 : 0,
             'file' => $path1,
             'file2' => $path2
         ]);
