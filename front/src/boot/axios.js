@@ -28,6 +28,10 @@ export default boot(({ app, router }) => {
       const mes = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
       const dias = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado']
       return `${dias[moment(String(fecha)).format('d')]} ${moment(String(fecha)).format('DD')} de ${mes[moment(String(fecha)).format('MM') - 1]}`
+    },
+    datedmYHi (fecha) {
+      // return `${moment(String(fecha)).format('YYYY-MM-DD HH:mm')}`
+      return `${moment(String(fecha)).format('DD/MM/YYYY HH:mm')}`
     }
   }
   // ^ ^ ^ this will allow you to use this.$axios (for Vue Options API form)

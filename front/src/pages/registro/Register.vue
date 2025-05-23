@@ -39,6 +39,7 @@
         <th>Provincia</th>
         <th>Dirección</th>
         <th>Curso/Taller</th>
+        <th>Fecha</th>
       </tr>
       </thead>
       <tbody>
@@ -96,6 +97,7 @@
         <td>{{ registro.provincia }}</td>
         <td>{{ registro.direccion }}</td>
         <td>{{ registro.cursoTaller }}</td>
+        <td>{{ $filters.datedmYHi(registro.created_at) }}</td>
       </tr>
       </tbody>
     </q-markup-table>
