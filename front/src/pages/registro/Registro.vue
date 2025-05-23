@@ -24,6 +24,7 @@
           <div class="col-12 col-md-2"></div>
           <div class="col-12 col-md-2"></div>
           <div class="col-12 col-md-8">
+            <q-img src="aviso.jpg" class="q-mb-md" />
             <q-card flat bordered>
               <q-card-section>
                 <q-form class="q-gutter-md" @submit.prevent="registrarUsuario">

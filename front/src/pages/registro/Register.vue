@@ -1,6 +1,11 @@
 <template>
   <q-page class="bg-grey-3 q-pa-md">
-    <q-markup-table dense wrap-cells>
+    <q-card flat bordered>
+      <q-card-section class="q-pa-xs text-right">
+        <q-btn @click="clickRegistrar" color="green" label="Crear Registro" class="q-mb-md" no-caps />
+      </q-card-section>
+    </q-card>
+    <q-markup-table dense wrap-cells flat bordered>
       <thead>
       <tr>
         <th>Opciones</th>
@@ -22,10 +27,28 @@
           <q-btn-dropdown color="primary" text-color="white" dense label="Opciones" no-caps size="xs">
             <q-list>
               <q-item clickable @click="crearUsuario(registro)" v-close-popup>
+                <q-item-section avatar>
+                  <q-icon name="person_add" />
+                </q-item-section>
                 <q-item-section>Crear usuario</q-item-section>
               </q-item>
               <q-item clickable @click="mandarRegistro(registro)" v-close-popup>
+                <q-item-section avatar>
+                  <q-icon name="fa-brands fa-whatsapp" />
+                </q-item-section>
                 <q-item-section>Mandar por WhatsApp</q-item-section>
+              </q-item>
+              <q-item clickable @click="editarRegistro(registro)" v-close-popup>
+                <q-item-section avatar>
+                  <q-icon name="visibility" />
+                </q-item-section>
+                <q-item-section>Ver</q-item-section>
+              </q-item>
+              <q-item clickable @click="eliminarRegistro(registro)" v-close-popup>
+                <q-item-section avatar>
+                  <q-icon name="delete" />
+                </q-item-section>
+                <q-item-section>Eliminar</q-item-section>
               </q-item>
             </q-list>
           </q-btn-dropdown>
@@ -55,7 +78,7 @@
       </tr>
       </tbody>
     </q-markup-table>
-<!--    <pre>{{registros}}</pre>-->
+    <pre>{{registros}}</pre>
 <!--    [-->
 <!--    {-->
 <!--    "id": 2,-->
@@ -75,6 +98,36 @@
 <!--    "file": "comprobantes/1cSY4QK5cT9LGi9oKUJX0Qz06uPFrObqn1WPajIA.png",-->
 <!--    "file2": null-->
 <!--    },-->
+    <q-dialog v-model="registroDialog" persistent>
+      <q-card>
+        <q-card-section class="q-pb-none">
+          {{ registro.id ? 'Editar Registro' : 'Crear Registro' }}
+          <q-btn flat icon="close" @click="registroDialog = false" class="absolute-top-right q-mt-xs q-mr-xs" />
+        </q-card-section>
+        <q-card-section>
+          <q-form @submit.prevent="submit">
+            <q-input v-model="registro.firstName" dense outlined label="Nombre" />
+            <q-input v-model="registro.firstSurname" dense outlined label="Apellido Paterno" />
+            <q-input v-model="registro.secondSurname" dense outlined label="Apellido Materno" />
+            <q-input v-model="registro.ci" dense outlined label="CI" />
+            <q-input v-model="registro.phone" dense outlined label="Teléfono" />
+            <q-input v-model="registro.email" dense outlined label="Email" type="email" />
+            <q-input v-model="registro.profession" dense outlined label="Profesión" />
+            <q-input v-model="registro.departamento" dense outlined label="Departamento" />
+            <q-input v-model="registro.provincia" dense outlined label="Provincia" />
+            <q-input v-model="registro.direccion" dense outlined label="Dirección" />
+            <q-input v-model="registro.cursoTaller" dense outlined label="Curso/Taller" />
+<!--            file file2-->
+            <q-file v-model="registro.file" dense outlined label="Comprobante de pago" type="file" />
+            <q-file v-model="registro.file2" dense outlined label="Comprobante de pago 2" type="file" />
+            <div class="q-mt-md">
+              <q-btn type="submit" color="primary">Guardar</q-btn>
+              <q-btn flat @click="registroDialog = false">Cancelar</q-btn>
+            </div>
+          </q-form>
+        </q-card-section>
+      </q-card>
+    </q-dialog>
   </q-page>
 </template>
 <script>
@@ -84,13 +137,63 @@ export default {
     return {
       loading: false,
       registros: [],
-      registro: {}
+      registro: {},
+      registroDialog: false
     }
   },
   mounted () {
     this.registroGet()
   },
   methods: {
+    clickRegistrar () {
+      this.registro = {}
+      this.registroDialog = true
+    },
+    submit () {
+      if (this.registro.id) {
+        // this.updateRegistro()
+      } else {
+        this.crearRegistro()
+      }
+    },
+    crearRegistro () {
+      this.loading = true
+      const formData = new FormData()
+      formData.append('firstName', this.registro.firstName)
+      formData.append('firstSurname', this.registro.firstSurname)
+      formData.append('secondSurname', this.registro.secondSurname)
+      formData.append('ci', this.registro.ci)
+      formData.append('phone', this.registro.phone)
+      formData.append('email', this.registro.email)
+      formData.append('profession', this.registro.profession)
+      formData.append('departamento', this.registro.departamento)
+      formData.append('provincia', this.registro.provincia)
+      formData.append('direccion', this.registro.direccion)
+      formData.append('cursoTaller', this.registro.cursoTaller)
+      formData.append('file', this.registro.file)
+      formData.append('file2', this.registro.file2)
+      this.$axios.post('registro', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
+        .then(res => {
+          this.$q.notify({ type: 'positive', message: res.data.message, position: 'top' })
+          this.registroGet()
+        })
+        .catch(err => {
+          const msg = err.response?.data?.message || 'Error al crear registro'
+          this.$q.notify({ type: 'red', message: msg, position: 'top' })
+        })
+        .finally(() => {
+          this.registroDialog = false
+          this.loading = false
+        })
+    },
+    editarRegistro (registro) {
+      this.registro = { ...registro }
+      this.registroDialog = true
+    },
     mandarRegistro (registro) {
       const numero = registro.phone.replace(/\D/g, '') // limpia espacios o guiones
       const mensaje = `Hola ${registro.firstName}, te damos la bienvenida. Tu cuenta ha sido creada:\n\nUsuario: ${registro.ci}\nContraseña: ${registro.ci}`
