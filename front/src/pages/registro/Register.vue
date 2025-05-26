@@ -78,11 +78,12 @@
         <td>{{ registro.ci }}</td>
         <td>{{ registro.phone }}</td>
         <td>
+          <a :href="`${$url}../storage/${registro.file}`" target="_blank">
           <q-img
           :src="`${$url}../storage/${registro.file}`"
             style="max-width: 100px; max-height: 100px;"
-            @click="verFoto(registro.file)"
           />
+          </a>
         </td>
 <!--        <td>-->
 <!--          <q-img-->
