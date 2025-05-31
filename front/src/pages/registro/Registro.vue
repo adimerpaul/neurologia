@@ -102,7 +102,7 @@
                   <q-file
                     filled
                     v-model="user.file"
-                    label="Comprobante de Inscripción"
+                    :label="mensajeCosto"
                     accept=".pdf, image/*"
                     use-chips
                   />
@@ -245,6 +245,19 @@ export default {
         this.$q.notify({ type: 'negative', message: err.response.data.message, position: 'top' })
         console.error(err.response?.data || err.message)
       }
+    }
+  },
+  // computed mensajeCosto
+  computed: {
+    mensajeCosto () {
+      if (this.user.cursoTaller === 'Inscribirse a las Jornadas') {
+        return 'Comprobante de Inscripción'
+      } else if (this.user.cursoTaller === 'Inscribirse al Taller') {
+        return 'Costo de inscripción 70 bs'
+      } else if (this.user.cursoTaller === 'Inscribirse a ambos') {
+        return 'Debe cancelar un costo adicional de 70 bs. Por el Curso Taller'
+      }
+      return 'Comprobante de Inscripción'
     }
   }
 }
