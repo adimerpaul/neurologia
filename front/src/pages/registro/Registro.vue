@@ -99,10 +99,16 @@
                   <div class="text-bold text-h5 ">
                     Comprobante de pago de Inscripción Jornadas
                   </div>
+<!--                  <q-chip mensajeCosto-->
+                  <q-chip
+                    v-if="user.cursoTaller === 'Inscribirse al Taller' || user.cursoTaller === 'Inscribirse a ambos'"
+                    class="bg-red text-white"
+                    :label="mensajeCosto"
+                  />
                   <q-file
                     filled
                     v-model="user.file"
-                    :label="mensajeCosto"
+                    label="Subir Comprobante de Inscripción"
                     accept=".pdf, image/*"
                     use-chips
                   />
