@@ -161,10 +161,10 @@ export default defineComponent({
 .borderRadius{
   border-radius: 10px;
 }
-.bannerMenu{
+/*.bannerMenuxxx{
   background: url('/images/portadaTono3.jpg') no-repeat center center;
   background-size: cover;
-}
+}*/
 .tituloCarrocel2{
   padding: 10px 20px 20px 10px;
   font-size: 10px;

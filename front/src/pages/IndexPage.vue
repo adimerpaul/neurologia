@@ -1,16 +1,16 @@
 <template>
   <q-page>
-    <div class="bannerMenu">
+    <div class="bannerMenu full-width">
       <div class="q-pa-md text-white text-h4 text-bold">
         <div class="row">
           <div class="col-12 col-md-1 text-center">
-            <q-img src="images/quir blanco2.png" width="70px" />
+            <q-img src="images/quirquincho web.png" width="70px"/>
           </div>
-          <div class="col-12 col-md-2 flex flex-center">
-            <span class="text-subtitle1 q-pr-sm">Aula virtual </span>
-            <span class="text-center textMenu changa">
-              Neuro Oruro
-            </span>
+          <div class="col-12 col-md-2">
+            <!--                <span class="text-subtitle1 q-pr-sm">Aula virtual </span>-->
+            <span class="text-center textMenu changa text-primary">
+                  Neuro Oruro
+                </span>
           </div>
           <div class="col-12 col-md-7"></div>
           <div class="col-12 col-md-2 flex flex-center">
@@ -22,11 +22,12 @@
                 bg-color="white"
                 border-color="white"
                 clearable
+                style="border: 5px solid #001B2C"
               >
                 <template v-slot:append>
-<!--                  <div class="bg-blue">-->
-                    <q-icon name="search" />
-<!--                  </div>-->
+                  <!--                  <div class="bg-blue">-->
+                  <q-icon name="search"/>
+                  <!--                  </div>-->
                 </template>
               </q-input>
             </div>
@@ -40,11 +41,8 @@
       animated
       v-model="slide"
       arrows
-      navigation-icon="radio_button_unchecked"
-      class="q-mt-xs"
       infinite
       autoplay
-      dark
     >
       <q-carousel-slide v-for="(t, i) in textos" :name="i+1" :key="i" class="column no-wrap flex-center" :img-src="t.img">
         <div class="text-center full-width q-pa-lg background">
@@ -59,19 +57,19 @@
             {{ t.fecha }}
           </div>
           <div>
-            <q-btn color="primary" class="q-mt-md " rounded  no-caps to="/login">
-              <div class="changa button" >Ingresa Aqui</div>
+            <q-btn color="primary" class="q-mt-md " rounded no-caps to="/login">
+              <div class="changa button">Ingresa Aqui</div>
             </q-btn>
-            <q-btn color="white" class="q-mt-md " rounded  no-caps to="/inscripcion" outline>
-              <div class="changa button" >Inscribirse</div>
+            <q-btn color="white" class="q-mt-md " rounded no-caps to="/inscripcion" outline>
+              <div class="changa button">Inscribirse</div>
             </q-btn>
           </div>
           <div style="position: absolute; bottom: 0; right: 0; padding: 10px 10px 10px 10px;margin: 5px">
-<!--            <div class="flex flex-center">-->
-<!--                <q-img :src="t.imgButton" width="45px" />-->
-<!--                <div class="changa tituloCarrocel" v-html="t.textButton">-->
-<!--                </div>-->
-<!--            </div>-->
+            <!--            <div class="flex flex-center">-->
+            <!--                <q-img :src="t.imgButton" width="45px" />-->
+            <!--                <div class="changa tituloCarrocel" v-html="t.textButton">-->
+            <!--                </div>-->
+            <!--            </div>-->
             <div class="">
               <img
                 class="demo-bg"
@@ -80,32 +78,32 @@
               >
               <div class="demo-content">
                 <div class="flex flex-center">
-                    <q-img :src="t.imgButton" width="45px" />
-                    <div class="changa tituloCarrocel" v-html="t.textButton">
-                    </div>
+                  <q-img :src="t.imgButton" width="45px"/>
+                  <div class="changa tituloCarrocel" v-html="t.textButton">
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-<!--          <q-img src="images/logoColMed3.png" width="30px" />-->
-<!--          <div class="changa tituloCarrocel">-->
-<!--            Colegio Medico Oruro-->
-<!--          </div>-->
+          <!--          <q-img src="images/logoColMed3.png" width="30px" />-->
+          <!--          <div class="changa tituloCarrocel">-->
+          <!--            Colegio Medico Oruro-->
+          <!--          </div>-->
         </div>
       </q-carousel-slide>
-<!--      <template v-slot:control>-->
-<!--        <q-carousel-control-->
-<!--          position="bottom-right"-->
-<!--          :offset="[18, 18]"-->
-<!--          class="text-white rounded-borders"-->
-<!--          style="background: rgba(0, 0, 0, .3); padding: 4px 8px;"-->
-<!--        >-->
-<!--          <q-img src="images/logoColMed3.png" width="30px" />-->
-<!--          <div class="changa tituloCarrocel">-->
-<!--            Colegio Medico Oruro-->
-<!--          </div>-->
-<!--        </q-carousel-control>-->
-<!--      </template>-->
+      <!--      <template v-slot:control>-->
+      <!--        <q-carousel-control-->
+      <!--          position="bottom-right"-->
+      <!--          :offset="[18, 18]"-->
+      <!--          class="text-white rounded-borders"-->
+      <!--          style="background: rgba(0, 0, 0, .3); padding: 4px 8px;"-->
+      <!--        >-->
+      <!--          <q-img src="images/logoColMed3.png" width="30px" />-->
+      <!--          <div class="changa tituloCarrocel">-->
+      <!--            Colegio Medico Oruro-->
+      <!--          </div>-->
+      <!--        </q-carousel-control>-->
+      <!--      </template>-->
     </q-carousel>
     <div>
       <div class="text-center">
@@ -116,24 +114,24 @@
     </div>
     <div class="row">
       <div class="col-12 flex flex-center bg-grey-2">
-          <div class="q-pa-xs">
-            <q-img src="logos/bago.png" width="100px"  />
-          </div>
-<!--          <div class="q-pa-xs">-->
-<!--            <q-img src="logos/breskot pharma.png" width="80px"  />-->
-<!--          </div>-->
-<!--          <div class="q-pa-xs">-->
-<!--            <q-img src="logos/ferrer.png" width="80px"  />-->
-<!--          </div>-->
-<!--          <div class="q-pa-xs">-->
-<!--            <q-img src="logos/IMG_20230805_161256.jpg" width="60px"  />-->
-<!--          </div>-->
-<!--          <div class="q-pa-xs">-->
-<!--            <q-img src="logos/megalabs.png" width="80px"  />-->
-<!--          </div>-->
-<!--          <div class="q-pa-xs">-->
-<!--            <q-img src="logos/saval.png" width="55px"  />-->
-<!--          </div>-->
+        <div class="q-pa-xs">
+          <q-img src="logos/bago.png" width="100px"/>
+        </div>
+        <!--          <div class="q-pa-xs">-->
+        <!--            <q-img src="logos/breskot pharma.png" width="80px"  />-->
+        <!--          </div>-->
+        <!--          <div class="q-pa-xs">-->
+        <!--            <q-img src="logos/ferrer.png" width="80px"  />-->
+        <!--          </div>-->
+        <!--          <div class="q-pa-xs">-->
+        <!--            <q-img src="logos/IMG_20230805_161256.jpg" width="60px"  />-->
+        <!--          </div>-->
+        <!--          <div class="q-pa-xs">-->
+        <!--            <q-img src="logos/megalabs.png" width="80px"  />-->
+        <!--          </div>-->
+        <!--          <div class="q-pa-xs">-->
+        <!--            <q-img src="logos/saval.png" width="55px"  />-->
+        <!--          </div>-->
       </div>
     </div>
   </q-page>
@@ -150,27 +148,27 @@ export default defineComponent({
       slide: 1,
       textos: [
         {
-          titulo: '4ta. JORNADA NACIONAL DE NEUROLOGÍA',
-          subtitulo: 'Actualización en Enfermedades Neurológicas',
-          fecha: '13, 14, 15 de septiembre',
-          img: 'WhatsApp Image 2023-08-05 at 15.53.45.jpeg',
-          imgButton: 'images/logoColMed3.png',
+          titulo: '5ta. JORNADA NACIONAL DE NEUROLOGÍA',
+          subtitulo: 'Avances en diagnóstico y tratamiento de enfermedades neurológicas',
+          fecha: '12, 13, 14 de Junio',
+          img: 'images/1.jpeg',
+          imgButton: 'images/logoSBN3 mejorado.gif',
           textButton: 'Colegio Médico <br> De Oruro'
         },
         {
-          titulo: '2DO. SIMPOSIO INTERNACIONAL',
-          subtitulo: 'Emergencias Neurológicas',
-          fecha: '16 y 17 de septiembre',
-          img: 'WhatsApp Image 2023-08-05 at 15.53.45 (1).jpeg',
-          imgButton: 'images/logoSBN3.gif',
+          titulo: '1er CURSO TALLER DE EXPLORACIÓN NEUROLÓGICA',
+          subtitulo: 'Curso teórico práctico',
+          fecha: '13 de Junio',
+          img: 'images/3.jpg',
+          imgButton: 'images/logoColMed3.png',
           textButton: 'Sociedad Boliviana <br> De Neurologia'
         },
         {
-          titulo: 'AULA VIRTUAL: Transmisión en vivo',
-          subtitulo: 'Material de aprendizaje',
-          fecha: '',
-          img: 'images/WhatsApp Image 2023-08-28 at 20.04.20.jpeg',
-          imgButton: 'images/quir blanco2.png',
+          titulo: 'TRANSMISIÓN EN VIVO Y AULA VIRTUAL',
+          subtitulo: 'Transmisión en vivo de las jornadas',
+          fecha: '12, 13, 14 de Junio',
+          img: 'images/aula2.jpg',
+          imgButton: 'images/quirquincho blanco.png',
           textButton: 'Neuro Oruro'
         }
       ]
@@ -184,35 +182,41 @@ export default defineComponent({
   color: white;
   height: 90vh;
 }
-.titulo{
+
+.titulo {
   padding: 10px;
   font-size: 50px;
   line-height: 1;
   letter-spacing: 1px;
   max-width: 600px;
 }
-.button{
+
+.button {
   max-width: 100px;
   line-height: 1
 }
-.subtitulo{
+
+.subtitulo {
   padding: 10px 30px;
   font-size: 30px;
 }
-.borderRadius{
+
+.borderRadius {
   border-radius: 10px;
 }
 .bannerMenu{
-  background: url('/images/portadaTono4.jpg') no-repeat center center;
+  background: url('/images/franja.jpg') no-repeat center center;
   background-size: cover;
 }
-.tituloCarrocel{
+
+.tituloCarrocel {
   padding: 20px 30px 30px 20px;
   font-size: 15px;
   line-height: 1;
   letter-spacing: 1px;
   color: white;
 }
+
 .demo-wrap {
   overflow: hidden;
   position: relative;
@@ -225,21 +229,25 @@ export default defineComponent({
   top: 10px;
   width: 100%;
 }
+
 .demo-content {
   position: relative;
 }
+
 @media (max-width: 1024px) {
-  .titulo{
+  .titulo {
     padding: 50px 0px 0px 0px;
     font-size: 25px;
     font-weight: 900;
   }
-  .subtitulo{
+
+  .subtitulo {
     padding: 5px 10px;
     font-size: 15px;
     font-weight: 900;
   }
-  .textMenu{
+
+  .textMenu {
     font-size: 20px;
   }
 }
