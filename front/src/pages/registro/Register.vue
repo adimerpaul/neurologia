@@ -3,8 +3,10 @@
     <q-card flat bordered>
       <q-card-section class="q-pa-xs">
         <div class="row">
-          <div class="col-12 col-md-8">
-<!--            input buscar-->
+          <div class="col-12 col-md-2">
+            Total Registros: <strong>{{ registros.length }}</strong>
+          </div>
+          <div class="col-12 col-md-6">
             <q-input
               v-model="search"
               dense
@@ -15,11 +17,11 @@
             />
           </div>
           <div class="col-12 col-md-2">
-            <q-btn @click="registroGet" color="primary" label="Actualizar Registros" class="q-mb-md" no-caps :loading="loading"
+            <q-btn @click="registroGet" color="primary" label="Actualizar" class="q-mb-md" no-caps :loading="loading"
                    icon="refresh" />
           </div>
           <div class="col-12 col-md-2 text-right">
-            <q-btn @click="clickRegistrar" color="green" label="Crear Registro" class="q-mb-md" no-caps icon="add_circle" />
+            <q-btn @click="clickRegistrar" color="green" label="Crear" class="q-mb-md" no-caps icon="add_circle" />
           </div>
         </div>
       </q-card-section>
@@ -45,34 +47,37 @@
       <tbody>
       <tr v-for="(registro, index) in registros" :key="index">
         <td>
-          <q-btn-dropdown color="primary" text-color="white" dense label="Opciones" no-caps size="xs" :loading="loading">
-            <q-list>
-              <q-item clickable @click="crearUsuario(registro)" v-close-popup>
-                <q-item-section avatar>
-                  <q-icon name="person_add" />
-                </q-item-section>
-                <q-item-section>Crear usuario</q-item-section>
-              </q-item>
-              <q-item clickable @click="mandarRegistro(registro)" v-close-popup>
-                <q-item-section avatar>
-                  <q-icon name="fa-brands fa-whatsapp" />
-                </q-item-section>
-                <q-item-section>Mandar por WhatsApp</q-item-section>
-              </q-item>
-              <q-item clickable @click="editarRegistro(registro)" v-close-popup>
-                <q-item-section avatar>
-                  <q-icon name="visibility" />
-                </q-item-section>
-                <q-item-section>Ver</q-item-section>
-              </q-item>
-              <q-item clickable @click="eliminarRegistro(registro)" v-close-popup>
-                <q-item-section avatar>
-                  <q-icon name="delete" />
-                </q-item-section>
-                <q-item-section>Eliminar</q-item-section>
-              </q-item>
-            </q-list>
-          </q-btn-dropdown>
+          <div style="display: flex; align-items: center; gap: 5px;">
+            {{ index + 1 }}
+            <q-btn-dropdown color="primary" text-color="white" dense label="Opciones" no-caps size="xs" :loading="loading">
+              <q-list>
+                <q-item clickable @click="crearUsuario(registro)" v-close-popup>
+                  <q-item-section avatar>
+                    <q-icon name="person_add" />
+                  </q-item-section>
+                  <q-item-section>Crear usuario</q-item-section>
+                </q-item>
+                <q-item clickable @click="mandarRegistro(registro)" v-close-popup>
+                  <q-item-section avatar>
+                    <q-icon name="fa-brands fa-whatsapp" />
+                  </q-item-section>
+                  <q-item-section>Mandar por WhatsApp</q-item-section>
+                </q-item>
+                <q-item clickable @click="editarRegistro(registro)" v-close-popup>
+                  <q-item-section avatar>
+                    <q-icon name="visibility" />
+                  </q-item-section>
+                  <q-item-section>Ver</q-item-section>
+                </q-item>
+                <q-item clickable @click="eliminarRegistro(registro)" v-close-popup>
+                  <q-item-section avatar>
+                    <q-icon name="delete" />
+                  </q-item-section>
+                  <q-item-section>Eliminar</q-item-section>
+                </q-item>
+              </q-list>
+            </q-btn-dropdown>
+          </div>
         </td>
         <td>{{ registro.firstSurname }} {{ registro.secondSurname }} {{ registro.firstName }} {{ registro.secondName }}</td>
         <td>{{ registro.ci }}</td>
