@@ -1,7 +1,7 @@
 // app global css in SCSS form
 @font-face {
   font-family: customfont;
-  src: url("fonts/RobotoCondensed-Regular.ttf");
+  src: url("fonts/LeagueSpartan-Bold.otf");
 }
 @font-face {
   font-family: changa;
@@ -19,7 +19,7 @@
   font-weight: 700;
 }
 * {
-  font-family: 'montserrat', sans-serif;
+  font-family: customfont, montserrat, sans-serif;
 }
 .changa{
   font-family: changa;
