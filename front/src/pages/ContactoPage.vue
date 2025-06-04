@@ -1,102 +1,62 @@
 <template>
-      <q-page class="fondo q-pa-lg">
-        <div class="row">
-          <div class="col-12">
-            <q-card class="q-pa-md bg-grey-3">
-              <q-card-section class="text-h4 fondo">
-                <div class="text-center text-bold text-white">
-                  CONTACTOS
-                </div>
-              </q-card-section>
-              <q-card-section class="q-pa-none">
-                <div class="row">
-                  <div class="col-12 col-md-4"></div>
-                  <div class="col-12 col-md-8">
-                    <q-btn type="a" target="_blank" href="https://www.facebook.com/profile.php?id=100068249745954" flat dense
-                           size="22px" color="primary" class="q-ma-md"
-                    >
-                      <div class="row items-center no-wrap">
-                        <q-icon left name="fa-brands fa-facebook" />
-                        <div class="text-left text-grey text-subtitle2 text-bold " style="line-height: 1.2;">
-                          Facebook<br>4ta. Jornada <br>Nacional de Neurología
-                        </div>
-                      </div>
-                    </q-btn>
+  <q-page class="fondo q-pa-lg">
+    <div class="row justify-center">
+      <div class="col-12 col-md-10">
+        <q-card class="q-pa-md bg-grey-2">
+          <q-card-section class="text-h4 fondo">
+            <div class="text-center text-bold text-primary">
+              CONTACTOS
+            </div>
+          </q-card-section>
+
+          <q-card-section class="q-mt-md">
+            <div class="row q-col-gutter-md q-px-md">
+
+              <!-- Facebook -->
+              <div class="col-12 col-md-4">
+                <q-btn type="a" target="_blank"
+                       href="https://www.facebook.com/profile.php?id=100068249745954"
+                       color="primary" class="full-width q-pa-sm" rounded outline>
+                  <q-icon name="fa-brands fa-facebook" size="md" class="q-mr-sm" />
+                  <span class="text-subtitle2 text-weight-medium">Facebook<br>5ta Jornada Nacional de Neurología</span>
+                </q-btn>
+              </div>
+
+              <!-- WhatsApp -->
+              <div class="col-12 col-md-4">
+                <q-btn flat dense class="full-width q-pa-sm text-left text-green-8" style="cursor: default">
+                  <q-icon name="fa-brands fa-whatsapp" size="md" class="q-mr-sm" />
+                  <div class="text-subtitle2 text-weight-medium">
+                    Cel: 7247581<br>
+                    Cel: 61823204<br>
+                    Cel: 60401730
                   </div>
-                  <div class="col-12 col-md-4"></div>
-                  <div class="col-12 col-md-8">
-                    <q-btn type="a" target="_blank" href="https://www.facebook.com/profile.php?id=100068249745954" flat dense
-                           size="22px" color="green-5" class="q-ma-md"
-                    >
-                      <div class="row items-center no-wrap">
-                        <q-icon left name="fa-brands fa-whatsapp" />
-                        <div class="text-left text-grey text-subtitle2 text-bold " style="line-height: 1.2;">
-                          Cel: 7247581 <br>
-                          Cel: 61823204 <br>
-                          Cel: 60401730
-                        </div>
-                      </div>
-                    </q-btn>
+                </q-btn>
+              </div>
+
+              <!-- Página Web -->
+              <div class="col-12 col-md-4">
+                <q-btn flat dense class="full-width q-pa-sm text-left text-blue-9" style="cursor: default">
+                  <q-icon name="o_public" size="md" class="q-mr-sm" />
+                  <div class="text-subtitle2 text-weight-medium">
+                    Página web:<br>
+                    <a href="https://jornadasimposioneurooruro.org/" target="_blank"
+                       class="text-primary text-underline">
+                      jornadasimposioneurooruro.org
+                    </a>
                   </div>
-                  <div class="col-12 col-md-4"></div>
-                  <div class="col-12 col-md-8">
-                    <q-btn type="a" target="_blank" href="https://www.facebook.com/profile.php?id=100068249745954" flat dense
-                           size="22px" color="primary" class="q-ma-md"
-                    >
-                      <div class="row items-center no-wrap">
-                        <q-icon left name="o_public" />
-                        <div class="text-left text-grey text-subtitle2 text-bold text-capitalize" style="line-height: 1.2;">
-                          Pagina web: <br>
-                          <a href="https://jornadasimposioneurooruro.org/">https://jornadasimposioneurooruro.org/</a>
-                        </div>
-                      </div>
-                    </q-btn>
-                  </div>
-<!--                  <div class="col-6 col-md-3 flex flex-center">-->
-<!--                    <q-btn type="a" target="_blank" href="https://www.facebook.com/profile.php?id=100068249745954" flat dense-->
-<!--                           size="22px" color="primary" class="q-ma-md"-->
-<!--                    >-->
-<!--                      <div class="row items-center no-wrap">-->
-<!--                        <q-icon left name="fa-brands fa-whatsapp" />-->
-<!--                        <div class="text-left text-grey text-subtitle2 text-bold " style="line-height: 1.2;">-->
-<!--                          Facebook<br>4ta. Jornada Nacional de Neurología-->
-<!--                        </div>-->
-<!--                      </div>-->
-<!--                    </q-btn>-->
-<!--                  </div>-->
-                </div>
-              </q-card-section>
-            </q-card>
-          </div>
-        </div>
-      </q-page>
+                </q-btn>
+              </div>
+
+            </div>
+          </q-card-section>
+        </q-card>
+      </div>
+    </div>
+  </q-page>
 </template>
-
-<script>
-
-export default {
-  name: 'ContactoPage',
-  data () {
-    return {
-      programas: []
-    }
-  },
-  mounted () {
-    this.$axios.get('programa')
-      .then(response => {
-        this.programas = response.data
-      })
-      .catch(error => {
-        this.$alert.error(error.response.data.message)
-      })
-  },
-  methods: {
-  }
-}
-</script>
-
 <style scoped>
-.fondo{
+.fondo {
   background-image: url("/images/portadaTono4.jpg");
   background-repeat: no-repeat;
   background-size: cover;
