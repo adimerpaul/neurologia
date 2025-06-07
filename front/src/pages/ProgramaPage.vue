@@ -1,15 +1,15 @@
 <template>
-      <q-page class="fondo q-pa-lg">
+      <q-page class="fondoA q-pa-lg">
         <div class="row">
           <div class="col-12">
             <q-card class="q-pa-md bg-grey-3">
-              <q-card-section class="text-h4 fondo">
+              <q-card-section class="text-h4 fondoA">
                 <div class="text-center text-bold text-white">
-                  PROGRAMA GENERAL
+                  PROGRAMA GENERAL JORNADAS
                 </div>
               </q-card-section>
               <q-card-section class="q-pa-none">
-                <div class="row">
+                <div class="row flex flex-center">
 <!--                  <q-card v-for="p in programas" :key="p.date" class="q-my-md">-->
 <!--                    <q-card-section >-->
 <!--                      <div class="text-h6 text-blue-10 text-bold text-center" style="text-decoration: underline;">-->
@@ -84,6 +84,24 @@
                         <li><strong>13:50</strong> - Clausura<br>Dr. Héctor Copa Magne</li>
                       </ul>
                     </q-card-section>
+                    <!-- Taller - Viernes 13 de Junio -->
+                    <div class="q-pa-md">
+                      <div class="text-h6 text-center text-bold text-black mt-md">
+                        1er Curso Taller de Exploración Neurológica
+                      </div>
+                      <div class="text-subtitle2 text-bold text-black ">Coordinador: Dr. Jaime López</div>
+                      <div class="text-subtitle2 text-bold text-black ">Horario: 9:00 a 13:00</div>
+                      <ul class="texto-programa q-mt-sm">
+                        <li><strong>Funciones mentales</strong><br>Dr. Juan Carlos Fernández Colque</li>
+                        <li><strong>Pares craneales: I al VI pares</strong><br>Dr. Amilkar Moruno</li>
+                        <li><strong>Pares craneales: VII al XII pares</strong><br>Dr. Steve Roy Aguilar Apaza</li>
+                        <li><strong>Motor</strong><br>Dr. Igor Oliver Quilo Álvarez</li>
+                        <li><strong>Sensibilidad</strong><br>Dr. Ramiro André Herrera Cuajera</li>
+                        <li><strong>Marcha</strong><br>Dr. Gabriel Darío Santiestevez Ruiz</li>
+                        <li><strong>Cerebelo y signos meníngeos</strong><br>Dra. Gissel Torrez Lazcano</li>
+                        <li><em>Nota:</em> La modalidad será por grupos divididos de acuerdo a la cantidad de participantes inscritos al Taller, los cuales irán rotando por cada estación. Haciendo un total de 15 a 20 minutos por cada estación. Al concluir se evaluará a los participantes.</li>
+                      </ul>
+                    </div>
 
                   </q-card>
                 </div>
@@ -124,8 +142,8 @@ export default {
 </script>
 
 <style scoped>
-.fondo{
-  background-image: url("/images/portadaTono4.jpg");
+.fondoA{
+  background-image: url("/images/plomoOscuro.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

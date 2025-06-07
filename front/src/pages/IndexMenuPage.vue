@@ -30,7 +30,7 @@
       <q-carousel-slide v-for="(t, i) in textos" :name="i+1" :key="i" class="column no-wrap flex-center" :img-src="t.img">
         <div class="text-center full-width q-pa-lg background">
           <div class="flex flex-center">
-            <div class="titulo league-spartan">
+            <div class="titulo2 league-spartan">
               {{ t.titulo }}
             </div>
           </div>
@@ -63,7 +63,7 @@
     <div class="row q-pa-lg">
       <div class="col-12 flex flex-center">
         <iframe :width="$q.screen.lt.md ? '80%' : '70%'"
-                height="400px" src="https://youtu.be/fotAwmJo-Fc" title="JORNADAS Y SIMPOSIO NEROLOGÍA ORURO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                height="400px" src="https://www.youtube.com/embed/fotAwmJo-Fc" title="JORNADAS Y SIMPOSIO NEROLOGÍA ORURO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
     <div>
@@ -143,9 +143,9 @@ export default defineComponent({
   color: white;
   height: 90vh;
 }
-.titulo{
-  padding: 10px;
-  font-size: 50px;
+.titulo2{
+  padding: 5px;
+  font-size: 30px;
   line-height: 1;
   letter-spacing: 1px;
   max-width: 600px;

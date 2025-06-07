@@ -4,7 +4,7 @@
       <div class="col-12 col-md-10">
         <q-card class="q-pa-md bg-grey-2">
           <q-card-section class="text-h4 fondo">
-            <div class="text-center text-bold text-primary">
+            <div class="text-center text-bold text-white">
               CONTACTOS
             </div>
           </q-card-section>
@@ -57,7 +57,7 @@
 </template>
 <style scoped>
 .fondo {
-  background-image: url("/images/portadaTono4.jpg");
+  background-image: url("/images/plomoOscuro.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

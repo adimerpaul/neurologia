@@ -120,7 +120,7 @@
     <div class="row">
       <div class="col-12 flex flex-center bg-grey-2">
         <div class="q-pa-xs">
-          <q-img src="logos/bago.png" width="100px"/>
+          <q-img src="images/oficial.jpeg" width="100px"/>
         </div>
         <!--          <div class="q-pa-xs">-->
         <!--            <q-img src="logos/breskot pharma.png" width="80px"  />-->
