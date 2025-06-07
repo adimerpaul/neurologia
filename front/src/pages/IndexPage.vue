@@ -64,7 +64,7 @@
               <div class="changa button">Inscribirse</div>
             </q-btn>
           </div>
-          <div style="position: absolute; bottom: 0; right: 0; padding: 10px 10px 10px 10px;margin: 5px;width: 200px;height:50px;background-image: url('/images/fondoAzul.png');background-size: cover;">
+          <div style="position: absolute; bottom: 0; right: 0; padding: 10px 10px 10px 10px;margin: 5px;width: 200px;height:50px;background-image: url('/images/figura.png');background-size: cover;">
             <div style="display: flex; align-items: center; justify-content: center;">
               <div class="changa" v-html="t.textButton">
               </div>
