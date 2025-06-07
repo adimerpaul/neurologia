@@ -141,25 +141,25 @@
                 Viernes 15-Sep-2023
               </q-item-section>
             </q-item>
-            <q-item-label header >
-              2da Simposio Internacional de Neurología
-            </q-item-label>
-            <q-item clickable to="/dia13/2023-09-16" exact active-class="bg-primary text-white text-bold">
-              <q-item-section avatar>
-                <q-icon name="event_available" />
-              </q-item-section>
-              <q-item-section>
-                Sábado 16-Sep-2023
-              </q-item-section>
-            </q-item>
-            <q-item clickable to="/dia13/2023-09-17" exact active-class="bg-primary text-white text-bold">
-              <q-item-section avatar>
-                <q-icon name="event_available" />
-              </q-item-section>
-              <q-item-section>
-                Domingo 17-Sep-2023
-              </q-item-section>
-            </q-item>
+<!--            <q-item-label header >-->
+<!--              2da Simposio Internacional de Neurología-->
+<!--            </q-item-label>-->
+<!--            <q-item clickable to="/dia13/2025-06-12" exact active-class="bg-primary text-white text-bold">-->
+<!--              <q-item-section avatar>-->
+<!--                <q-icon name="event_available" />-->
+<!--              </q-item-section>-->
+<!--              <q-item-section>-->
+<!--                Sábado 16-Sep-2023-->
+<!--              </q-item-section>-->
+<!--            </q-item>-->
+<!--            <q-item clickable to="/dia13/2023-09-17" exact active-class="bg-primary text-white text-bold">-->
+<!--              <q-item-section avatar>-->
+<!--                <q-icon name="event_available" />-->
+<!--              </q-item-section>-->
+<!--              <q-item-section>-->
+<!--                Domingo 17-Sep-2023-->
+<!--              </q-item-section>-->
+<!--            </q-item>-->
             <q-item clickable to="/biblioteca" exact active-class="bg-primary text-white text-bold">
               <q-item-section avatar>
                 <q-icon name="o_library_books" />

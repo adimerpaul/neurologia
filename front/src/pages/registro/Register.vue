@@ -83,12 +83,19 @@
         <td>{{ registro.ci }}</td>
         <td>{{ registro.phone }}</td>
         <td>
-          <a :href="`${$url}../storage/${registro.file}`" target="_blank">
+          <a :href="`${$url}../storage/${registro.file}`" target="_blank" title="Ver foto 1" >
           <q-img
           :src="`${$url}../storage/${registro.file}`"
             style="max-width: 100px; max-height: 100px;"
           />
           </a>
+          <a :href="`${$url}../storage/${registro.file2}`" target="_blank" title="Ver foto 2" >
+            <q-img
+              :src="`${$url}../storage/${registro.file2}`"
+              style="max-width: 100px; max-height: 100px;"
+            />
+          </a>
+<!--          <pre>{{registro}}</pre>-->
         </td>
 <!--        <td>-->
 <!--          <q-img-->

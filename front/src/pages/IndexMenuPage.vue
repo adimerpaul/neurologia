@@ -41,22 +41,22 @@
           </div>
           <div>
           </div>
-          <div style="position: absolute; bottom: 0; right: 0; padding: 10px 10px 10px 10px;margin: 5px">
-            <div class="">
-              <img
-                class="demo-bg2"
-                src="images/fondoAzul.png"
-                alt=""
-              >
-              <div class="demo-content2">
-                <div class="flex flex-center">
-                  <q-img :src="t.imgButton" width="35px" />
-                  <div class="changa tituloCarrocel2" v-html="t.textButton">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+<!--          <div style="position: absolute; bottom: 0; right: 0; padding: 10px 10px 10px 10px;margin: 5px">-->
+<!--            <div class="">-->
+<!--              <img-->
+<!--                class="demo-bg2"-->
+<!--                src="images/fondoAzul.png"-->
+<!--                alt=""-->
+<!--              >-->
+<!--              <div class="demo-content2">-->
+<!--                <div class="flex flex-center">-->
+<!--                  <q-img :src="t.imgButton" width="35px" />-->
+<!--                  <div class="changa tituloCarrocel2" v-html="t.textButton">-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
         </div>
       </q-carousel-slide>
     </q-carousel>
@@ -109,29 +109,29 @@ export default defineComponent({
       slide: 1,
       textos: [
         {
-          titulo: '4ta. JORNADA NACIONAL DE NEUROLOGÍA',
+          titulo: '5ta. JORNADA NACIONAL DE NEUROLOGÍA',
           subtitulo: 'Actualización en Enfermedades Neurológicas',
-          fecha: '13, 14, 15 de septiembre',
+          fecha: '12 - 13 - 14 JUNIO',
           img: 'WhatsApp Image 2023-08-05 at 15.53.45.jpeg',
           imgButton: 'images/logoColMed3.png',
           textButton: 'Colegio Médico <br> De Oruro'
-        },
-        {
-          titulo: '2DO. SIMPOSIO INTERNACIONAL',
-          subtitulo: 'Emergencias Neurológicas',
-          fecha: '16 y 17 de septiembre',
-          img: 'WhatsApp Image 2023-08-05 at 15.53.45 (1).jpeg',
-          imgButton: 'images/logoSBN3.gif',
-          textButton: 'Sociedad Boliviana <br> De Neurologia'
-        },
-        {
-          titulo: 'AULA VIRTUAL: Transmisión en vivo',
-          subtitulo: 'Material de aprendizaje',
-          fecha: '',
-          img: 'images/WhatsApp Image 2023-08-28 at 20.04.20.jpeg',
-          imgButton: 'images/quir blanco2.png',
-          textButton: 'Neuro Oruro'
         }
+        // {
+        //   titulo: '2DO. SIMPOSIO INTERNACIONAL',
+        //   subtitulo: 'Emergencias Neurológicas',
+        //   fecha: '16 y 17 de septiembre',
+        //   img: 'WhatsApp Image 2023-08-05 at 15.53.45 (1).jpeg',
+        //   imgButton: 'images/logoSBN3.gif',
+        //   textButton: 'Sociedad Boliviana <br> De Neurologia'
+        // },
+        // {
+        //   titulo: 'AULA VIRTUAL: Transmisión en vivo',
+        //   subtitulo: 'Material de aprendizaje',
+        //   fecha: '',
+        //   img: 'images/WhatsApp Image 2023-08-28 at 20.04.20.jpeg',
+        //   imgButton: 'images/quir blanco2.png',
+        //   textButton: 'Neuro Oruro'
+        // }
       ]
     }
   }
