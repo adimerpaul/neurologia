@@ -103,20 +103,20 @@ class RegistroController extends Controller{
         }
 
         $user = User::create([
-            'firstName' => $registro->firstName,
-            'secondName' => $registro->secondName,
-            'lastName' => $registro->firstSurname,
-            'secondLastName' => $registro->secondSurname,
-            'ci' => $registro->ci,
-            'phone' => $registro->phone,
-            'celular' => $registro->phone,
-            'email' => $registro->email,
-            'correo' => $registro->email,
-            'profession' => $registro->profession,
-            'departamento' => $registro->departamento,
-            'provincia' => $registro->provincia,
-            'direccion' => $registro->direccion,
-            'password' => Hash::make($registro->ci), // contraseña = ci
+            'firstName' => $registro->firstName?? '',
+            'secondName' => $registro->secondName ?? '',
+            'lastName' => $registro->firstSurname ?? '',
+            'secondLastName' => $registro->secondSurname ?? '',
+            'ci' => $registro->ci ?? '',
+            'phone' => $registro->phone ?? '',
+            'celular' => $registro->phone ?? '',
+            'email' => $registro->email ?? '',
+            'correo' => $registro->email ?? '',
+            'profession' => $registro->profession ?? '',
+            'departamento' => $registro->departamento ?? '',
+            'provincia' => $registro->provincia ?? '',
+            'direccion' => $registro->direccion ?? '',
+            'password' => Hash::make($registro->ci) ?? '',
         ]);
 
         return response()->json([
