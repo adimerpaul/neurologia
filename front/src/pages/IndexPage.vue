@@ -113,7 +113,7 @@
     <div>
       <div class="text-center">
         <span class="changa text-h6 text-bold text-white bg-grey-9 q-pa-xs borderRadius">
-          AUSPICIADOR OFICIAL
+          CASAS AUSPICIADORAS
         </span>
       </div>
     </div>

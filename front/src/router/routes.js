@@ -16,7 +16,8 @@ const routes = [
       { path: '', component: () => import('pages/IndexPage.vue') },
       { path: '/programa', component: () => import('pages/ProgramaPage.vue') },
       { path: '/contacto', component: () => import('pages/ContactoPage.vue') },
-      { path: '/mapa', component: () => import('pages/MapaPage.vue') }
+      { path: '/mapa', component: () => import('pages/MapaPage.vue') },
+      { path: '/expositores', component: () => import('pages/ExpositoresPage.vue') }
     ]
   },
   {

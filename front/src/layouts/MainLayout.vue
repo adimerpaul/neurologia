@@ -7,6 +7,7 @@
           <q-tabs shrink class="text-white">
             <q-route-tab name="Inicio" label="Inicio" to="/" no-caps exactActiveClass="text-bold"/>
             <q-route-tab name="Programa general" label="Programa general" to="/programa" no-caps exact-active-class="text-bold"/>
+            <q-route-tab name="Expositores" label="Expositores" to="/expositores" no-caps exact-active-class="text-bold"/>
             <q-route-tab name="Contactos" label="Contactos" to="/contacto" no-caps exact-active-class="text-bold"/>
             <q-route-tab name="Mapa" label="Lugar Evento" to="/mapa" no-caps exact-active-class="text-bold"/>
             <q-tab name="ingresar" no-caps>
