@@ -119,8 +119,8 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <div class="q-pa-md">
-          <q-img src="images/oficial.jpeg"/>
+        <div class="q-pa-lg text-center">
+          <q-img src="images/oficial.jpeg" width="50%" class="borderRadius" />
         </div>
         <!--          <div class="q-pa-xs">-->
         <!--            <q-img src="logos/breskot pharma.png" width="80px"  />-->
