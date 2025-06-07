@@ -30,11 +30,11 @@
       <q-carousel-slide v-for="(t, i) in textos" :name="i+1" :key="i" class="column no-wrap flex-center" :img-src="t.img">
         <div class="text-center full-width q-pa-lg background">
           <div class="flex flex-center">
-            <div class="titulo changa">
+            <div class="titulo league-spartan">
               {{ t.titulo }}
             </div>
           </div>
-          <div class="subtitulo changa">
+          <div class="subtitulo league-spartan">
             {{ t.subtitulo }}
             <br>
             {{ t.fecha }}
@@ -63,7 +63,7 @@
     <div class="row q-pa-lg">
       <div class="col-12 flex flex-center">
         <iframe :width="$q.screen.lt.md ? '80%' : '70%'"
-                height="400px" src="https://www.youtube.com/embed/eQwTo9R4Wiw" title="JORNADAS Y SIMPOSIO NEROLOGÍA ORURO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                height="400px" src="https://youtu.be/fotAwmJo-Fc" title="JORNADAS Y SIMPOSIO NEROLOGÍA ORURO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
     <div>
@@ -109,29 +109,29 @@ export default defineComponent({
       slide: 1,
       textos: [
         {
-          titulo: '5ta. JORNADA NACIONAL DE NEUROLOGÍA',
-          subtitulo: 'Actualización en Enfermedades Neurológicas',
-          fecha: '12 - 13 - 14 JUNIO',
-          img: 'WhatsApp Image 2023-08-05 at 15.53.45.jpeg',
-          imgButton: 'images/logoColMed3.png',
+          titulo: '5ta JORNADA NACIONAL DE NEUROLOGÍA',
+          subtitulo: 'Avances en diagnóstico y tratamiento de enfermedades neurológicas',
+          fecha: '12, 13, 14 de Junio',
+          img: 'images/1.jpeg',
+          imgButton: 'images/logoSBN3 mejorado.gif',
           textButton: 'Colegio Médico <br> De Oruro'
+        },
+        {
+          titulo: '1er CURSO TALLER DE EXPLORACIÓN NEUROLÓGICA',
+          subtitulo: 'Curso Teórico Práctico',
+          fecha: '13 de Junio',
+          img: 'images/3.jpg',
+          imgButton: 'images/logoColMed3.png',
+          textButton: 'Sociedad Boliviana <br> De Neurologia'
+        },
+        {
+          titulo: 'TRANSMISIÓN EN VIVO Y AULA VIRTUAL',
+          subtitulo: 'Transmisión en vivo de las jornadas',
+          fecha: '12, 13, 14 de Junio',
+          img: 'images/aula2.jpg',
+          imgButton: 'images/quirquincho blanco.png',
+          textButton: 'Neuro Oruro'
         }
-        // {
-        //   titulo: '2DO. SIMPOSIO INTERNACIONAL',
-        //   subtitulo: 'Emergencias Neurológicas',
-        //   fecha: '16 y 17 de septiembre',
-        //   img: 'WhatsApp Image 2023-08-05 at 15.53.45 (1).jpeg',
-        //   imgButton: 'images/logoSBN3.gif',
-        //   textButton: 'Sociedad Boliviana <br> De Neurologia'
-        // },
-        // {
-        //   titulo: 'AULA VIRTUAL: Transmisión en vivo',
-        //   subtitulo: 'Material de aprendizaje',
-        //   fecha: '',
-        //   img: 'images/WhatsApp Image 2023-08-28 at 20.04.20.jpeg',
-        //   imgButton: 'images/quir blanco2.png',
-        //   textButton: 'Neuro Oruro'
-        // }
       ]
     }
   }
