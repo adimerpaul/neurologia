@@ -186,7 +186,7 @@
                 Pagina Web
               </q-item-section>
             </q-item>
-            <q-item clickable to="/users" exact active-class="bg-primary text-white text-bold" v-if="$store.user.id==1">
+            <q-item clickable to="/users" exact active-class="bg-primary text-white text-bold" v-if="$store.user.id==1 || $store.user.id==7">
               <q-item-section avatar>
                 <q-icon name="o_people" />
               </q-item-section>
