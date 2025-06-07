@@ -86,9 +86,14 @@
                     </q-card-section>
                     <!-- Taller - Viernes 13 de Junio -->
                     <div class="q-pa-md">
-                      <div class="text-h6 text-center text-bold text-black mt-md">
-                        1er Curso Taller de Exploración Neurológica
-                      </div>
+<!--                      <div class="text-h6 text-center text-bold text-black mt-md">-->
+<!--                        1er Curso Taller de Exploración Neurológica-->
+<!--                      </div>-->
+                      <q-card-section class="text-h4 fondoA">
+                        <div class="text-center text-bold text-white">
+                          1er Curso Taller de Exploración Neurológica
+                        </div>
+                      </q-card-section>
                       <div class="text-subtitle2 text-bold text-black ">Coordinador: Dr. Jaime López</div>
                       <div class="text-subtitle2 text-bold text-black ">Horario: 9:00 a 13:00</div>
                       <ul class="texto-programa q-mt-sm">
@@ -99,7 +104,6 @@
                         <li><strong>Sensibilidad</strong><br>Dr. Ramiro André Herrera Cuajera</li>
                         <li><strong>Marcha</strong><br>Dr. Gabriel Darío Santiestevez Ruiz</li>
                         <li><strong>Cerebelo y signos meníngeos</strong><br>Dra. Gissel Torrez Lazcano</li>
-                        <li><em>Nota:</em> La modalidad será por grupos divididos de acuerdo a la cantidad de participantes inscritos al Taller, los cuales irán rotando por cada estación. Haciendo un total de 15 a 20 minutos por cada estación. Al concluir se evaluará a los participantes.</li>
                       </ul>
                     </div>
 
