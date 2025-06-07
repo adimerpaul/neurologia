@@ -33,7 +33,7 @@
                   <q-input filled v-model="user.secondName" label="Segundo Nombre" ></q-input>
                   <!--              <q-input filled v-model="user.name" label="Nombre Completo:" required ></q-input>-->
                   <q-input filled v-model="user.ci" label="Carnet" required ></q-input>
-                  <q-input filled v-model="user.phone" label="Celular" required ></q-input>
+                  <q-input filled v-model="user.phone" label="Celular" required type="number" ></q-input>
                   <q-input filled v-model="user.email" label="Correo Electrónico:" ></q-input>
                   <!--              <q-option-group v-value="user.profession" :options="profesiones" label="Profesión:" required/>-->
                   <template v-for="(profession, index) in profesiones"

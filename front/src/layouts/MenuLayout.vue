@@ -194,12 +194,12 @@
                 Administrar Usuarios
               </q-item-section>
             </q-item>
-            <q-item clickable to="/register" exact active-class="bg-primary text-white text-bold" v-if="$store.user.id==1">
+            <q-item clickable to="/register" exact active-class="bg-primary text-white text-bold" v-if="$store.user.id==1 || $store.user.id==7">
               <q-item-section avatar>
                 <q-icon name="o_person_add" />
               </q-item-section>
               <q-item-section>
-                Personas Registradas
+                Personas Instritas
               </q-item-section>
             </q-item>
 <!--            <q-item clickable to="/estadisticos" exact active-class="bg-primary text-white text-bold" v-if="$store.user.id==1">-->
