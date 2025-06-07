@@ -3,7 +3,7 @@
     <q-timeline color="secondary">
       <q-timeline-entry heading>
         <template v-if="date=='t'">
-          Talleres
+          1er CURSO TALLER DE EXPLORACIÓN NEUROLÓGICA
         </template>
         <template v-else>
         {{ $filters.dateDmY(date) }}

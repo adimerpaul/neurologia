@@ -11,7 +11,12 @@ use Illuminate\Http\Request;
 class VideoController extends Controller{
     public function index(Request $request){
         $date = $request->get('date');
-        $videos = Video::whereDate('date', $date)->get();
+
+        if ($date == 't'){
+            return Video::where('tipo','Taller')->get();
+        }
+
+        $videos = Video::whereDate('date', $date)->where('tipo','Jornada')->get();
         return response()->json($videos);
     }
     public function verVideo(Request $request){
