@@ -114,7 +114,7 @@
             </q-item>
             <q-separator></q-separator>
             <q-item-label header >
-              4ta Jornada Nacional de Neurología
+              5ta Jornada Nacional de Neurología
             </q-item-label>
             <q-separator></q-separator>
             <q-expansion-item
