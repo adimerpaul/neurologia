@@ -117,30 +117,56 @@
               4ta Jornada Nacional de Neurología
             </q-item-label>
             <q-separator></q-separator>
-            <q-item clickable to="/dia13/2025-06-12" exact active-class="bg-primary text-white text-bold">
-              <q-item-section avatar>
-                <q-icon name="event_available" />
-              </q-item-section>
-              <q-item-section>
-                Jueves 12-Sep-2023
-              </q-item-section>
-            </q-item>
-            <q-item clickable to="/dia13/2025-06-13" exact active-class="bg-primary text-white text-bold">
-              <q-item-section avatar>
-                <q-icon name="event_available" />
-              </q-item-section>
-              <q-item-section>
-                Viernes 13-Sep-2023
-              </q-item-section>
-            </q-item>
-            <q-item clickable to="/dia13/2025-06-14" exact active-class="bg-primary text-white text-bold">
-              <q-item-section avatar>
-                <q-icon name="event_available" />
-              </q-item-section>
-              <q-item-section>
-                Sábado 14-Sep-2023
-              </q-item-section>
-            </q-item>
+            <q-expansion-item
+              dense
+              expand-separator
+              icon="event_available"
+              label="Dias de Jornadas"
+              class="text-bold"
+              default-opened
+            >
+              <q-item dense clickable to="/dia13/2025-06-12" exact class="text-weight-regular" active-class="bg-primary text-white">
+                <q-item-section avatar>
+                  <q-icon name="event_available" />
+                </q-item-section>
+                <q-item-section>
+                  Jueves 12-Sep-2025
+                </q-item-section>
+              </q-item>
+              <q-item dense clickable to="/dia13/2025-06-13" exact class="text-weight-regular" active-class="bg-primary text-white">
+                <q-item-section avatar>
+                  <q-icon name="event_available" />
+                </q-item-section>
+                <q-item-section>
+                  Viernes 13-Sep-2025
+                </q-item-section>
+              </q-item>
+              <q-item dense clickable to="/dia13/2025-06-14" exact class="text-weight-regular" active-class="bg-primary text-white">
+                <q-item-section avatar>
+                  <q-icon name="event_available" />
+                </q-item-section>
+                <q-item-section>
+                  Sábado 14-Sep-2025
+                </q-item-section>
+              </q-item>
+            </q-expansion-item>
+            <q-expansion-item
+              dense
+              expand-separator
+              icon="schedule"
+              label="Dias de Taller"
+              class="text-bold"
+              default-opened
+            >
+              <q-item dense clickable to="/dia13/2025-06-13" exact class="text-weight-regular" active-class="bg-primary text-white">
+                <q-item-section avatar>
+                  <q-icon name="event_available" />
+                </q-item-section>
+                <q-item-section>
+                  Viernes 13-Sep-2025
+                </q-item-section>
+              </q-item>
+            </q-expansion-item>
 <!--            <q-item-label header >-->
 <!--              2da Simposio Internacional de Neurología-->
 <!--            </q-item-label>-->
