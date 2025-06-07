@@ -181,13 +181,13 @@ export default {
       if (this.search) {
         this.registros = this.registrosAll.filter(registro => {
           return (
-            registro.firstSurname.toLowerCase().includes(this.search.toLowerCase()) ||
-            registro.secondSurname.toLowerCase().includes(this.search.toLowerCase()) ||
-            registro.firstName.toLowerCase().includes(this.search.toLowerCase()) ||
-            registro.secondName.toLowerCase().includes(this.search.toLowerCase()) ||
+            registro.firstSurname?.toLowerCase().includes(this.search.toLowerCase()) ||
+            registro.secondSurname?.toLowerCase().includes(this.search.toLowerCase()) ||
+            registro.firstName?.toLowerCase().includes(this.search.toLowerCase()) ||
+            registro.secondName?.toLowerCase().includes(this.search.toLowerCase()) ||
             registro.ci.includes(this.search) ||
             registro.phone.includes(this.search) ||
-            registro.email.toLowerCase().includes(this.search.toLowerCase())
+            registro.email?.toLowerCase().includes(this.search.toLowerCase())
           )
         })
       } else {

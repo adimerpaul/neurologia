@@ -199,7 +199,7 @@
                 <q-icon name="o_person_add" />
               </q-item-section>
               <q-item-section>
-                Personas Instritas
+                Personas Inscritas
               </q-item-section>
             </q-item>
 <!--            <q-item clickable to="/estadisticos" exact active-class="bg-primary text-white text-bold" v-if="$store.user.id==1">-->
