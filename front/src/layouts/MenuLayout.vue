@@ -130,7 +130,7 @@
                   <q-icon name="event_available" />
                 </q-item-section>
                 <q-item-section>
-                  Jueves 12-Sep-2025
+                  Jueves 12-Jun-2025
                 </q-item-section>
               </q-item>
               <q-item dense clickable to="/dia13/2025-06-13" exact class="text-weight-regular" active-class="bg-primary text-white">
@@ -138,7 +138,7 @@
                   <q-icon name="event_available" />
                 </q-item-section>
                 <q-item-section>
-                  Viernes 13-Sep-2025
+                  Viernes 13-Jun-2025
                 </q-item-section>
               </q-item>
               <q-item dense clickable to="/dia13/2025-06-14" exact class="text-weight-regular" active-class="bg-primary text-white">
@@ -146,7 +146,7 @@
                   <q-icon name="event_available" />
                 </q-item-section>
                 <q-item-section>
-                  Sábado 14-Sep-2025
+                  Sábado 14-Jun-2025
                 </q-item-section>
               </q-item>
             </q-expansion-item>
@@ -156,14 +156,13 @@
               icon="schedule"
               label="Dias de Taller"
               class="text-bold"
-              default-opened
             >
-              <q-item dense clickable to="/dia13/2025-06-13" exact class="text-weight-regular" active-class="bg-primary text-white">
+              <q-item dense clickable to="/dia13/t" exact class="text-weight-regular" active-class="bg-primary text-white">
                 <q-item-section avatar>
                   <q-icon name="event_available" />
                 </q-item-section>
                 <q-item-section>
-                  Viernes 13-Sep-2025
+                  Viernes 13-Jun-2025
                 </q-item-section>
               </q-item>
             </q-expansion-item>

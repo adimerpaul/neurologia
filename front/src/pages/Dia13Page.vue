@@ -2,7 +2,12 @@
   <q-page class="q-pa-md bg-grey-3">
     <q-timeline color="secondary">
       <q-timeline-entry heading>
+        <template v-if="date=='t'">
+          Talleres
+        </template>
+        <template v-else>
         {{ $filters.dateDmY(date) }}
+        </template>
         <q-btn flat round dense icon="o_refresh" @click="videosGet" :loading="loading" />
       </q-timeline-entry>
       <q-timeline-entry v-for="(video,i) in videos" :key="i.title"
