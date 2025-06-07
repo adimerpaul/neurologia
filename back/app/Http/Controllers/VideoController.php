@@ -9,6 +9,10 @@ use App\Http\Requests\UpdateVideoRequest;
 use Illuminate\Http\Request;
 
 class VideoController extends Controller{
+    function expositores(){
+        $expositores = Video::get();
+        return response()->json($expositores);
+    }
     public function index(Request $request){
         $date = $request->get('date');
 
