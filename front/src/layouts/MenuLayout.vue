@@ -117,28 +117,28 @@
               4ta Jornada Nacional de Neurología
             </q-item-label>
             <q-separator></q-separator>
-            <q-item clickable to="/dia13/2023-09-13" exact active-class="bg-primary text-white text-bold">
+            <q-item clickable to="/dia13/2025-06-12" exact active-class="bg-primary text-white text-bold">
               <q-item-section avatar>
                 <q-icon name="event_available" />
               </q-item-section>
               <q-item-section>
-                Miércoles 13-Sep-2023
+                Jueves 12-Sep-2023
               </q-item-section>
             </q-item>
-            <q-item clickable to="/dia13/2023-09-14" exact active-class="bg-primary text-white text-bold">
+            <q-item clickable to="/dia13/2025-06-13" exact active-class="bg-primary text-white text-bold">
               <q-item-section avatar>
                 <q-icon name="event_available" />
               </q-item-section>
               <q-item-section>
-                Jueves 14-Sep-2023
+                Viernes 13-Sep-2023
               </q-item-section>
             </q-item>
-            <q-item clickable to="/dia13/2023-09-15" exact active-class="bg-primary text-white text-bold">
+            <q-item clickable to="/dia13/2025-06-14" exact active-class="bg-primary text-white text-bold">
               <q-item-section avatar>
                 <q-icon name="event_available" />
               </q-item-section>
               <q-item-section>
-                Viernes 15-Sep-2023
+                Sábado 14-Sep-2023
               </q-item-section>
             </q-item>
 <!--            <q-item-label header >-->

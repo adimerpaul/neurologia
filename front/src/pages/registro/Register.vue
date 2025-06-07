@@ -155,7 +155,7 @@
             <q-input v-model="registro.direccion" dense outlined label="Dirección" />
             <q-input v-model="registro.cursoTaller" dense outlined label="Curso/Taller" />
 <!--            file file2-->
-            <q-file v-model="registro.file" dense outlined label="Comprobante de pago" type="file" />
+<!--            <q-file v-model="registro.file" dense outlined label="Comprobante de pago" type="file" />-->
             <q-file v-model="registro.file2" dense outlined label="Comprobante de pago 2" type="file" />
             <div class="q-mt-md">
               <q-btn type="submit" color="primary" :loading="loading">Guardar</q-btn>

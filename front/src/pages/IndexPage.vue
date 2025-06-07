@@ -47,11 +47,11 @@
       <q-carousel-slide v-for="(t, i) in textos" :name="i+1" :key="i" class="column no-wrap flex-center" :img-src="t.img">
         <div class="text-center full-width q-pa-lg background">
           <div class="flex flex-center">
-            <div class="titulo changa">
+            <div class="titulo league-spartan ">
               {{ t.titulo }}
             </div>
           </div>
-          <div class="subtitulo changa">
+          <div class="subtitulo league-spartan ">
             {{ t.subtitulo }}
             <br>
             {{ t.fecha }}
@@ -153,7 +153,7 @@ export default defineComponent({
       slide: 1,
       textos: [
         {
-          titulo: '5ta. JORNADA NACIONAL DE NEUROLOGÍA',
+          titulo: '5ta JORNADA NACIONAL DE NEUROLOGÍA',
           subtitulo: 'Avances en diagnóstico y tratamiento de enfermedades neurológicas',
           fecha: '12, 13, 14 de Junio',
           img: 'images/1.jpeg',
@@ -162,7 +162,7 @@ export default defineComponent({
         },
         {
           titulo: '1er CURSO TALLER DE EXPLORACIÓN NEUROLÓGICA',
-          subtitulo: 'Curso teórico práctico',
+          subtitulo: 'Curso Teórico Práctico',
           fecha: '13 de Junio',
           img: 'images/3.jpg',
           imgButton: 'images/logoColMed3.png',
@@ -191,9 +191,9 @@ export default defineComponent({
 .titulo {
   padding: 10px;
   font-size: 50px;
-  line-height: 1;
+  line-height: 1.5;
   letter-spacing: 1px;
-  max-width: 600px;
+  max-width: 750px;
 }
 
 .button {
