@@ -10,10 +10,9 @@
                 <div class="text-h5 text-bold">{{userOption === 'login' ? 'Iniciar sesión' : 'Registrarse'}}</div>
 <!--                {{userOption === 'login' ? 'Si ya tienes una cuenta, inicia sesión' : 'Si no tienes una cuenta, registrate'}}-->
                 <q-img src="images/quirquin3.png" width="150px" />
-                <div class="text-h6 text-bold">4ta. Jornada Nacional de Neurología</div>
+                <div class="text-h6 text-bold">5ta Jornada Nacional de Neurología</div>
                 <div class="text-subtitle2 text-bold">
-                  <q-icon name="o_location_on" /> 2do Simposio Internacional de
-                  Neurología
+                  <q-icon name="o_location_on" />  “Avances en diagnóstico y tratamiento de enfermedades neurológicas”
                 </div>
               </q-card-section>
               <q-card-section>
@@ -51,7 +50,7 @@
                        class="text-primary">¿Olvidaste tu contraseña?</a>
                   </div>
                   <q-btn label="Iniciar sesión" color="primary" no-caps rounded icon="o_login" :loading="loading" class="full-width" type="submit"/>
-                  <q-btn label="Registrarse" color="primary" no-caps rounded outline icon="o_person_add" class="full-width q-mt-xs" @click="userOption = 'register'"/>
+<!--                  <q-btn label="Registrarse" color="primary" no-caps rounded outline icon="o_person_add" class="full-width q-mt-xs" @click="userOption = 'register'"/>-->
                   <q-btn label="Pagina principal" color="primary" no-caps rounded flat icon="public" class="full-width q-mt-xs" @click="$router.push('/')"/>
                 </q-form>
 <!--                $table->string('firstName')->nullable();-->
@@ -158,22 +157,22 @@ export default {
         })
     },
     register () {
-      this.loading = true
-      this.$axios.post('register', this.user)
-        .then(response => {
-          this.$alert.success(`Bienvenido ${response.data.user.name}!`)
-          this.$store.user = response.data.user
-          this.$store.isLoggedIn = true
-          this.$axios.defaults.headers.common.Authorization = `Bearer ${response.data.token}`
-          localStorage.setItem('tokenNeuro', response.data.token)
-          this.$router.push('/menu')
-        })
-        .catch(error => {
-          this.$alert.error(error.response.data.message)
-        })
-        .finally(() => {
-          this.loading = false
-        })
+      // this.loading = true
+      // this.$axios.post('register', this.user)
+      //   .then(response => {
+      //     this.$alert.success(`Bienvenido ${response.data.user.name}!`)
+      //     this.$store.user = response.data.user
+      //     this.$store.isLoggedIn = true
+      //     this.$axios.defaults.headers.common.Authorization = `Bearer ${response.data.token}`
+      //     localStorage.setItem('tokenNeuro', response.data.token)
+      //     this.$router.push('/menu')
+      //   })
+      //   .catch(error => {
+      //     this.$alert.error(error.response.data.message)
+      //   })
+      //   .finally(() => {
+      //     this.loading = false
+      //   })
     }
   }
 }
@@ -181,7 +180,7 @@ export default {
 
 <style scoped>
 .fondo{
-  background-image: url("/images/portadaTono4.jpg");
+  background-image: url("/images/plantilla diseño.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

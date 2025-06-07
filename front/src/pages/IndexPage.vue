@@ -64,32 +64,32 @@
               <div class="changa button">Inscribirse</div>
             </q-btn>
           </div>
-          <div style="position: absolute; bottom: 0; right: 0; padding: 10px 10px 10px 10px;margin: 5px;width: 200px;height:50px;background-image: url('/images/figura.png');background-size: cover;">
-            <div style="display: flex; align-items: center; justify-content: center;">
-              <div class="changa" v-html="t.textButton">
-              </div>
-              <q-img :src="t.imgButton" width="45px"/>
-            </div>
-            <!--            <div class="flex flex-center">-->
-            <!--                <q-img :src="t.imgButton" width="45px" />-->
-            <!--                <div class="changa tituloCarrocel" v-html="t.textButton">-->
-            <!--                </div>-->
-            <!--            </div>-->
-<!--            <div class="">-->
-<!--              <img-->
-<!--                class="demo-bg"-->
-<!--                src="images/fondoAzul.png"-->
-<!--                alt=""-->
-<!--              >-->
-<!--              <div class="demo-content">-->
-<!--                <div class="flex flex-center">-->
-<!--                  <q-img :src="t.imgButton" width="45px"/>-->
-<!--                  <div class="changa tituloCarrocel" v-html="t.textButton">-->
-<!--                  </div>-->
-<!--                </div>-->
+<!--          <div style="position: absolute; bottom: 0; right: 0; padding: 10px 10px 10px 10px;margin: 5px;width: 200px;height:50px;background-image: url('/images/figura.png');background-size: cover;">-->
+<!--            <div style="display: flex; align-items: center; justify-content: center;">-->
+<!--              <div class="changa" v-html="t.textButton">-->
 <!--              </div>-->
+<!--              <q-img :src="t.imgButton" width="45px"/>-->
 <!--            </div>-->
-          </div>
+<!--            &lt;!&ndash;            <div class="flex flex-center">&ndash;&gt;-->
+<!--            &lt;!&ndash;                <q-img :src="t.imgButton" width="45px" />&ndash;&gt;-->
+<!--            &lt;!&ndash;                <div class="changa tituloCarrocel" v-html="t.textButton">&ndash;&gt;-->
+<!--            &lt;!&ndash;                </div>&ndash;&gt;-->
+<!--            &lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="">&ndash;&gt;-->
+<!--&lt;!&ndash;              <img&ndash;&gt;-->
+<!--&lt;!&ndash;                class="demo-bg"&ndash;&gt;-->
+<!--&lt;!&ndash;                src="images/fondoAzul.png"&ndash;&gt;-->
+<!--&lt;!&ndash;                alt=""&ndash;&gt;-->
+<!--&lt;!&ndash;              >&ndash;&gt;-->
+<!--&lt;!&ndash;              <div class="demo-content">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="flex flex-center">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <q-img :src="t.imgButton" width="45px"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                  <div class="changa tituloCarrocel" v-html="t.textButton">&ndash;&gt;-->
+<!--&lt;!&ndash;                  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--          </div>-->
           <!--          <q-img src="images/logoColMed3.png" width="30px" />-->
           <!--          <div class="changa tituloCarrocel">-->
           <!--            Colegio Medico Oruro-->
