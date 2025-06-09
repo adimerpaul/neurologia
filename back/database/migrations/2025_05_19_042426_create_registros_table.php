@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('cursoTaller')->default('');
             $table->string('file')->nullable();
             $table->string('file2')->nullable();
+            $table->text('observacion')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
