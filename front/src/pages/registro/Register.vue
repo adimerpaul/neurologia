@@ -66,6 +66,13 @@
                     </q-item-section>
                     <q-item-section>Mandar por WhatsApp</q-item-section>
                   </q-item>
+<!--                  oobservacion-->
+                  <q-item clickable @click="dialogObservacion = true; this.registro = registro" v-close-popup>
+                    <q-item-section avatar>
+                      <q-icon name="comment" />
+                    </q-item-section>
+                    <q-item-section>Observación</q-item-section>
+                  </q-item>
                   <q-item clickable @click="editarRegistro(registro)" v-close-popup>
                     <q-item-section avatar>
                       <q-icon name="visibility" />
@@ -175,6 +182,23 @@
         </q-card-section>
       </q-card>
     </q-dialog>
+    <q-dialog v-model="dialogObservacion" persistent>
+      <q-card>
+        <q-card-section class="q-pb-none">
+          Observación
+          <q-btn flat icon="close" @click="dialogObservacion = false" class="absolute-top-right q-mt-xs q-mr-xs" />
+        </q-card-section>
+        <q-card-section>
+          <q-form >
+          <q-input v-model="registro.observacion" dense outlined label="Observación" type="textarea" />
+          <div class="q-mt-md">
+            <q-btn outline @click="dialogObservacion = false" color="primary" class="q-mr-sm" :loading="loading">Cerrar</q-btn>
+            <q-btn @click="updateRegistro" color="primary" :loading="loading">Guardar</q-btn>
+          </div>
+          </q-form>
+        </q-card-section>
+      </q-card>
+    </q-dialog>
   </q-page>
 </template>
 
@@ -188,7 +212,8 @@ export default {
       registrosAll: [],
       registro: {},
       registroDialog: false,
-      search: ''
+      search: '',
+      dialogObservacion: false
     }
   },
   mounted () {
@@ -262,6 +287,7 @@ export default {
         .finally(() => {
           this.registroDialog = false
           this.loading = false
+          this.dialogObservacion = false
         })
     },
     crearRegistro () {
