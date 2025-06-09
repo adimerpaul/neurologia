@@ -42,6 +42,7 @@
         <th>Dirección</th>
         <th>Curso/Taller</th>
         <th>Fecha</th>
+        <th>Observación</th>
       </tr>
       </thead>
       <tbody>
@@ -111,6 +112,11 @@
         <td>{{ registro.direccion }}</td>
         <td>{{ registro.cursoTaller }}</td>
         <td>{{ $filters.datedmYHi(registro.created_at) }}</td>
+        <td>
+          <span v-if="registro.observacion" class="text-red text-bold">
+            {{ registro.observacion }}
+          </span>
+        </td>
       </tr>
       </tbody>
     </q-markup-table>
@@ -157,6 +163,7 @@
 <!--            file file2-->
             <q-file v-model="registro.file" dense outlined label="Comprobante de pago" type="file" />
             <q-file v-model="registro.file2" dense outlined label="Comprobante de pago 2" type="file" />
+            <q-input v-model="registro.observacion" dense outlined label="Observacion" type="textarea" />
             <div class="q-mt-md">
               <q-btn type="submit" color="primary" :loading="loading">Guardar</q-btn>
               <q-btn flat @click="registroDialog = false" :loading="loading">Cancelar</q-btn>
@@ -167,6 +174,7 @@
     </q-dialog>
   </q-page>
 </template>
+
 <script>
 export default {
   name: 'RegisterPage',
@@ -228,6 +236,7 @@ export default {
       formData.append('provincia', this.registro.provincia)
       formData.append('direccion', this.registro.direccion)
       formData.append('cursoTaller', this.registro.cursoTaller)
+      formData.append('observacion', this.registro.observacion || '')
       if (this.registro.file) {
         formData.append('file', this.registro.file)
       }
@@ -268,6 +277,7 @@ export default {
       formData.append('cursoTaller', this.registro.cursoTaller)
       formData.append('file', this.registro.file)
       formData.append('file2', this.registro.file2)
+      formData.append('observacion', this.registro.observacion || '')
       this.$axios.post('registro', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'

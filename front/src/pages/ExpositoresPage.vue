@@ -31,7 +31,8 @@
 </template>
 
 <script>
-import { date as qDate } from 'quasar'
+// import { date as qDate } from 'quasar'
+// import moment from 'moment'
 
 export default {
   name: 'ExpositoresPage',
@@ -43,15 +44,28 @@ export default {
   },
   computed: {
     expositoresAgrupados () {
+      const dias = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado']
+      const meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+
       const grupos = {}
+
       this.expositores.forEach(expo => {
-        const fecha = expo.date === 't'
-          ? 'Taller'
-          : qDate.formatDate(expo.date, 'dddd DD [de] MMMM')
+        let fecha = ''
+        if (expo.date === 't') {
+          fecha = 'Taller'
+        } else {
+          const partes = expo.date.split('-') // YYYY-MM-DD
+          const d = new Date(Number(partes[0]), Number(partes[1]) - 1, Number(partes[2]))
+          const diaSemana = dias[d.getDay()]
+          const dia = d.getDate()
+          const mes = meses[d.getMonth()]
+          fecha = `${this.capitalize(diaSemana)} ${dia} de ${this.capitalize(mes)}`
+        }
 
         if (!grupos[fecha]) grupos[fecha] = []
         grupos[fecha].push(expo)
       })
+
       return grupos
     }
   },
@@ -59,6 +73,9 @@ export default {
     this.getExpositores()
   },
   methods: {
+    capitalize (str) {
+      return str.charAt(0).toUpperCase() + str.slice(1)
+    },
     getExpositores () {
       this.$axios.get('expositores')
         .then(res => {

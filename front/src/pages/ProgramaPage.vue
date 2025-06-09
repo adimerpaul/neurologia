@@ -89,7 +89,7 @@
 <!--                      <div class="text-h6 text-center text-bold text-black mt-md">-->
 <!--                        1er Curso Taller de Exploración Neurológica-->
 <!--                      </div>-->
-                      <q-card-section class="text-h4 fondoA">
+                      <q-card-section class="text-h6 fondoA">
                         <div class="text-center text-bold text-white">
                           1er Curso Taller de Exploración Neurológica
                         </div>
