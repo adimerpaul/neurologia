@@ -26,6 +26,7 @@ class RegistroController extends Controller{
             'direccion' => 'required|string',
             'file' => 'required|file|mimes:pdf,jpg,jpeg,png',
 //            'file2' => 'nullable|file|mimes:pdf,jpg,jpeg,png'
+            'observacion' => 'nullable|string',
         ],[
             'file.required' => 'Se debe mandar el documento de comprobante.',
             'file.mimes' => 'El comprobante debe ser un archivo en formato PDF, JPG, JPEG o PNG.',
@@ -43,7 +44,9 @@ class RegistroController extends Controller{
             ]),
 //            'cursoTaller' => $request->cursoTaller ? 1 : 0,
             'file' => $path1,
-            'file2' => $path2
+            'file2' => $path2,
+            'observacion' => $request->observacion,
+
         ]);
 
         return response()->json(['success' => true, 'data' => $registro], 201);
@@ -71,19 +74,21 @@ class RegistroController extends Controller{
             $registro->file2 = $path2;
         }
         error_log('firstName: ' . $request->firstName);
-        $registro->firstSurname = $request->firstSurname;
-        $registro->secondSurname = $request->secondSurname;
-        $registro->firstName = $request->firstName;
-        $registro->secondName = $request->secondName;
-        $registro->ci = $request->ci;
-        $registro->phone = $request->phone;
-        $registro->email = $request->email;
-        $registro->profession = $request->profession;
-        $registro->professionOther = $request->professionOther;
-        $registro->departamento = $request->departamento;
-        $registro->provincia = $request->provincia;
-        $registro->direccion = $request->direccion;
-        $registro->cursoTaller = $request->cursoTaller ;
+        $registro->firstSurname = $request->firstSurname ?? '';
+        $registro->secondSurname = $request->secondSurname ?? '';
+        $registro->firstName = $request->firstName ?? '';
+        $registro->secondName = $request->secondName ?? '';
+        $registro->ci = $request->ci ?? '';
+        $registro->phone = $request->phone ?? '';
+        $registro->email = $request->email ?? '';
+        $registro->profession = $request->profession ?? '';
+        $registro->professionOther = $request->professionOther ?? '';
+        $registro->departamento = $request->departamento ?? '';
+        $registro->provincia = $request->provincia ?? '';
+        $registro->direccion = $request->direccion ?? '';
+        $registro->cursoTaller = $request->cursoTaller ?? '';
+        $registro->observacion = $request->observacion ?? '';
+
         $registro->save();
 
     }

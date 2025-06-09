@@ -23,7 +23,8 @@ class Registro extends Model{
         'direccion',
         'cursoTaller',
         'file',
-        'file2'
+        'file2',
+        'observacion'
     ];
     protected $hidden = [
 //        'created_at',
