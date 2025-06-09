@@ -46,78 +46,81 @@
       </tr>
       </thead>
       <tbody>
-      <tr v-for="(registro, index) in registros" :key="index">
-        <td>
-          <div style="display: flex; align-items: center; gap: 5px;">
-            {{ index + 1 }}
-            <q-btn-dropdown color="primary" text-color="white" dense label="Opciones" no-caps size="xs" :loading="loading">
-              <q-list>
-                <q-item clickable @click="crearUsuario(registro)" v-close-popup>
-                  <q-item-section avatar>
-                    <q-icon name="person_add" />
-                  </q-item-section>
-                  <q-item-section>Crear usuario</q-item-section>
-                </q-item>
-                <q-item clickable @click="mandarRegistro(registro)" v-close-popup>
-                  <q-item-section avatar>
-                    <q-icon name="fa-brands fa-whatsapp" />
-                  </q-item-section>
-                  <q-item-section>Mandar por WhatsApp</q-item-section>
-                </q-item>
-                <q-item clickable @click="editarRegistro(registro)" v-close-popup>
-                  <q-item-section avatar>
-                    <q-icon name="visibility" />
-                  </q-item-section>
-                  <q-item-section>Ver</q-item-section>
-                </q-item>
-                <q-item clickable @click="eliminarRegistro(registro)" v-close-popup>
-                  <q-item-section avatar>
-                    <q-icon name="delete" />
-                  </q-item-section>
-                  <q-item-section>Eliminar</q-item-section>
-                </q-item>
-              </q-list>
-            </q-btn-dropdown>
-          </div>
-        </td>
-        <td>{{ registro.firstSurname }} {{ registro.secondSurname }} {{ registro.firstName }} {{ registro.secondName }}</td>
-        <td>{{ registro.ci }}</td>
-        <td>{{ registro.phone }}</td>
-        <td>
-          <a :href="`${$url}../storage/${registro.file}`" target="_blank" title="Ver foto 1" >
-          <q-img
-          :src="`${$url}../storage/${registro.file}`"
-            style="max-width: 100px; max-height: 100px;"
-          />
-          </a>
-          <a :href="`${$url}../storage/${registro.file2}`" target="_blank" title="Ver foto 2" >
-            <q-img
-              :src="`${$url}../storage/${registro.file2}`"
-              style="max-width: 100px; max-height: 100px;"
-            />
-          </a>
-<!--          <pre>{{registro}}</pre>-->
-        </td>
-<!--        <td>-->
-<!--          <q-img-->
-<!--            :src="`${$url}../storage/${registro.file2}`"-->
-<!--            style="max-width: 100px; max-height: 100px;"-->
-<!--            @click="verFoto(registro.file2)"-->
-<!--          />-->
-<!--        </td>-->
-        <td>{{ registro.email }}</td>
-        <td>{{ registro.profession }}</td>
-        <td>{{ registro.departamento }}</td>
-        <td>{{ registro.provincia }}</td>
-        <td>{{ registro.direccion }}</td>
-        <td>{{ registro.cursoTaller }}</td>
-        <td>{{ $filters.datedmYHi(registro.created_at) }}</td>
-        <td class="bg-red-1">
+      <template v-for="(registro, index) in registros" :key="index">
+<!--        cambiar bg-red si tiene observacion-->
+        <tr :class="{ 'bg-red-1': registro.observacion }">
+          <td>
+            <div style="display: flex; align-items: center; gap: 5px;">
+              {{ index + 1 }}
+              <q-btn-dropdown color="primary" text-color="white" dense label="Opciones" no-caps size="xs" :loading="loading">
+                <q-list>
+                  <q-item clickable @click="crearUsuario(registro)" v-close-popup>
+                    <q-item-section avatar>
+                      <q-icon name="person_add" />
+                    </q-item-section>
+                    <q-item-section>Crear usuario</q-item-section>
+                  </q-item>
+                  <q-item clickable @click="mandarRegistro(registro)" v-close-popup>
+                    <q-item-section avatar>
+                      <q-icon name="fa-brands fa-whatsapp" />
+                    </q-item-section>
+                    <q-item-section>Mandar por WhatsApp</q-item-section>
+                  </q-item>
+                  <q-item clickable @click="editarRegistro(registro)" v-close-popup>
+                    <q-item-section avatar>
+                      <q-icon name="visibility" />
+                    </q-item-section>
+                    <q-item-section>Ver</q-item-section>
+                  </q-item>
+                  <q-item clickable @click="eliminarRegistro(registro)" v-close-popup>
+                    <q-item-section avatar>
+                      <q-icon name="delete" />
+                    </q-item-section>
+                    <q-item-section>Eliminar</q-item-section>
+                  </q-item>
+                </q-list>
+              </q-btn-dropdown>
+            </div>
+          </td>
+          <td>{{ registro.firstSurname }} {{ registro.secondSurname }} {{ registro.firstName }} {{ registro.secondName }}</td>
+          <td>{{ registro.ci }}</td>
+          <td>{{ registro.phone }}</td>
+          <td>
+            <a :href="`${$url}../storage/${registro.file}`" target="_blank" title="Ver foto 1" >
+              <q-img
+                :src="`${$url}../storage/${registro.file}`"
+                style="max-width: 100px; max-height: 100px;"
+              />
+            </a>
+            <a :href="`${$url}../storage/${registro.file2}`" target="_blank" title="Ver foto 2" >
+              <q-img
+                :src="`${$url}../storage/${registro.file2}`"
+                style="max-width: 100px; max-height: 100px;"
+              />
+            </a>
+            <!--          <pre>{{registro}}</pre>-->
+          </td>
+          <!--        <td>-->
+          <!--          <q-img-->
+          <!--            :src="`${$url}../storage/${registro.file2}`"-->
+          <!--            style="max-width: 100px; max-height: 100px;"-->
+          <!--            @click="verFoto(registro.file2)"-->
+          <!--          />-->
+          <!--        </td>-->
+          <td>{{ registro.email }}</td>
+          <td>{{ registro.profession }}</td>
+          <td>{{ registro.departamento }}</td>
+          <td>{{ registro.provincia }}</td>
+          <td>{{ registro.direccion }}</td>
+          <td>{{ registro.cursoTaller }}</td>
+          <td>{{ $filters.datedmYHi(registro.created_at) }}</td>
+          <td>
           <span v-if="registro.observacion" class="text-red text-bold">
             {{ registro.observacion }}
           </span>
-        </td>
-      </tr>
+          </td>
+        </tr>
+      </template>
       </tbody>
     </q-markup-table>
 <!--    <pre>{{registros}}</pre>-->
