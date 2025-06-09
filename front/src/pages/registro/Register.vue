@@ -112,7 +112,7 @@
         <td>{{ registro.direccion }}</td>
         <td>{{ registro.cursoTaller }}</td>
         <td>{{ $filters.datedmYHi(registro.created_at) }}</td>
-        <td>
+        <td class="bg-red-1">
           <span v-if="registro.observacion" class="text-red text-bold">
             {{ registro.observacion }}
           </span>
