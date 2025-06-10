@@ -64,7 +64,7 @@
               <div class="changa button">Inscribirse</div>
             </q-btn>
           </div>
-          <div style="position: absolute; top: 0; right: 0; padding: 0;margin: 5px;width: 150px;line-height: 0.9;">
+          <div style="position: absolute; top: 10; right: 10px; padding: 0;margin: 5px;width: 150px;line-height: 0.9;">
             <div style="display: flex; align-items: center; justify-content: center;">
               <div class="changa" v-html="t.textButton">
               </div>
