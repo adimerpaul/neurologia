@@ -262,6 +262,7 @@
           </div>
           <q-btn label="Inicio" color="primary" to="/" size="14px" class="full-width text-bold text-white" flat @click="modalMenu= false"/>
           <q-btn label="Programa general" color="primary" to="/programa" size="14px" class="full-width text-bold text-white" flat @click="modalMenu= false"/>
+          <q-btn label="Expositores" color="primary" to="/expositores" size="14px" class="full-width text-bold text-white" flat @click="modalMenu= false"/>
           <q-btn label="Contactos" color="primary" to="/contacto" size="14px" class="full-width text-bold text-white" flat @click="modalMenu= false"/>
           <q-btn label="Lugar Evento" color="primary" to="/mapa" size="14px" class="full-width text-bold text-white" flat @click="modalMenu= false"/>
           <q-btn icon="login" label="Ingresar" to="/login" color="primary" size="14px" class="full-width text-bold text-white" flat @click="modalMenu= false"/>
