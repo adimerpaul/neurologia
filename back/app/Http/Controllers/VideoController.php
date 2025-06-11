@@ -10,7 +10,9 @@ use Illuminate\Http\Request;
 
 class VideoController extends Controller{
     function expositores(){
-        $expositores = Video::orderBy('subtitle')->get();
+        $expositores = Video::orderBy('subtitle')
+            ->orderBy('date')
+            ->get();
         return response()->json($expositores);
     }
     public function index(Request $request){
