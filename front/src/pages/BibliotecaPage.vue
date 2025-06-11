@@ -1,9 +1,9 @@
 <template>
-      <q-page class="fondo q-pa-lg">
+      <q-page class="fondo3 q-pa-lg">
         <div class="row">
           <div class="col-12">
             <q-card class="q-pa-md bg-grey-3">
-              <q-card-section class="text-h3 fondo">
+              <q-card-section class="text-h3 fondo3">
                 <div class="text-center text-bold text-white">
                   BIBLIOTECA VIRTUAL
                 </div>
@@ -97,8 +97,8 @@ export default {
 </script>
 
 <style scoped>
-.fondo{
-  background-image: url("/images/portadaTono4.jpg");
+.fondo3{
+  background-image: url("/images/plomoOscuro.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
