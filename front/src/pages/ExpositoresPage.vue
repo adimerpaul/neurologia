@@ -4,7 +4,8 @@
       Expositores por Día
     </div>
 
-    <div v-for="(lista, fecha) in expositoresAgrupados" :key="fecha" class="q-mb-xl">
+    <!-- Jornadas agrupadas -->
+    <div v-for="(lista, fecha) in jornadasAgrupadas" :key="fecha" class="q-mb-xl">
       <div class="text-h6 text-bold text-blue-10 q-mb-sm">
         {{ fecha }}
       </div>
@@ -27,13 +28,33 @@
         </q-item>
       </q-card>
     </div>
+
+    <!-- Talleres sin agrupar -->
+    <div class="text-h6 text-bold text-deep-orange-9 q-mb-sm">
+      Talleres
+    </div>
+    <q-card flat bordered class="q-pa-md bg-white">
+      <q-item v-for="(expo, i) in talleres" :key="'t-' + i" class="q-mb-sm">
+        <q-item-section avatar>
+          <q-avatar size="56px" rounded>
+            <img :src="expo.avatar || defaultAvatar" alt="avatar" />
+          </q-avatar>
+        </q-item-section>
+        <q-item-section>
+          <q-item-label class="text-subtitle1 text-weight-medium">{{ expo.title }}</q-item-label>
+          <q-item-label caption class="text-grey-7">
+            {{ expo.hora }} – {{ expo.text }}
+          </q-item-label>
+          <q-item-label v-if="expo.content" caption class="text-blue-8">
+            {{ expo.content }}
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+    </q-card>
   </q-page>
 </template>
 
 <script>
-// import { date as qDate } from 'quasar'
-// import moment from 'moment'
-
 export default {
   name: 'ExpositoresPage',
   data () {
@@ -43,40 +64,36 @@ export default {
     }
   },
   computed: {
-    expositoresAgrupados () {
+    jornadasAgrupadas () {
       const dias = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado']
       const meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
 
       const grupos = {}
 
-      this.expositores.forEach(expo => {
-        const clave = expo.date
-        if (!grupos[clave]) grupos[clave] = []
+      this.expositores
+        .filter(e => e.tipo === 'Jornada')
+        .forEach(expo => {
+          const partes = expo.date.split('-')
+          const d = new Date(Number(partes[0]), Number(partes[1]) - 1, Number(partes[2]))
+          const diaSemana = dias[d.getDay()]
+          const dia = d.getDate()
+          const mes = meses[d.getMonth()]
+          const fechaTitulo = `${this.capitalize(diaSemana)} ${dia} de ${this.capitalize(mes)}`
 
-        grupos[clave].push(expo)
-      })
-
-      const ordenado = Object.keys(grupos)
-        .sort((a, b) => {
-          if (a === 't') return 1 // Talleres siempre al final
-          if (b === 't') return -1
-          return new Date(a) - new Date(b)
+          if (!grupos[expo.date]) grupos[expo.date] = { titulo: fechaTitulo, expos: [] }
+          grupos[expo.date].expos.push(expo)
         })
-        .reduce((acc, clave) => {
-          let titulo = 'Taller'
-          if (clave !== 't') {
-            const partes = clave.split('-') // YYYY-MM-DD
-            const d = new Date(Number(partes[0]), Number(partes[1]) - 1, Number(partes[2]))
-            const diaSemana = dias[d.getDay()]
-            const dia = d.getDate()
-            const mes = meses[d.getMonth()]
-            titulo = `${this.capitalize(diaSemana)} ${dia} de ${this.capitalize(mes)}`
-          }
-          acc[titulo] = grupos[clave]
-          return acc
-        }, {})
 
-      return ordenado
+      // Ordenar por fecha
+      const ordenado = Object.keys(grupos).sort((a, b) => new Date(a) - new Date(b))
+
+      return ordenado.reduce((acc, clave) => {
+        acc[grupos[clave].titulo] = grupos[clave].expos
+        return acc
+      }, {})
+    },
+    talleres () {
+      return this.expositores.filter(e => e.tipo === 'Taller')
     }
   },
   mounted () {
