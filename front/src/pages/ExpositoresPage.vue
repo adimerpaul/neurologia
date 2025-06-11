@@ -50,23 +50,33 @@ export default {
       const grupos = {}
 
       this.expositores.forEach(expo => {
-        let fecha = ''
-        if (expo.date === 't') {
-          fecha = 'Taller'
-        } else {
-          const partes = expo.date.split('-') // YYYY-MM-DD
-          const d = new Date(Number(partes[0]), Number(partes[1]) - 1, Number(partes[2]))
-          const diaSemana = dias[d.getDay()]
-          const dia = d.getDate()
-          const mes = meses[d.getMonth()]
-          fecha = `${this.capitalize(diaSemana)} ${dia} de ${this.capitalize(mes)}`
-        }
+        const clave = expo.date
+        if (!grupos[clave]) grupos[clave] = []
 
-        if (!grupos[fecha]) grupos[fecha] = []
-        grupos[fecha].push(expo)
+        grupos[clave].push(expo)
       })
 
-      return grupos
+      const ordenado = Object.keys(grupos)
+        .sort((a, b) => {
+          if (a === 't') return 1 // Talleres siempre al final
+          if (b === 't') return -1
+          return new Date(a) - new Date(b)
+        })
+        .reduce((acc, clave) => {
+          let titulo = 'Taller'
+          if (clave !== 't') {
+            const partes = clave.split('-') // YYYY-MM-DD
+            const d = new Date(Number(partes[0]), Number(partes[1]) - 1, Number(partes[2]))
+            const diaSemana = dias[d.getDay()]
+            const dia = d.getDate()
+            const mes = meses[d.getMonth()]
+            titulo = `${this.capitalize(diaSemana)} ${dia} de ${this.capitalize(mes)}`
+          }
+          acc[titulo] = grupos[clave]
+          return acc
+        }, {})
+
+      return ordenado
     }
   },
   mounted () {
