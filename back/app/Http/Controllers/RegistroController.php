@@ -106,6 +106,7 @@ class RegistroController extends Controller{
                 'message' => 'Este usuario ya fue creado.'
             ], 409);
         }
+        return '1';
 
         $user = User::create([
             'firstName' => $registro->firstName?? '',
