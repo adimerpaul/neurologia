@@ -1,6 +1,6 @@
 <template>
   <q-page class="q-pa-md bg-grey-1">
-    <div class="text-h5 text-primary text-center q-mb-md text-center">
+    <div class="text-h5 text-primary text-center q-mb-md text-center text-h3">
       Expositores Jornadas
     </div>
 
@@ -30,7 +30,7 @@
     </div>
 
     <!-- Talleres sin agrupar -->
-    <div class="text-h6 text-bold text-black q-mb-sm text-center">
+    <div class="text-h6 text-bold text-black q-mb-sm text-center text-h3">
       Expositores  Talleres
     </div>
     <q-card flat bordered class="q-pa-md bg-white">
