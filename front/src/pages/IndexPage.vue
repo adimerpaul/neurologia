@@ -57,12 +57,12 @@
             {{ t.fecha }}
           </div>
           <div>
-            <q-btn color="white" class="q-mt-md " rounded no-caps to="/login" outline>
+            <q-btn color="primary" class="q-mt-md " rounded no-caps to="/login" >
               <div class="changa button">Ingresa Aqui</div>
             </q-btn>
-            <q-btn color="primary" class="q-mt-md " rounded no-caps to="/inscripcion" >
-              <div class="changa button">Inscribirse</div>
-            </q-btn>
+<!--            <q-btn color="primary" class="q-mt-md " rounded no-caps to="/inscripcion" >-->
+<!--              <div class="changa button">Inscribirse</div>-->
+<!--            </q-btn>-->
           </div>
           <div style="position: absolute; top: 10px; right: 10px; padding: 0;margin: 5px;width: 150px;line-height: 0.9;">
             <div style="display: flex; align-items: center; justify-content: center;">

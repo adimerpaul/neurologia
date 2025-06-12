@@ -3,10 +3,13 @@
     <q-card flat bordered>
       <q-card-section class="q-pa-xs">
         <div class="row">
-          <div class="col-12 col-md-2">
-            Total Registros: <strong>{{ registros.length }}</strong>
+          <div class="col-12 col-md-1">
+            <div>Total Registros: </div>
+            <div class="text-center">
+              <strong>{{ registros.length }}</strong>
+            </div>
           </div>
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-4">
             <q-input
               v-model="search"
               dense
@@ -20,7 +23,15 @@
             <q-btn @click="registroGet" color="primary" label="Actualizar" class="q-mb-md" no-caps :loading="loading"
                    icon="refresh" />
           </div>
-          <div class="col-12 col-md-2 text-right">
+          <div class="col-12 col-md-5 text-right">
+            <q-btn
+              color="secondary"
+              label="Reporte por Curso/Taller"
+              icon="print"
+              class="q-ml-sm q-mb-md q-mr-md"
+              @click="imprimirReporteCurso"
+              no-caps
+            />
             <q-btn @click="clickRegistrar" color="green" label="Crear" class="q-mb-md" no-caps icon="add_circle" />
           </div>
         </div>
@@ -203,6 +214,7 @@
 </template>
 
 <script>
+import { Printd } from 'printd'
 export default {
   name: 'RegisterPage',
   data () {
@@ -220,6 +232,55 @@ export default {
     this.registroGet()
   },
   methods: {
+    imprimirReporteCurso () {
+      const data = this.agruparPorCursoTaller()
+      const filas = Object.entries(data).map(([curso, cantidad], index) => `
+    <tr>
+      <td>${index + 1}</td>
+      <td>${curso}</td>
+      <td style="text-align: right">${cantidad}</td>
+    </tr>
+  `).join('')
+
+      const html = `
+    <style>
+      body { font-family: Arial, sans-serif; padding: 20px; }
+      h2 { text-align: center; }
+      table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; }
+      th, td { border: 1px solid #000; padding: 6px; }
+      th { background-color: #f0f0f0; }
+    </style>
+    <h2>REPORTE DE INSCRITOS POR CURSO/TALLER</h2>
+    <p>Total registros: ${this.registrosAll.length}</p>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Curso/Taller</th>
+          <th>Inscritos</th>
+        </tr>
+      </thead>
+      <tbody>${filas}</tbody>
+    </table>
+  `
+
+      const d = new Printd()
+      const frag = document.createRange().createContextualFragment(html)
+      d.print(frag)
+    },
+    agruparPorCursoTaller () {
+      const conteo = {}
+
+      this.registrosAll.forEach(registro => {
+        const clave = registro.cursoTaller || 'Sin especificar'
+        if (!conteo[clave]) {
+          conteo[clave] = 0
+        }
+        conteo[clave]++
+      })
+
+      return conteo
+    },
     filterRegistros () {
       if (this.search) {
         this.registros = this.registrosAll.filter(registro => {
