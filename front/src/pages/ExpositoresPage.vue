@@ -1,7 +1,7 @@
 <template>
   <q-page class="q-pa-md bg-grey-1">
-    <div class="text-h5 text-primary text-center q-mb-md">
-      Expositores por Día
+    <div class="text-h5 text-primary text-center q-mb-md text-center">
+      Expositores Jornadas
     </div>
 
     <!-- Jornadas agrupadas -->
@@ -30,8 +30,8 @@
     </div>
 
     <!-- Talleres sin agrupar -->
-    <div class="text-h6 text-bold text-deep-orange-9 q-mb-sm">
-      Talleres
+    <div class="text-h6 text-bold text-black q-mb-sm text-center">
+      Expocitore Talleres
     </div>
     <q-card flat bordered class="q-pa-md bg-white">
       <q-item v-for="(expo, i) in talleres" :key="'t-' + i" class="q-mb-sm">
