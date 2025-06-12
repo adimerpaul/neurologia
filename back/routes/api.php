@@ -24,6 +24,7 @@ Route::post('/registro', [\App\Http\Controllers\RegistroController::class, 'stor
 Route::group(['middleware'=>'auth:sanctum'],function () {
     Route::get('/registro', [\App\Http\Controllers\RegistroController::class, 'index']);
 //    Route::post('/registro', [\App\Http\Controllers\RegistroController::class, 'store']);
+    Route::post('/registro/crear-usuario', [\App\Http\Controllers\RegistroController::class, 'crearUsuarioDesdeRegistro']);
     Route::post('/registro/{id}', [\App\Http\Controllers\RegistroController::class, 'update']);
     Route::delete('/registro/{id}', [\App\Http\Controllers\RegistroController::class, 'destroy']);
 
@@ -31,7 +32,7 @@ Route::group(['middleware'=>'auth:sanctum'],function () {
     Route::post('/logout', [\App\Http\Controllers\UserController::class, 'logout']);
     Route::post('/cambiarPass', [\App\Http\Controllers\UserController::class, 'cambiarPass']);
     Route::put('/updatePassword/{user}', [\App\Http\Controllers\UserController::class, 'updatePassword']);
-    Route::post('/registro/crear-usuario', [\App\Http\Controllers\RegistroController::class, 'crearUsuarioDesdeRegistro']);
+    
 
     Route::resource('videos', \App\Http\Controllers\VideoController::class);
     Route::resource('users', \App\Http\Controllers\UserController::class);
