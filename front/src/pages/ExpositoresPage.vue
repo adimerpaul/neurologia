@@ -31,7 +31,7 @@
 
     <!-- Talleres sin agrupar -->
     <div class="text-h6 text-bold text-black q-mb-sm text-center">
-      Expocitore Talleres
+      Expositores  Talleres
     </div>
     <q-card flat bordered class="q-pa-md bg-white">
       <q-item v-for="(expo, i) in talleres" :key="'t-' + i" class="q-mb-sm">
