@@ -277,7 +277,6 @@ export default {
 
       this.registrosAll.forEach(r => {
         const nombreCompleto = `${r.firstSurname} ${r.secondSurname} ${r.firstName} ${r.secondName}`
-
         if (r.cursoTaller === 'Inscribirse a ambos') {
           grupos['Inscribirse a las Jornadas'].push(nombreCompleto)
           grupos['Inscribirse al Taller'].push(nombreCompleto)
@@ -301,7 +300,13 @@ export default {
           head: tableHeaders,
           body,
           styles: { fontSize: 10 },
-          margin: { left: 14, right: 14 }
+          margin: { left: 14, right: 14 },
+          didDrawPage: function (data) {
+            // Posición final después de la tabla
+            const finalY = data.cursor.y + 10
+            doc.setFontSize(12)
+            doc.text(`Total inscritos: ${nombres.length}`, 14, finalY)
+          }
         })
       })
 
