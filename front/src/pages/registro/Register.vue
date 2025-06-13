@@ -53,6 +53,10 @@
                   <q-item-section avatar><q-icon name="picture_as_pdf" /></q-item-section>
                   <q-item-section>PDF expositores</q-item-section>
                 </q-item>
+                <q-item clickable @click="exportarInscritosPorCursoPDF" v-close-popup>
+                  <q-item-section avatar><q-icon name="picture_as_pdf" /></q-item-section>
+                  <q-item-section>PDF por Curso/Taller</q-item-section>
+                </q-item>
               </q-list>
             </q-btn-dropdown>
             <q-btn @click="clickRegistrar" color="green" label="Crear" class="q-mb-md" no-caps icon="add_circle" />
@@ -260,6 +264,54 @@ export default {
     this.videosGetAll()
   },
   methods: {
+    exportarInscritosPorCursoPDF () {
+      // eslint-disable-next-line new-cap
+      const doc = new jsPDF()
+      doc.setFontSize(16)
+      doc.text('LISTADO DE INSCRITOS POR CURSO/TALLER', 14, 15)
+
+      const grupos = {
+        'Inscribirse a ambos': [],
+        'Inscribirse a las Jornadas': [],
+        'Inscribirse al Taller': []
+      }
+
+      // Agrupar registros
+      this.registrosAll.forEach((r, i) => {
+        if (grupos[r.cursoTaller]) {
+          grupos[r.cursoTaller].push([
+            i + 1,
+            `${r.firstSurname} ${r.secondSurname} ${r.firstName} ${r.secondName}`,
+            r.ci,
+            r.phone,
+            r.email,
+            r.profession,
+            new Date(r.created_at).toLocaleString()
+          ])
+        }
+      })
+
+      const tableHeaders = [['#', 'Nombre Completo', 'CI', 'Teléfono', 'Email', 'Profesión', 'Fecha']]
+      // Ajustar el tamaño de la fuente
+      const  currentY = 25
+
+      // Por cada grupo, imprimir subtítulo + tabla
+      Object.entries(grupos).forEach(([titulo, filas], idx) => {
+        if (idx > 0) doc.addPage()
+
+        doc.setFontSize(14)
+        doc.text(`Curso/Taller: ${titulo}`, 14, currentY)
+        autoTable(doc, {
+          startY: currentY + 5,
+          head: tableHeaders,
+          body: filas,
+          styles: { fontSize: 8 },
+          margin: { left: 14, right: 14 }
+        })
+      })
+
+      doc.save(`Inscritos_por_Curso_${new Date().toISOString().split('T')[0]}.pdf`)
+    },
     exportarInscritosPDF () {
       // eslint-disable-next-line new-cap
       const doc = new jsPDF()
