@@ -36,13 +36,22 @@
                   <q-item-section avatar>
                     <q-icon name="file_download" />
                   </q-item-section>
-                  <q-item-section>Exportar a Excel</q-item-section>
+                  <q-item-section>Excel inscritor</q-item-section>
                 </q-item>
                 <q-item clickable @click="exportarVideosJornadas" v-close-popup>
                   <q-item-section avatar>
                     <q-icon name="file_download" />
                   </q-item-section>
-                  <q-item-section>Exportar Videos Jornadas</q-item-section>
+                  <q-item-section>Excel expocitores</q-item-section>
+                </q-item>
+                <q-item clickable @click="exportarInscritosPDF" v-close-popup>
+                  <q-item-section avatar><q-icon name="picture_as_pdf" /></q-item-section>
+                  <q-item-section>PDF inscritos</q-item-section>
+                </q-item>
+
+                <q-item clickable @click="exportarExpositoresPDF" v-close-popup>
+                  <q-item-section avatar><q-icon name="picture_as_pdf" /></q-item-section>
+                  <q-item-section>PDF expositores</q-item-section>
                 </q-item>
               </q-list>
             </q-btn-dropdown>
@@ -230,7 +239,8 @@
 <script>
 import { Printd } from 'printd'
 import xlsx from 'json-as-xlsx'
-
+import jsPDF from 'jspdf'
+import autoTable from 'jspdf-autotable'
 export default {
   name: 'RegisterPage',
   data () {
@@ -250,6 +260,58 @@ export default {
     this.videosGetAll()
   },
   methods: {
+    exportarInscritosPDF () {
+      // eslint-disable-next-line new-cap
+      const doc = new jsPDF()
+      doc.setFontSize(14)
+      doc.text('Listado de Inscritos', 14, 15)
+
+      const rows = this.registrosAll.map((r, i) => [
+        i + 1,
+        `${r.firstSurname} ${r.secondSurname} ${r.firstName} ${r.secondName}`,
+        r.ci,
+        r.phone,
+        r.email,
+        r.profession,
+        r.cursoTaller,
+        new Date(r.created_at).toLocaleString()
+      ])
+
+      autoTable(doc, {
+        startY: 20,
+        head: [['#', 'Nombre Completo', 'CI', 'Teléfono', 'Email', 'Profesión', 'Curso/Taller', 'Fecha']],
+        body: rows,
+        styles: { fontSize: 8 }
+      })
+
+      doc.save(`Inscritos_${new Date().toISOString().split('T')[0]}.pdf`)
+    },
+    exportarExpositoresPDF () {
+      const jornadas = this.videos.filter(video => video.tipo === 'Jornada')
+
+      // eslint-disable-next-line new-cap
+      const doc = new jsPDF()
+      doc.setFontSize(14)
+      doc.text('Listado de Expositores (Jornadas)', 14, 15)
+
+      const rows = jornadas.map((v, i) => [
+        i + 1,
+        v.title,
+        v.subtitle,
+        new Date(v.date).toLocaleDateString(),
+        v.urlZoom || '-',
+        v.urlYoutube || '-'
+      ])
+
+      autoTable(doc, {
+        startY: 20,
+        head: [['#', 'Título', 'Subtítulo', 'Fecha', 'Zoom', 'YouTube']],
+        body: rows,
+        styles: { fontSize: 8 }
+      })
+
+      doc.save(`Expositores_Jornadas_${new Date().toISOString().split('T')[0]}.pdf`)
+    },
     exportarVideosJornadas () {
       const jornadas = this.videos.filter(video => video.tipo === 'Jornada')
 
