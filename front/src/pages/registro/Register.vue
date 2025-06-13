@@ -24,14 +24,28 @@
                    icon="refresh" />
           </div>
           <div class="col-12 col-md-5 text-right">
-            <q-btn
-              color="secondary"
-              label="Reporte por Curso/Taller"
-              icon="print"
-              class="q-ml-sm q-mb-md q-mr-md"
-              @click="imprimirReporteCurso"
-              no-caps
-            />
+            <q-btn-dropdown color="secondary q-mb-md q-mr-md" text-color="white" label="Reportes" no-caps :loading="loading">
+              <q-list>
+                <q-item clickable @click="imprimirReporteCurso" v-close-popup>
+                  <q-item-section avatar>
+                    <q-icon name="print" />
+                  </q-item-section>
+                  <q-item-section>Reporte por Curso/Taller</q-item-section>
+                </q-item>
+                <q-item clickable @click="exportarExcel" v-close-popup>
+                  <q-item-section avatar>
+                    <q-icon name="file_download" />
+                  </q-item-section>
+                  <q-item-section>Exportar a Excel</q-item-section>
+                </q-item>
+                <q-item clickable @click="exportarVideosJornadas" v-close-popup>
+                  <q-item-section avatar>
+                    <q-icon name="file_download" />
+                  </q-item-section>
+                  <q-item-section>Exportar Videos Jornadas</q-item-section>
+                </q-item>
+              </q-list>
+            </q-btn-dropdown>
             <q-btn @click="clickRegistrar" color="green" label="Crear" class="q-mb-md" no-caps icon="add_circle" />
           </div>
         </div>
@@ -215,6 +229,8 @@
 
 <script>
 import { Printd } from 'printd'
+import xlsx from 'json-as-xlsx'
+
 export default {
   name: 'RegisterPage',
   data () {
@@ -225,13 +241,86 @@ export default {
       registro: {},
       registroDialog: false,
       search: '',
-      dialogObservacion: false
+      dialogObservacion: false,
+      videos: []
     }
   },
   mounted () {
     this.registroGet()
+    this.videosGetAll()
   },
   methods: {
+    exportarVideosJornadas () {
+      const jornadas = this.videos.filter(video => video.tipo === 'Jornada')
+
+      const data = [
+        {
+          sheet: 'Jornadas',
+          columns: [
+            { label: 'Título', value: 'title' },
+            { label: 'Subtítulo', value: 'subtitle' },
+            { label: 'Contenido', value: 'content' },
+            { label: 'Fecha', value: row => new Date(row.date).toLocaleString() },
+            { label: 'Zoom', value: 'urlZoom' },
+            { label: 'YouTube', value: 'urlYoutube' },
+            { label: 'Estado botón', value: row => row.button === 1 ? 'Activo' : 'Inactivo' }
+          ],
+          content: jornadas
+        }
+      ]
+
+      const settings = {
+        fileName: `Videos_Jornadas_${new Date().toISOString().split('T')[0]}`
+      }
+
+      xlsx(data, settings)
+    },
+    videosGetAll () {
+      this.$axios.get('/videosAll')
+        .then(response => {
+          this.videos = response.data
+        })
+        .catch(error => {
+          console.error('Error fetching videos:', error)
+        })
+    },
+    exportarExcel () {
+      const data = [
+        {
+          sheet: 'Inscritos',
+          columns: [
+            { label: 'Nro', value: 'nro' },
+            { label: 'Apellido Paterno', value: 'firstSurname' },
+            { label: 'Apellido Materno', value: 'secondSurname' },
+            { label: 'Nombre', value: 'firstName' },
+            { label: 'Segundo Nombre', value: 'secondName' },
+            { label: 'CI', value: 'ci' },
+            { label: 'Teléfono', value: 'phone' },
+            { label: 'Email', value: 'email' },
+            { label: 'Profesión', value: 'profession' },
+            { label: 'Departamento', value: 'departamento' },
+            { label: 'Provincia', value: 'provincia' },
+            { label: 'Dirección', value: 'direccion' },
+            { label: 'Curso/Taller', value: 'cursoTaller' },
+            { label: 'Observación', value: 'observacion' },
+            { label: 'Fecha', value: row => new Date(row.created_at).toLocaleString() },
+            { label: 'Comprobante 1', value: row => `${this.$url}../storage/${row.file}` },
+            { label: 'Comprobante 2', value: row => row.file2 ? `${this.$url}../storage/${row.file2}` : '' }
+          ],
+          content: this.registrosAll.map((r, i) => ({
+            ...r,
+            nro: i + 1
+          }))
+        }
+      ]
+
+      const settings = {
+        fileName: `Reporte_Inscritos_${new Date().toISOString().split('T')[0]}`, // sin extensión
+        extraLength: 3 // espacio adicional para celdas grandes
+      }
+
+      xlsx(data, settings)
+    },
     imprimirReporteCurso () {
       const data = this.agruparPorCursoTaller()
       const filas = Object.entries(data).map(([curso, cantidad], index) => `
@@ -414,8 +503,8 @@ export default {
     },
     mandarRegistro (registro) {
       const numero = registro.phone.replace(/\D/g, '') // limpia espacios o guiones
-      const mensaje = `Hola ${registro.firstName}, te damos la bienvenida. Tu cuenta ha sido creada:\n\nUsuario: ${registro.ci}\nContraseña: ${registro.ci}`
-
+      let mensaje = `Hola ${registro.firstName}, te damos la bienvenida. Tu cuenta ha sido creada:\n\nUsuario: ${registro.ci}\nContraseña: ${registro.ci}`
+      mensaje += '\n\nPara más información visita: https://jornadasimposioneurooruro.org/'
       const url = `https://wa.me/591${numero}?text=${encodeURIComponent(mensaje)}`
       window.open(url, '_blank')
     },
