@@ -271,41 +271,36 @@ export default {
       doc.text('LISTADO DE INSCRITOS POR CURSO/TALLER', 14, 15)
 
       const grupos = {
-        'Inscribirse a ambos': [],
         'Inscribirse a las Jornadas': [],
         'Inscribirse al Taller': []
       }
 
-      // Agrupar registros
-      this.registrosAll.forEach((r, i) => {
-        if (grupos[r.cursoTaller]) {
-          grupos[r.cursoTaller].push([
-            i + 1,
-            `${r.firstSurname} ${r.secondSurname} ${r.firstName} ${r.secondName}`,
-            r.ci,
-            r.phone,
-            r.email,
-            r.profession,
-            new Date(r.created_at).toLocaleString()
-          ])
+      this.registrosAll.forEach(r => {
+        const nombreCompleto = `${r.firstSurname} ${r.secondSurname} ${r.firstName} ${r.secondName}`
+
+        if (r.cursoTaller === 'Inscribirse a ambos') {
+          grupos['Inscribirse a las Jornadas'].push(nombreCompleto)
+          grupos['Inscribirse al Taller'].push(nombreCompleto)
+        } else if (grupos[r.cursoTaller]) {
+          grupos[r.cursoTaller].push(nombreCompleto)
         }
       })
 
-      const tableHeaders = [['#', 'Nombre Completo', 'CI', 'Teléfono', 'Email', 'Profesión', 'Fecha']]
-      // Ajustar el tamaño de la fuente
-      const  currentY = 25
+      const tableHeaders = [['#', 'Nombre Completo']]
+      const currentY = 25
 
-      // Por cada grupo, imprimir subtítulo + tabla
-      Object.entries(grupos).forEach(([titulo, filas], idx) => {
+      Object.entries(grupos).forEach(([titulo, nombres], idx) => {
         if (idx > 0) doc.addPage()
-
         doc.setFontSize(14)
         doc.text(`Curso/Taller: ${titulo}`, 14, currentY)
+
+        const body = nombres.map((nombre, i) => [i + 1, nombre])
+
         autoTable(doc, {
           startY: currentY + 5,
           head: tableHeaders,
-          body: filas,
-          styles: { fontSize: 8 },
+          body,
+          styles: { fontSize: 10 },
           margin: { left: 14, right: 14 }
         })
       })
