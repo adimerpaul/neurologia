@@ -32,11 +32,13 @@ Route::group(['middleware'=>'auth:sanctum'],function () {
     Route::post('/logout', [\App\Http\Controllers\UserController::class, 'logout']);
     Route::post('/cambiarPass', [\App\Http\Controllers\UserController::class, 'cambiarPass']);
     Route::put('/updatePassword/{user}', [\App\Http\Controllers\UserController::class, 'updatePassword']);
-    
+
 
     Route::resource('videos', \App\Http\Controllers\VideoController::class);
     Route::resource('users', \App\Http\Controllers\UserController::class);
     Route::post('/verVideo', [\App\Http\Controllers\VideoController::class, 'verVideo']);
+
+    Route::get('/videosAll', [\App\Http\Controllers\VideoController::class, 'videosAll']);
 });
 Route::get('/programa', [\App\Http\Controllers\ProgramaController::class, 'programa']);
 Route::get('expositores', [\App\Http\Controllers\VideoController::class, 'expositores']);

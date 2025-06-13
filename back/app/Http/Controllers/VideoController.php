@@ -9,6 +9,10 @@ use App\Http\Requests\UpdateVideoRequest;
 use Illuminate\Http\Request;
 
 class VideoController extends Controller{
+    function videosAll(){
+        $videos = Video::orderBy('date', 'desc')->get();
+        return response()->json($videos);
+    }
     function expositores(){
         $expositores = Video::orderBy('subtitle')
             ->orderBy('date')
