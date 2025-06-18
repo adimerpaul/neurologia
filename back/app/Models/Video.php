@@ -18,6 +18,8 @@ class Video extends Model
         'urlZoom',
         'urlYoutube',
         'date',
+        'tipo',
+        'diapositivas',
     ];
     protected $appends = [
         'hora','text'

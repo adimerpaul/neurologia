@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('hojaVida')->nullable()->default('');
             $table->date('date')->nullable()->default('2023-09-13');
             $table->string('tipo')->nullable()->default('Jornada');
+            $table->text('diapositivas')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

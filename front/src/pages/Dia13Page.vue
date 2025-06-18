@@ -33,6 +33,10 @@
                      icon-right="fa-brands fa-youtube" type="a" :href="video.urlYoutube"
                      target="_blank" v-if="video.urlYoutube" @click="verVideo(video)"
               />
+<!--              botn diapositiva orange-->
+              <q-btn size="12px" label="Ver diapositiva" color="orange" class="q-ml-xs" no-caps
+                     icon-right="o_file_download" type="a" :href="video.urlDiapositiva"
+                     target="_blank" v-if="video.diapositivas"/>
             </template>
           </div>
         </div>
