@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class RegistroController extends Controller{
+    public function inscritosPorProfesion(){
+        $data = Registro::select('profession', \DB::raw('COUNT(*) as total'))
+            ->groupBy('profession')
+            ->orderByDesc('total')
+            ->get();
+
+        return response()->json($data);
+    }
     function index(){
         $registros = Registro::orderBy('id', 'desc')->get();
         return $registros;

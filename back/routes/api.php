@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RegistroController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,8 @@ Route::post('/login',[\App\Http\Controllers\UserController::class,'login']);
 Route::post('/registro', [\App\Http\Controllers\RegistroController::class, 'store']);
 //Route::post('upload/{id}/{option}', [\App\Http\Controllers\UploadController::class, 'upload']);
 Route::group(['middleware'=>'auth:sanctum'],function () {
+    Route::get('/inscritos-por-profesion', [RegistroController::class, 'inscritosPorProfesion']);
+
     Route::get('/registro', [\App\Http\Controllers\RegistroController::class, 'index']);
 //    Route::post('/registro', [\App\Http\Controllers\RegistroController::class, 'store']);
     Route::post('/registro/crear-usuario', [\App\Http\Controllers\RegistroController::class, 'crearUsuarioDesdeRegistro']);

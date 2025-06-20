@@ -30,7 +30,8 @@ const routes = [
       { path: '/register', component: () => import('pages/registro/Register.vue'), meta: { requiresAuth: true } },
       { path: '/perfil', component: PerfilPage, meta: { requiresAuth: true } },
       { path: '/changePassword', component: ChangePasswordPage, meta: { requiresAuth: true } },
-      { path: '/biblioteca', component: BibliotecaPage, meta: { requiresAuth: true } }
+      { path: '/biblioteca', component: BibliotecaPage, meta: { requiresAuth: true } },
+      { path: '/reportes', component: () => import('pages/Reportes.vue'), meta: { requiresAuth: true } }
     ]
   },
   {

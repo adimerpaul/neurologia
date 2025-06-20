@@ -227,6 +227,14 @@
                 Personas Inscritas
               </q-item-section>
             </q-item>
+            <q-item clickable to="/reportes" exact active-class="bg-primary text-white text-bold" v-if="$store.user.id==1 || $store.user.id==7">
+              <q-item-section avatar>
+                <q-icon name="o_person_add" />
+              </q-item-section>
+              <q-item-section>
+                Reportes
+              </q-item-section>
+            </q-item>
 <!--            <q-item clickable to="/estadisticos" exact active-class="bg-primary text-white text-bold" v-if="$store.user.id==1">-->
 <!--              <q-item-section avatar>-->
 <!--                <q-icon name="o_bar_chart" />-->
