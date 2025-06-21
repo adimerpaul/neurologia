@@ -19,22 +19,22 @@
           <div v-html="video.content"></div>
           <div>
             <template v-if="video.button">
-              <q-btn style="width: 170px" size="12px" outline label="Hoja de vida" color="blue" class="q-ml-xs" no-caps
+              <q-btn style="width: 170px" size="12px" outline label="Hoja de vida" color="blue" class="q-ma-xs" no-caps
                      icon-right="o_file_download" type="a" :href="video.hojaVida"
                      target="_blank" v-if="video.hojaVida"/>
-              <q-btn style="width: 170px" size="12px" label="Material estudio" color="blue-10" class="q-ml-xs" no-caps
+              <q-btn style="width: 170px" size="12px" label="Material estudio" color="blue-10" class="q-ma-xs" no-caps
                      icon-right="o_file_download" type="a" :href="video.materialEstudio"
                      target="_blank" v-if="video.materialEstudio"/>
-              <q-btn style="width: 170px" size="12px" label="Ingresa a la sala" color="blue" class="q-ml-xs" no-caps
+              <q-btn style="width: 170px" size="12px" label="Ingresa a la sala" color="blue" class="q-ma-xs" no-caps
                      icon-right="o_videocam" type="a" :href="video.urlZoom"
                      target="_blank" v-if="video.urlZoom"
               />
-              <q-btn style="width: 170px" size="12px" label="Ver video" color="red" class="q-ml-xs" no-caps
+              <q-btn style="width: 170px" size="12px" label="Ver video" color="red" class="q-ma-xs" no-caps
                      icon-right="fa-brands fa-youtube" type="a" :href="video.urlYoutube"
                      target="_blank" v-if="video.urlYoutube" @click="verVideo(video)"
               />
 <!--              botn diapositiva orange-->
-              <q-btn style="width: 170px" size="12px" label="Ver diapositiva" color="orange" class="q-ml-xs" no-caps
+              <q-btn style="width: 170px" size="12px" label="Ver diapositiva" color="orange" class="q-ma-xs" no-caps
                      icon-right="o_file_download" type="a" :href="video.diapositivas"
                      target="_blank" v-if="video.diapositivas"/>
             </template>
