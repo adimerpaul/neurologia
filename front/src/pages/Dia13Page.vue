@@ -35,7 +35,7 @@
               />
 <!--              botn diapositiva orange-->
               <q-btn style="width: 170px" size="12px" label="Ver diapositiva" color="orange" class="q-ml-xs" no-caps
-                     icon-right="o_file_download" type="a" :href="video.urlDiapositiva"
+                     icon-right="o_file_download" type="a" :href="video.diapositivas"
                      target="_blank" v-if="video.diapositivas"/>
             </template>
           </div>

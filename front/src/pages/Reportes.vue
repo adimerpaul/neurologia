@@ -33,45 +33,27 @@ export default {
       chartSeries: [],
       chartOptions: {
         chart: {
-          type: 'bar'
+          id: 'reporte-tipo',
+          toolbar: { show: true }
         },
-        title: {
-          text: 'Cantidad de Inscritos por Profesión',
-          align: 'center'
-        },
-        colors: ['#008FFB', '#00E396', '#FEB019', '#FF4560', '#775DD0', '#3F51B5', '#F46036', '#2B908F'],
-        plotOptions: {
-          bar: {
-            distributed: true,
-            horizontal: false,
-            columnWidth: '60%',
-            endingShape: 'rounded'
-          }
+        xaxis: {
+          categories: []
         },
         dataLabels: {
           enabled: true,
-          formatter: function (val) {
-            return val
-          },
-          offsetY: -20,
-          style: {
-            fontSize: '12px',
-            colors: ['#304758']
+          formatter: function (_, opts) {
+            return opts.w.config.series[0].data[opts.dataPointIndex].customData
           }
         },
-        xaxis: {
-          categories: [], // se llena con nombres reales
-          labels: {
-            rotate: -45,
-            trim: false,
-            style: {
-              fontSize: '12px'
-            }
+        legend: {
+          show: false
+        },
+        plotOptions: {
+          bar: {
+            distributed: true
           }
-        }
-        // legend: {
-        //   show: false // ocultar leyenda con 1, 2, 3, 4
-        // }
+        },
+        colors: ['#43a047', '#1e88e5', '#fbc02d', '#e53935'] // colores por mesa
       },
       columns: [
         { name: 'profession', label: 'Profesión', field: 'profession', align: 'left' },
@@ -86,15 +68,42 @@ export default {
     async obtenerDatos () {
       try {
         const response = await this.$axios.get('/inscritos-por-profesion')
+        // Actualiza solo el array de datos sin romper la reactividad
+        // this.chartSeries[0].data = response.data.map(item => item.total)
+        // this.chartOptions.xaxis.categories = response.data.map(item => item.profession)
+        // Asegura que no se muestre la leyenda numérica
+        // this.chartOptions.legend.show = false
         this.registros = response.data
-
         this.chartSeries = [{
+          name: 'Cantidad',
           data: response.data.map(item => item.total)
         }]
-
-        // this.chartOptions.xaxis.categories = response.data.map(item => item.profession)
-        // this.chartOptions.legend.show = false // fuerza ocultar leyenda numérica
         this.chartOptions.xaxis.categories = response.data.map(item => item.profession)
+        // this.chartOptions.xaxis.categories = ['a']
+        // this.chartOptions.xaxis = {
+        //   categories: response.data.map(item => item.profession),
+        //   labels: {
+        //     rotate: -45,
+        //     trim: false,
+        //     style: {
+        //       fontSize: '12px'
+        //     }
+        //   }
+        // }
+        // this.chartOptions = {
+        //   ...this.chartOptions,
+        //   xaxis: {
+        //     categories: ['a'],
+        //     labels: {
+        //       rotate: -45,
+        //       trim: false,
+        //       style: {
+        //         fontSize: '12px'
+        //       }
+        //     }
+        //   }
+        // }
+        console.log(this.chartOptions.xaxis.categories)
       } catch (error) {
         console.error('Error al obtener datos:', error)
       }
